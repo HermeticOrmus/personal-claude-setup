@@ -1,0 +1,381 @@
+{
+  "name": "Hermetic Market Teacher - Salvador Portfolio Monitor",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": ["message"]
+      },
+      "id": "webhook-trigger",
+      "name": "Telegram Webhook",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "salvador-portfolio",
+      "credentials": {
+        "telegramApi": {
+          "id": "existing",
+          "name": "Hermetic Market Teacher Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate that this is Salvador or admin (Hermetic Ormus)\nconst allowedUsers = [\n  'SALVADOR_CHAT_ID',  // TODO: Replace with Salvador's actual Telegram user ID\n  '1540112442'         // Hermetic Ormus (admin)\n];\n\nconst message = $input.first().json.message;\nconst chatId = message.chat.id.toString();\nconst username = message.from.username || 'Unknown';\nconst firstName = message.from.first_name || 'User';\n\nif (!allowedUsers.includes(chatId)) {\n  return [{\n    json: {\n      authorized: false,\n      chatId: chatId,\n      username: username,\n      response: `⛔ Access Denied\\n\\nThis bot is for authorized users only.\\n\\nYour chat ID: ${chatId}\\nUsername: @${username}`\n    }\n  }];\n}\n\n// User authorized - extract message text\nconst messageText = message.text || '';\nconst isAdmin = chatId === '1540112442';\n\nreturn [{\n  json: {\n    authorized: true,\n    chatId: chatId,\n    username: username,\n    firstName: firstName,\n    isAdmin: isAdmin,\n    messageText: messageText,\n    originalMessage: message\n  }\n}];"
+      },
+      "id": "validate-user",
+      "name": "Validate User",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.authorized }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "check-authorization",
+      "name": "Check Authorization",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "sendMessage",
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.response }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "send-access-denied",
+      "name": "Send Access Denied",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [900, 480],
+      "credentials": {
+        "telegramApi": {
+          "id": "existing",
+          "name": "Hermetic Market Teacher Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const message = $input.first().json.messageText.trim();\nconst isAdmin = $input.first().json.isAdmin;\n\n// Check if this is a command (starts with /)\nconst isCommand = message.startsWith('/');\n\nif (isCommand) {\n  const parts = message.split(' ');\n  const command = parts[0].toLowerCase();\n  const args = parts.slice(1);\n  \n  return [{\n    json: {\n      messageType: 'command',\n      command: command,\n      args: args,\n      originalMessage: message,\n      isAdmin: isAdmin,\n      chatId: $input.first().json.chatId,\n      firstName: $input.first().json.firstName\n    }\n  }];\n}\n\n// Natural language query\nreturn [{\n  json: {\n    messageType: 'natural',\n    query: message,\n    originalMessage: message,\n    isAdmin: isAdmin,\n    chatId: $input.first().json.chatId,\n    firstName: $input.first().json.firstName\n  }\n}];"
+      },
+      "id": "parse-message",
+      "name": "Parse Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 120]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{ $json.messageType }}",
+                    "value2": "command"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "command"
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{ $json.messageType }}",
+                    "value2": "natural"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "natural"
+            }
+          ]
+        },
+        "fallbackOutput": "none"
+      },
+      "id": "route-by-type",
+      "name": "Route By Type",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [1120, 120]
+    },
+    {
+      "parameters": {
+        "resource": "row",
+        "operation": "getAll",
+        "tableId": "salvador_positions",
+        "returnAll": true,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "status",
+              "condition": "equals",
+              "keyValue": "active"
+            }
+          ]
+        }
+      },
+      "id": "fetch-positions",
+      "name": "Fetch Salvador Positions",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 120],
+      "credentials": {
+        "supabaseApi": {
+          "id": "existing",
+          "name": "Hermetic Automation OS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://query1.finance.yahoo.com/v8/finance/chart/{{ $('Fetch Salvador Positions').all().map(p => p.json.ticker).join(',') }}?interval=1d&range=1d"
+      },
+      "id": "fetch-prices",
+      "name": "Fetch Current Prices",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1560, 120]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const positions = $('Fetch Salvador Positions').all().map(item => item.json);\n  const priceData = $input.first().json;\n  \n  // Parse Yahoo Finance response\n  const prices = {};\n  if (priceData.chart && priceData.chart.result) {\n    for (const stock of priceData.chart.result) {\n      const ticker = stock.meta.symbol;\n      const price = stock.meta.regularMarketPrice;\n      prices[ticker] = price;\n    }\n  }\n  \n  // Calculate P&L for each position\n  const enrichedPositions = [];\n  let totalValue = 0;\n  let totalCost = 0;\n  \n  for (const position of positions) {\n    const currentPrice = prices[position.ticker] || 0;\n    const currentValue = position.shares * currentPrice;\n    const unrealizedPL = currentValue - position.total_cost;\n    const unrealizedPLPct = position.total_cost > 0 ? (unrealizedPL / position.total_cost) * 100 : 0;\n    \n    enrichedPositions.push({\n      ...position,\n      currentPrice: currentPrice,\n      currentValue: currentValue,\n      unrealizedPL: unrealizedPL,\n      unrealizedPLPct: unrealizedPLPct\n    });\n    \n    totalValue += currentValue;\n    totalCost += position.total_cost;\n  }\n  \n  const totalPL = totalValue - totalCost;\n  const totalPLPct = totalCost > 0 ? (totalPL / totalCost) * 100 : 0;\n  \n  return [{\n    json: {\n      positions: enrichedPositions,\n      portfolio: {\n        totalValue: totalValue,\n        totalCost: totalCost,\n        totalPL: totalPL,\n        totalPLPct: totalPLPct,\n        positionCount: enrichedPositions.length\n      },\n      timestamp: new Date().toISOString(),\n      messageType: $('Parse Message').first().json.messageType,\n      command: $('Parse Message').first().json.command || null,\n      query: $('Parse Message').first().json.query || null,\n      chatId: $('Parse Message').first().json.chatId,\n      firstName: $('Parse Message').first().json.firstName\n    }\n  }];\n  \n} catch (error) {\n  return [{\n    json: {\n      error: true,\n      message: `Error calculating P&L: ${error.message}`,\n      chatId: $('Parse Message').first().json.chatId\n    }\n  }];\n}"
+      },
+      "id": "calculate-pnl",
+      "name": "Calculate P&L",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 120]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{ $json.command }}",
+                    "value2": "/position"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "position"
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{ $json.command }}",
+                    "value2": "/performance"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "performance"
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{ $json.command }}",
+                    "value2": "/holdings"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "holdings"
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{ $json.command }}",
+                    "value2": "/help"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "help"
+            }
+          ]
+        },
+        "fallbackOutput": "extra"
+      },
+      "id": "route-command",
+      "name": "Route Command",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [2000, 120]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst portfolio = data.portfolio;\nconst positions = data.positions;\nconst firstName = data.firstName;\n\nconst now = new Date();\nconst dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });\nconst timeStr = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York' });\n\nlet message = `📊 ${firstName}'s Portfolio | ${dateStr} ${timeStr} ET\\n\\n`;\nmessage += `💰 TOTAL VALUE: $${portfolio.totalValue.toFixed(2)}\\n`;\nmessage += `📈 UNREALIZED P&L: ${portfolio.totalPL >= 0 ? '+' : ''}$${portfolio.totalPL.toFixed(2)} (${portfolio.totalPLPct >= 0 ? '+' : ''}${portfolio.totalPLPct.toFixed(1)}%)\\n\\n`;\n\nif (positions.length === 0) {\n  message += `No active positions.\\n`;\n} else {\n  message += `Holdings:\\n`;\n  message += `━━━━━━━━━━━━━━━━━━━━━━━━━━\\n`;\n  \n  positions.forEach((pos, idx) => {\n    const icon = pos.unrealizedPL >= 0 ? '🟢' : '🔴';\n    message += `${icon} ${pos.ticker}\\n`;\n    message += `${pos.shares.toFixed(2)} shares @ $${pos.currentPrice.toFixed(2)} = $${pos.currentValue.toFixed(2)}\\n`;\n    message += `Cost basis: $${pos.cost_basis.toFixed(2)}/sh ($${pos.total_cost.toFixed(2)} total)\\n`;\n    message += `P&L: ${pos.unrealizedPL >= 0 ? '+' : ''}$${pos.unrealizedPL.toFixed(2)} (${pos.unrealizedPLPct >= 0 ? '+' : ''}${pos.unrealizedPLPct.toFixed(1)}%) ${pos.unrealizedPL >= 0 ? '📈' : '📉'}\\n`;\n    \n    if (idx < positions.length - 1) {\n      message += `\\n`;\n    }\n  });\n  \n  message += `\\n━━━━━━━━━━━━━━━━━━━━━━━━━━\\n`;\n  message += `🔱 Hermetic Market Teacher\\n`;\n  message += `Managing $${portfolio.totalCost.toFixed(2)} → Now worth $${portfolio.totalValue.toFixed(2)}`;\n}\n\nreturn [{\n  json: {\n    message: message,\n    chatId: data.chatId\n  }\n}];"
+      },
+      "id": "format-position",
+      "name": "Format Position Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2220, 40]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst positions = data.positions;\nconst portfolio = data.portfolio;\n\nlet message = `📋 Your Holdings\\n\\n`;\n\nif (positions.length === 0) {\n  message += `No active positions.\\n`;\n} else {\n  positions.forEach((pos, idx) => {\n    message += `${idx + 1}. ${pos.ticker} - ${pos.shares.toFixed(2)} shares\\n`;\n  });\n  \n  message += `\\nTotal: ${portfolio.positionCount} positions\\n`;\n  message += `Portfolio value: $${portfolio.totalValue.toFixed(2)}`;\n}\n\nreturn [{\n  json: {\n    message: message,\n    chatId: data.chatId\n  }\n}];"
+      },
+      "id": "format-holdings",
+      "name": "Format Holdings Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2220, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "const message = `🔱 Salvador Portfolio Monitor\\n\\n` +\n  `Commands:\\n` +\n  `/position - Current positions & P&L\\n` +\n  `/performance - Performance metrics\\n` +\n  `/holdings - List your stocks\\n` +\n  `/help - Show this message\\n\\n` +\n  `You can also ask me questions:\\n` +\n  `• \"How am I doing?\"\\n` +\n  `• \"What's NVDA worth now?\"\\n` +\n  `• \"Should I sell anything?\"\\n` +\n  `• \"What's my best performer?\"\\n\\n` +\n  `🔱 Hermetic Market Teacher`;\n\nreturn [{\n  json: {\n    message: message,\n    chatId: $input.first().json.chatId\n  }\n}];"
+      },
+      "id": "format-help",
+      "name": "Format Help Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2220, 360]
+    },
+    {
+      "parameters": {
+        "operation": "message",
+        "modelId": "gpt-4o-mini",
+        "messages": {
+          "values": [
+            {
+              "content": "=You are the Hermetic Market Teacher assistant helping Salvador understand his portfolio.\\n\\nRules:\\n- Be clear and educational\\n- NEVER give financial advice (no \"buy\" or \"sell\" recommendations)\\n- Always show the data and let Salvador decide\\n- Reference specific numbers from his portfolio\\n- Explain market concepts simply\\n- If asked for advice, present data and say \"You decide based on your goals\"\\n\\nSalvador's Current Portfolio:\\n{{ $json.positions.map(p => `${p.ticker}: ${p.shares} shares @ $${p.currentPrice.toFixed(2)} = $${p.currentValue.toFixed(2)} (${p.unrealizedPLPct >= 0 ? '+' : ''}${p.unrealizedPLPct.toFixed(1)}%)`).join('\\\\n') }}\\n\\nTotal Portfolio Value: ${{ $json.portfolio.totalValue.toFixed(2) }}\\nTotal P&L: {{ $json.portfolio.totalPL >= 0 ? '+' : '' }}${{ $json.portfolio.totalPL.toFixed(2) }} ({{ $json.portfolio.totalPLPct >= 0 ? '+' : '' }}{{ $json.portfolio.totalPLPct.toFixed(1) }}%)\\n\\nSalvador's question: {{ $json.query }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 500
+        }
+      },
+      "id": "handle-natural-language",
+      "name": "AI Question Handler",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [2220, 600],
+      "credentials": {
+        "openAiApi": {
+          "id": "KJU3vs0eaJMLoxK9"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const aiResponse = $input.first().json.message.content;\nconst chatId = $('Calculate P&L').first().json.chatId;\n\nconst message = `${aiResponse}\\n\\n🔱 Hermetic Market Teacher`;\n\nreturn [{\n  json: {\n    message: message,\n    chatId: chatId\n  }\n}];"
+      },
+      "id": "format-ai-response",
+      "name": "Format AI Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2440, 600]
+    },
+    {
+      "parameters": {
+        "operation": "sendMessage",
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "send-response",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [2660, 300],
+      "credentials": {
+        "telegramApi": {
+          "id": "existing",
+          "name": "Hermetic Market Teacher Bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Telegram Webhook": {
+      "main": [[{"node": "Validate User", "type": "main", "index": 0}]]
+    },
+    "Validate User": {
+      "main": [[{"node": "Check Authorization", "type": "main", "index": 0}]]
+    },
+    "Check Authorization": {
+      "main": [
+        [{"node": "Parse Message", "type": "main", "index": 0}],
+        [{"node": "Send Access Denied", "type": "main", "index": 0}]
+      ]
+    },
+    "Parse Message": {
+      "main": [[{"node": "Route By Type", "type": "main", "index": 0}]]
+    },
+    "Route By Type": {
+      "main": [
+        [{"node": "Fetch Salvador Positions", "type": "main", "index": 0}],
+        [{"node": "Fetch Salvador Positions", "type": "main", "index": 0}]
+      ]
+    },
+    "Fetch Salvador Positions": {
+      "main": [[{"node": "Fetch Current Prices", "type": "main", "index": 0}]]
+    },
+    "Fetch Current Prices": {
+      "main": [[{"node": "Calculate P&L", "type": "main", "index": 0}]]
+    },
+    "Calculate P&L": {
+      "main": [[{"node": "Route Command", "type": "main", "index": 0}]]
+    },
+    "Route Command": {
+      "main": [
+        [{"node": "Format Position Response", "type": "main", "index": 0}],
+        [],
+        [{"node": "Format Holdings Response", "type": "main", "index": 0}],
+        [{"node": "Format Help Response", "type": "main", "index": 0}],
+        [{"node": "AI Question Handler", "type": "main", "index": 0}]
+      ]
+    },
+    "Format Position Response": {
+      "main": [[{"node": "Send to Telegram", "type": "main", "index": 0}]]
+    },
+    "Format Holdings Response": {
+      "main": [[{"node": "Send to Telegram", "type": "main", "index": 0}]]
+    },
+    "Format Help Response": {
+      "main": [[{"node": "Send to Telegram", "type": "main", "index": 0}]]
+    },
+    "AI Question Handler": {
+      "main": [[{"node": "Format AI Response", "type": "main", "index": 0}]]
+    },
+    "Format AI Response": {
+      "main": [[{"node": "Send to Telegram", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "timezone": "America/New_York"
+  }
+}

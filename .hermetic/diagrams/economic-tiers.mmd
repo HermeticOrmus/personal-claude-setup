@@ -1,0 +1,89 @@
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#FFD700','primaryTextColor':'#000','secondaryColor':'#4B0082','tertiaryColor':'#50C878','lineColor':'708090'}}}%%
+
+stateDiagram-v2
+    [*] --> Tier1_Survival
+
+    Tier1_Survival: 💰 TIER 1: SURVIVAL
+    Tier1_Survival: Pay rent this month
+    Tier1_Survival: No immediate crisis
+    Tier1_Survival: Accept work within hard boundaries
+    Tier1_Survival: ---
+    Tier1_Survival: Goal: Build 1-month buffer
+
+    Tier2_Stability: 🏦 TIER 2: STABILITY
+    Tier2_Stability: 3-6 month runway
+    Tier2_Stability: Can say no to terrible clients
+    Tier2_Stability: First passive income started
+    Tier2_Stability: ---
+    Tier2_Stability: Goal: Increase selectivity
+
+    Tier3_Selectivity: 🎯 TIER 3: SELECTIVITY
+    Tier3_Selectivity: 6-12 month runway
+    Tier3_Selectivity: Can decline dark pattern work
+    Tier3_Selectivity: Products = 20% of income
+    Tier3_Selectivity: ---
+    Tier3_Selectivity: Goal: Full alignment possible
+
+    Tier4_Mission: ⚡ TIER 4: MISSION ALIGNMENT
+    Tier4_Mission: 12+ month runway
+    Tier4_Mission: Only aligned work
+    Tier4_Mission: Products > trading time
+    Tier4_Mission: Teaching/leading position
+    Tier4_Mission: ---
+    Tier4_Mission: Goal: Economic sovereignty
+
+    Tier1_Survival --> Tier2_Stability: Save 20-30%\nBuild buffer\n1-6 months
+    Tier2_Stability --> Tier3_Selectivity: Diversify income\nGrow products\n6-12 months
+    Tier3_Selectivity --> Tier4_Mission: Scale passive income\nReduce client work\n12-24 months
+
+    Tier2_Stability --> Tier1_Survival: Economic shock\nLarge expense\nClient lost
+    Tier3_Selectivity --> Tier2_Stability: Setback\nBusiness decline\nBad decisions
+    Tier4_Mission --> Tier3_Selectivity: Major crisis\nMarket collapse\nHealth issues
+
+    note right of Tier1_Survival
+        Acceptable compromises:
+        • Work not fully aligned
+        • Some client requests you disagree with
+        • Build runway ASAP
+
+        NOT acceptable:
+        • Violating hard boundaries
+        • Deliberately harmful products
+        • Surveillance/predatory work
+    end note
+
+    note right of Tier2_Stability
+        Enables:
+        • Declining egregious work
+        • Offering alternatives to dark patterns
+        • Taking occasional financial hits
+
+        Focus:
+        • Bank 20-30% every payment
+        • Launch first product
+        • Build diverse income
+    end note
+
+    note right of Tier3_Selectivity
+        Enables:
+        • Turning down dark patterns
+        • Only accepting aligned clients
+        • Building products full-time
+
+        Focus:
+        • Products = 30-50% of revenue
+        • Niche into premium space
+        • Teach what you know
+    end note
+
+    note right of Tier4_Mission
+        You made it:
+        • Full Gold Hat alignment
+        • Economic sovereignty
+        • Teaching others the path
+
+        Maintain:
+        • Don't lifestyle inflate
+        • Keep building products
+        • Share wisdom generously
+    end note

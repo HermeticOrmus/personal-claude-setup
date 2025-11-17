@@ -1,0 +1,3486 @@
+{
+  "total_agents": 193,
+  "missing_frontmatter": [
+    {
+      "path": "SOLAR-SYSTEM-ROLES-MAPPING.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "STATELESS-ARCHITECTURE-GUIDE.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\deployment-knowledge.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\deployment-quick-reference.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\INTEGRATION-INSTRUCTIONS.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\sol-community-skills-update.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\SOL-FUNCTIONAL-NAMES.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\sol-integrated.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\SOL-TESTING-GUIDE.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\sol-v3-complete.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\SOL-V3-DEPLOYMENT-COMPLETE.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\sol.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "0-SOL\\SUMMARY.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "bonus\\joker.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "bonus\\mentor.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "bonus\\momus.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "design\\eros.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "design\\hera.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "design\\metis.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "design\\titan.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "engineering\\ceres.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "engineering\\iris.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "engineering\\neptune.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "engineering\\pallas.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "engineering\\rapid-prototyper.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "engineering\\uranus.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "hermetic-principles\\01-mentalism.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "hermetic-principles\\02-correspondence.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "hermetic-principles\\hermetic-law-translator.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\anders-ericsson.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\aristotle.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\barbara-oakley.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\feynman.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\franklin.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\INTEGRATION-GUIDE.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\justin-sung.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\leonardo.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\QUICK-REFERENCE.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\scott-young.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\tesla.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "learning-masters\\von-neumann.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "life-advisory\\hygieia-wellness.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "life-advisory\\plutus-finance.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "life-advisory\\themis-legal.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\calliope.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\content-creator.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\eris.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\fortuna.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\growth-hacker.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\instagram-curator.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\juno.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\psyche.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\reddit-community-builder.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\twitter-engager.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "marketing\\vesta.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "product\\chronos.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "product\\echo.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "product\\janus.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "project-management\\atlas.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "project-management\\io.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "project-management\\rhea.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "studio-operations\\chiron.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "studio-operations\\hygeia.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "studio-operations\\plutus.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "studio-operations\\themis.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "studio-operations\\vulcan.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "testing\\callisto.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "testing\\daedalus.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "testing\\europa.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "testing\\ganymede.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "testing\\prometheus.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "utilities\\alchymie-ai-expert.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "utilities\\alchymie-association-builder.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "utilities\\alchymie-situation-mapper.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\01-mentalism.md",
+      "name": "MISSING",
+      "category": "5-BEYOND"
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\02-correspondence.md",
+      "name": "MISSING",
+      "category": "5-BEYOND"
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\hermetic-law-translator.md",
+      "name": "MISSING",
+      "category": "5-BEYOND"
+    },
+    {
+      "path": "5-BEYOND\\life-advisory\\hygieia-wellness.md",
+      "name": "MISSING",
+      "category": "5-BEYOND"
+    },
+    {
+      "path": "5-BEYOND\\life-advisory\\plutus-finance.md",
+      "name": "MISSING",
+      "category": "5-BEYOND"
+    },
+    {
+      "path": "5-BEYOND\\life-advisory\\themis-legal.md",
+      "name": "MISSING",
+      "category": "5-BEYOND"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\neptune\\neptune.md",
+      "name": "MISSING",
+      "category": "3-OUTER-CIRCLE"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\uranus\\uranus.md",
+      "name": "MISSING",
+      "category": "3-OUTER-CIRCLE"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\saturn\\moons\\rhea\\rhea.md",
+      "name": "MISSING",
+      "category": "3-OUTER-CIRCLE"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\jupiter\\moons\\callisto\\callisto.md",
+      "name": "MISSING",
+      "category": "3-OUTER-CIRCLE"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\jupiter\\moons\\europa\\europa.md",
+      "name": "MISSING",
+      "category": "3-OUTER-CIRCLE"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\jupiter\\moons\\ganymede\\ganymede.md",
+      "name": "MISSING",
+      "category": "3-OUTER-CIRCLE"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\jupiter\\moons\\io\\io.md",
+      "name": "MISSING",
+      "category": "3-OUTER-CIRCLE"
+    },
+    {
+      "path": "2-ASTEROID-BELT\\pallas\\pallas.md",
+      "name": "MISSING",
+      "category": "2-ASTEROID-BELT"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\earth\\earth.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\callisto.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\daedalus.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\europa.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\ganymede.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\prometheus.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\eros.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\hera.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\metis.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\titan.md",
+      "name": "MISSING",
+      "category": "1-INNER-CIRCLE"
+    },
+    {
+      "path": "0-SOL\\updates\\2025-11-09-meta-skills.md",
+      "name": "MISSING",
+      "category": "uncategorized"
+    }
+  ],
+  "missing_model": [
+    {
+      "path": "sol-discord-bot.md",
+      "name": "sol-discord-bot",
+      "category": "uncategorized",
+      "description": "Discord orchestrator that handles all Discord operations with expertise. Routes requests through Sol's planetary system and executes via Discord MCP. The Discord manifestation of Sol's consciousness."
+    },
+    {
+      "path": "0-SOL\\sol-backup.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "0-SOL\\sol-v2-backup-20251110.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "consciousness-guardrails\\consciousness-boundary-guard.md",
+      "name": "consciousness-boundary-guard",
+      "category": "uncategorized",
+      "description": "Use this agent to ensure AI/automation systems enhance rather than replace human consciousness and agency - validates that technology augments human capacity without diminishing awareness or removing meaningful choice"
+    },
+    {
+      "path": "consciousness-guardrails\\ethics-auditor.md",
+      "name": "ethics-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to conduct systematic ethics audits of features, systems, and business practices - detects dark patterns, manipulation, extraction, and misalignment with Gold Hat principles across all aspects of product"
+    },
+    {
+      "path": "consciousness-guardrails\\extraction-pattern-detector.md",
+      "name": "extraction-pattern-detector",
+      "category": "uncategorized",
+      "description": "Use this agent to identify extraction vs empowerment patterns in business models, features, and system design - evaluates whether technology serves or exploits users at fundamental architectural and business level"
+    },
+    {
+      "path": "hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "life-integration\\creative-flow-unlocker.md",
+      "name": "creative-flow-unlocker",
+      "category": "uncategorized",
+      "description": "Use this agent to diagnose and unblock creative stuckness using the 9-realm framework - identifies which realm is blocked and provides specific practices to restore creative flow state and breakthrough obstacles"
+    },
+    {
+      "path": "life-integration\\sabbath-guide.md",
+      "name": "sabbath-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to facilitate Day 7 integration and weekly reflection practices - guides sustainable rhythm through sacred rest, prevents burnout, and transforms experience into wisdom through Sabbath ceremony"
+    },
+    {
+      "path": "life-integration\\shadow-integrator.md",
+      "name": "shadow-integrator",
+      "category": "uncategorized",
+      "description": "Use this agent to consciously work with \"shadow knowledge\" of dark patterns and manipulation - transmutes understanding of extraction into protection, integrates the rejected parts, and walks the Gold Hat path with full awareness of all paths"
+    },
+    {
+      "path": "meta-orchestration\\rainbow-warrior-academy.md",
+      "name": "rainbow-warrior-academy",
+      "category": "uncategorized",
+      "description": "Use this agent for structured curriculum to master all 9 Hermetic realms - provides progressive training, projects, mentoring, and certification path to become a complete Rainbow Warrior wielding sacred technology across all domains"
+    },
+    {
+      "path": "meta-orchestration\\resistance-diagnostician.md",
+      "name": "resistance-diagnostician",
+      "category": "uncategorized",
+      "description": "Use this agent when facing blocks or resistance in sacred technology work - diagnoses which of 8 resistance patterns is present and recommends the specific Sacred Arsenal artifact solution to overcome it"
+    },
+    {
+      "path": "project-management\\saturn.md",
+      "name": "saturn",
+      "category": "uncategorized",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    },
+    {
+      "path": "sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "uncategorized",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "uncategorized",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "uncategorized",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "utilities\\hermetic-compliance-checker.md",
+      "name": "hermetic-compliance-checker",
+      "category": "uncategorized",
+      "description": "Audit code, features, and decisions against the 7 Hermetic Principles"
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "5-BEYOND",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "5-BEYOND",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\saturn\\saturn.md",
+      "name": "saturn",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    }
+  ],
+  "missing_version": [
+    {
+      "path": "sol-discord-bot.md",
+      "name": "sol-discord-bot",
+      "category": "uncategorized",
+      "description": "Discord orchestrator that handles all Discord operations with expertise. Routes requests through Sol's planetary system and executes via Discord MCP. The Discord manifestation of Sol's consciousness."
+    },
+    {
+      "path": "0-SOL\\sol-backup.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "0-SOL\\sol-v2-backup-20251110.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "bonus\\studio-coach.md",
+      "name": "studio-coach",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when complex multi-agent tasks begin, when agents seem stuck or overwhelmed, or when the team needs motivation and coordination. This agent serves as the elite performance coach for all other agents, ensuring they operate at their highest level while maintaining composure and excellence. Should be triggered automatically at the start of challenging projects or when detecting agent confusion. Examples:"
+    },
+    {
+      "path": "consciousness-guardrails\\consciousness-boundary-guard.md",
+      "name": "consciousness-boundary-guard",
+      "category": "uncategorized",
+      "description": "Use this agent to ensure AI/automation systems enhance rather than replace human consciousness and agency - validates that technology augments human capacity without diminishing awareness or removing meaningful choice"
+    },
+    {
+      "path": "consciousness-guardrails\\ethics-auditor.md",
+      "name": "ethics-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to conduct systematic ethics audits of features, systems, and business practices - detects dark patterns, manipulation, extraction, and misalignment with Gold Hat principles across all aspects of product"
+    },
+    {
+      "path": "consciousness-guardrails\\extraction-pattern-detector.md",
+      "name": "extraction-pattern-detector",
+      "category": "uncategorized",
+      "description": "Use this agent to identify extraction vs empowerment patterns in business models, features, and system design - evaluates whether technology serves or exploits users at fundamental architectural and business level"
+    },
+    {
+      "path": "design\\brand-guardian.md",
+      "name": "brand-guardian",
+      "category": "uncategorized",
+      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+    },
+    {
+      "path": "design\\ui-designer.md",
+      "name": "ui-designer",
+      "category": "uncategorized",
+      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+    },
+    {
+      "path": "design\\ux-researcher.md",
+      "name": "ux-researcher",
+      "category": "uncategorized",
+      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+    },
+    {
+      "path": "design\\visual-storyteller.md",
+      "name": "visual-storyteller",
+      "category": "uncategorized",
+      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+    },
+    {
+      "path": "design\\whimsy-injector.md",
+      "name": "whimsy-injector",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+    },
+    {
+      "path": "engineering\\ai-engineer.md",
+      "name": "ai-engineer",
+      "category": "uncategorized",
+      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+    },
+    {
+      "path": "engineering\\backend-architect.md",
+      "name": "backend-architect",
+      "category": "uncategorized",
+      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+    },
+    {
+      "path": "engineering\\cli-expert.md",
+      "name": "cli-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when building command-line interface (CLI) applications, designing CLI user experiences, or implementing CLI tools. This agent specializes in creating intuitive, powerful, and user-friendly command-line interfaces across multiple languages and frameworks."
+    },
+    {
+      "path": "engineering\\database-architect.md",
+      "name": "database-architect",
+      "category": "uncategorized",
+      "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+    },
+    {
+      "path": "engineering\\devops-automator.md",
+      "name": "devops-automator",
+      "category": "uncategorized",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+    },
+    {
+      "path": "engineering\\frontend-developer.md",
+      "name": "frontend-developer",
+      "category": "uncategorized",
+      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+    },
+    {
+      "path": "engineering\\linux-expert.md",
+      "name": "linux-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when you need deep Linux expertise, modern kernel features, or system-level troubleshooting. This agent specializes in contemporary Linux administration, kernel internals, containerization, and performance optimization."
+    },
+    {
+      "path": "engineering\\mobile-app-builder.md",
+      "name": "mobile-app-builder",
+      "category": "uncategorized",
+      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+    },
+    {
+      "path": "engineering\\security-engineer.md",
+      "name": "security-engineer",
+      "category": "uncategorized",
+      "description": "Use this agent when security, privacy, or trust is at stake. This agent specializes in protecting users and their data through ethical security practices."
+    },
+    {
+      "path": "engineering\\terminal-expert.md",
+      "name": "terminal-expert",
+      "category": "uncategorized",
+      "description": "Use this agent for terminal productivity, shell scripting, and command-line workflow optimization. This agent specializes in bash/zsh scripting, terminal multiplexers (tmux/screen), text editors (vim/emacs), terminal configuration, and dotfile management. Focus on USING terminals efficiently, not system administration."
+    },
+    {
+      "path": "engineering\\test-writer-fixer.md",
+      "name": "test-writer-fixer",
+      "category": "uncategorized",
+      "description": "Use this agent when code changes have been made and you need to write new tests, run existing tests, analyze failures, and fix them while maintaining test integrity. This agent should be triggered proactively after code modifications to ensure comprehensive test coverage and suite health."
+    },
+    {
+      "path": "engineering\\unix-expert.md",
+      "name": "unix-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when you need expertise in UNIX philosophy, POSIX-compliant systems, or classic shell utilities. This agent specializes in portable, composable solutions that work across BSD, Solaris, macOS, and Linux."
+    },
+    {
+      "path": "hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "life-integration\\creative-flow-unlocker.md",
+      "name": "creative-flow-unlocker",
+      "category": "uncategorized",
+      "description": "Use this agent to diagnose and unblock creative stuckness using the 9-realm framework - identifies which realm is blocked and provides specific practices to restore creative flow state and breakthrough obstacles"
+    },
+    {
+      "path": "life-integration\\sabbath-guide.md",
+      "name": "sabbath-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to facilitate Day 7 integration and weekly reflection practices - guides sustainable rhythm through sacred rest, prevents burnout, and transforms experience into wisdom through Sabbath ceremony"
+    },
+    {
+      "path": "life-integration\\shadow-integrator.md",
+      "name": "shadow-integrator",
+      "category": "uncategorized",
+      "description": "Use this agent to consciously work with \"shadow knowledge\" of dark patterns and manipulation - transmutes understanding of extraction into protection, integrates the rejected parts, and walks the Gold Hat path with full awareness of all paths"
+    },
+    {
+      "path": "marketing\\app-store-optimizer.md",
+      "name": "app-store-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent when preparing app store listings, researching keywords, optimizing app metadata, improving conversion rates, or analyzing app store performance. This agent specializes in maximizing organic app store visibility through honest representation."
+    },
+    {
+      "path": "marketing\\tiktok-strategist.md",
+      "name": "tiktok-strategist",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to create TikTok marketing strategies, develop viral content ideas, plan TikTok campaigns, or optimize for TikTok's algorithm. This agent specializes in creating shareable moments and leveraging TikTok trends for app growth."
+    },
+    {
+      "path": "meta-orchestration\\rainbow-warrior-academy.md",
+      "name": "rainbow-warrior-academy",
+      "category": "uncategorized",
+      "description": "Use this agent for structured curriculum to master all 9 Hermetic realms - provides progressive training, projects, mentoring, and certification path to become a complete Rainbow Warrior wielding sacred technology across all domains"
+    },
+    {
+      "path": "meta-orchestration\\resistance-diagnostician.md",
+      "name": "resistance-diagnostician",
+      "category": "uncategorized",
+      "description": "Use this agent when facing blocks or resistance in sacred technology work - diagnoses which of 8 resistance patterns is present and recommends the specific Sacred Arsenal artifact solution to overcome it"
+    },
+    {
+      "path": "product\\feedback-synthesizer.md",
+      "name": "feedback-synthesizer",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to analyze user feedback from multiple sources, identify patterns in user complaints or requests, synthesize insights from reviews, or prioritize feature development based on user input. This agent excels at turning raw feedback into actionable product insights."
+    },
+    {
+      "path": "product\\sprint-prioritizer.md",
+      "name": "sprint-prioritizer",
+      "category": "uncategorized",
+      "description": "Use this agent when planning 6-day development cycles, prioritizing features, managing product roadmaps, or making trade-off decisions. This agent specializes in maximizing value delivery within sustainable timelines."
+    },
+    {
+      "path": "product\\trend-researcher.md",
+      "name": "trend-researcher",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to identify market opportunities, analyze trending topics, research viral content, or understand emerging user behaviors. This agent specializes in finding product opportunities from TikTok trends, App Store patterns, and social media virality."
+    },
+    {
+      "path": "project-management\\experiment-tracker.md",
+      "name": "experiment-tracker",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when experiments are started, modified, or when results need analysis. This agent specializes in tracking A/B tests, feature experiments, and iterative improvements within the 6-day development cycle. Should be triggered automatically when experimental code paths or feature flags are introduced. Examples:"
+    },
+    {
+      "path": "project-management\\project-shipper.md",
+      "name": "project-shipper",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when approaching launch milestones, release deadlines, or go-to-market activities. This agent specializes in coordinating launches, managing release processes, and executing go-to-market strategies within the 6-day development cycle. Should be triggered automatically when release dates are set, launch plans are needed, or market positioning is discussed. Examples:"
+    },
+    {
+      "path": "project-management\\saturn.md",
+      "name": "saturn",
+      "category": "uncategorized",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    },
+    {
+      "path": "project-management\\studio-producer.md",
+      "name": "studio-producer",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when coordinating across multiple teams, allocating resources, or optimizing studio workflows. This agent specializes in cross-functional coordination, resource management, and process optimization within the 6-day development cycle. Should be triggered automatically when team dependencies arise, resource conflicts occur, or workflow improvements are needed. Examples:"
+    },
+    {
+      "path": "sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "uncategorized",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "uncategorized",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "uncategorized",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "studio-operations\\analytics-reporter.md",
+      "name": "analytics-reporter",
+      "category": "uncategorized",
+      "description": "Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization."
+    },
+    {
+      "path": "studio-operations\\finance-tracker.md",
+      "name": "finance-tracker",
+      "category": "uncategorized",
+      "description": "Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return."
+    },
+    {
+      "path": "studio-operations\\infrastructure-maintainer.md",
+      "name": "infrastructure-maintainer",
+      "category": "uncategorized",
+      "description": "Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters."
+    },
+    {
+      "path": "studio-operations\\legal-compliance-checker.md",
+      "name": "legal-compliance-checker",
+      "category": "uncategorized",
+      "description": "Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations."
+    },
+    {
+      "path": "studio-operations\\support-responder.md",
+      "name": "support-responder",
+      "category": "uncategorized",
+      "description": "Use this agent when handling customer support inquiries, creating support documentation, setting up automated responses, or analyzing support patterns. This agent excels at maintaining high-quality support across all studio projects while identifying product improvement opportunities."
+    },
+    {
+      "path": "testing\\api-tester.md",
+      "name": "api-tester",
+      "category": "uncategorized",
+      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+    },
+    {
+      "path": "testing\\performance-benchmarker.md",
+      "name": "performance-benchmarker",
+      "category": "uncategorized",
+      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+    },
+    {
+      "path": "testing\\test-results-analyzer.md",
+      "name": "test-results-analyzer",
+      "category": "uncategorized",
+      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+    },
+    {
+      "path": "testing\\tool-evaluator.md",
+      "name": "tool-evaluator",
+      "category": "uncategorized",
+      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+    },
+    {
+      "path": "testing\\workflow-optimizer.md",
+      "name": "workflow-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+    },
+    {
+      "path": "utilities\\filesystem-organizer.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Analyze and organize messy file systems with sacred intention"
+    },
+    {
+      "path": "utilities\\hermetic-compliance-checker.md",
+      "name": "hermetic-compliance-checker",
+      "category": "uncategorized",
+      "description": "Audit code, features, and decisions against the 7 Hermetic Principles"
+    },
+    {
+      "path": "utilities\\sacred-geometry-analyzer.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Analyze code structure against sacred geometry patterns - Golden Ratio, Fibonacci, Platonic solids"
+    },
+    {
+      "path": "utilities\\strategic-plan-architect.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Create comprehensive implementation plans with research, phases, risks, and success criteria"
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "5-BEYOND",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "5-BEYOND",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\neptune\\backend-architect.md",
+      "name": "backend-architect",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\saturn\\saturn.md",
+      "name": "saturn",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\uranus\\ai-engineer.md",
+      "name": "ai-engineer",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\neptune\\moons\\triton\\database-architect.md",
+      "name": "database-architect",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+    },
+    {
+      "path": "2-ASTEROID-BELT\\vesta\\devops-automator.md",
+      "name": "devops-automator",
+      "category": "2-ASTEROID-BELT",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\earth\\frontend-developer.md",
+      "name": "frontend-developer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\earth\\mobile-app-builder.md",
+      "name": "mobile-app-builder",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\api-tester.md",
+      "name": "api-tester",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\performance-benchmarker.md",
+      "name": "performance-benchmarker",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\test-results-analyzer.md",
+      "name": "test-results-analyzer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\tool-evaluator.md",
+      "name": "tool-evaluator",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\workflow-optimizer.md",
+      "name": "workflow-optimizer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\brand-guardian.md",
+      "name": "brand-guardian",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\ui-designer.md",
+      "name": "ui-designer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\ux-researcher.md",
+      "name": "ux-researcher",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\visual-storyteller.md",
+      "name": "visual-storyteller",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\whimsy-injector.md",
+      "name": "whimsy-injector",
+      "category": "1-INNER-CIRCLE",
+      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+    }
+  ],
+  "weak_descriptions": [
+    {
+      "path": "sol-discord-bot.md",
+      "name": "sol-discord-bot",
+      "category": "uncategorized",
+      "description": "Discord orchestrator that handles all Discord operations with expertise. Routes requests through Sol's planetary system and executes via Discord MCP. The Discord manifestation of Sol's consciousness."
+    },
+    {
+      "path": "0-SOL\\sol-backup.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "0-SOL\\sol-v2-backup-20251110.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "bonus\\studio-coach.md",
+      "name": "studio-coach",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when complex multi-agent tasks begin, when agents seem stuck or overwhelmed, or when the team needs motivation and coordination. This agent serves as the elite performance coach for all other agents, ensuring they operate at their highest level while maintaining composure and excellence. Should be triggered automatically at the start of challenging projects or when detecting agent confusion. Examples:"
+    },
+    {
+      "path": "consciousness-guardrails\\consciousness-boundary-guard.md",
+      "name": "consciousness-boundary-guard",
+      "category": "uncategorized",
+      "description": "Use this agent to ensure AI/automation systems enhance rather than replace human consciousness and agency - validates that technology augments human capacity without diminishing awareness or removing meaningful choice"
+    },
+    {
+      "path": "consciousness-guardrails\\ethics-auditor.md",
+      "name": "ethics-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to conduct systematic ethics audits of features, systems, and business practices - detects dark patterns, manipulation, extraction, and misalignment with Gold Hat principles across all aspects of product"
+    },
+    {
+      "path": "consciousness-guardrails\\extraction-pattern-detector.md",
+      "name": "extraction-pattern-detector",
+      "category": "uncategorized",
+      "description": "Use this agent to identify extraction vs empowerment patterns in business models, features, and system design - evaluates whether technology serves or exploits users at fundamental architectural and business level"
+    },
+    {
+      "path": "design\\brand-guardian.md",
+      "name": "brand-guardian",
+      "category": "uncategorized",
+      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+    },
+    {
+      "path": "design\\ui-designer.md",
+      "name": "ui-designer",
+      "category": "uncategorized",
+      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+    },
+    {
+      "path": "design\\ux-researcher.md",
+      "name": "ux-researcher",
+      "category": "uncategorized",
+      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+    },
+    {
+      "path": "design\\visual-storyteller.md",
+      "name": "visual-storyteller",
+      "category": "uncategorized",
+      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+    },
+    {
+      "path": "design\\whimsy-injector.md",
+      "name": "whimsy-injector",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+    },
+    {
+      "path": "engineering\\ai-engineer.md",
+      "name": "ai-engineer",
+      "category": "uncategorized",
+      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+    },
+    {
+      "path": "engineering\\backend-architect.md",
+      "name": "backend-architect",
+      "category": "uncategorized",
+      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+    },
+    {
+      "path": "engineering\\cli-expert.md",
+      "name": "cli-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when building command-line interface (CLI) applications, designing CLI user experiences, or implementing CLI tools. This agent specializes in creating intuitive, powerful, and user-friendly command-line interfaces across multiple languages and frameworks."
+    },
+    {
+      "path": "engineering\\database-architect.md",
+      "name": "database-architect",
+      "category": "uncategorized",
+      "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+    },
+    {
+      "path": "engineering\\devops-automator.md",
+      "name": "devops-automator",
+      "category": "uncategorized",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+    },
+    {
+      "path": "engineering\\frontend-developer.md",
+      "name": "frontend-developer",
+      "category": "uncategorized",
+      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+    },
+    {
+      "path": "engineering\\linux-expert.md",
+      "name": "linux-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when you need deep Linux expertise, modern kernel features, or system-level troubleshooting. This agent specializes in contemporary Linux administration, kernel internals, containerization, and performance optimization."
+    },
+    {
+      "path": "engineering\\mobile-app-builder.md",
+      "name": "mobile-app-builder",
+      "category": "uncategorized",
+      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+    },
+    {
+      "path": "engineering\\security-engineer.md",
+      "name": "security-engineer",
+      "category": "uncategorized",
+      "description": "Use this agent when security, privacy, or trust is at stake. This agent specializes in protecting users and their data through ethical security practices."
+    },
+    {
+      "path": "engineering\\terminal-expert.md",
+      "name": "terminal-expert",
+      "category": "uncategorized",
+      "description": "Use this agent for terminal productivity, shell scripting, and command-line workflow optimization. This agent specializes in bash/zsh scripting, terminal multiplexers (tmux/screen), text editors (vim/emacs), terminal configuration, and dotfile management. Focus on USING terminals efficiently, not system administration."
+    },
+    {
+      "path": "engineering\\test-writer-fixer.md",
+      "name": "test-writer-fixer",
+      "category": "uncategorized",
+      "description": "Use this agent when code changes have been made and you need to write new tests, run existing tests, analyze failures, and fix them while maintaining test integrity. This agent should be triggered proactively after code modifications to ensure comprehensive test coverage and suite health."
+    },
+    {
+      "path": "engineering\\unix-expert.md",
+      "name": "unix-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when you need expertise in UNIX philosophy, POSIX-compliant systems, or classic shell utilities. This agent specializes in portable, composable solutions that work across BSD, Solaris, macOS, and Linux."
+    },
+    {
+      "path": "hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "life-integration\\creative-flow-unlocker.md",
+      "name": "creative-flow-unlocker",
+      "category": "uncategorized",
+      "description": "Use this agent to diagnose and unblock creative stuckness using the 9-realm framework - identifies which realm is blocked and provides specific practices to restore creative flow state and breakthrough obstacles"
+    },
+    {
+      "path": "life-integration\\sabbath-guide.md",
+      "name": "sabbath-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to facilitate Day 7 integration and weekly reflection practices - guides sustainable rhythm through sacred rest, prevents burnout, and transforms experience into wisdom through Sabbath ceremony"
+    },
+    {
+      "path": "life-integration\\shadow-integrator.md",
+      "name": "shadow-integrator",
+      "category": "uncategorized",
+      "description": "Use this agent to consciously work with \"shadow knowledge\" of dark patterns and manipulation - transmutes understanding of extraction into protection, integrates the rejected parts, and walks the Gold Hat path with full awareness of all paths"
+    },
+    {
+      "path": "marketing\\app-store-optimizer.md",
+      "name": "app-store-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent when preparing app store listings, researching keywords, optimizing app metadata, improving conversion rates, or analyzing app store performance. This agent specializes in maximizing organic app store visibility through honest representation."
+    },
+    {
+      "path": "marketing\\tiktok-strategist.md",
+      "name": "tiktok-strategist",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to create TikTok marketing strategies, develop viral content ideas, plan TikTok campaigns, or optimize for TikTok's algorithm. This agent specializes in creating shareable moments and leveraging TikTok trends for app growth."
+    },
+    {
+      "path": "meta-orchestration\\rainbow-warrior-academy.md",
+      "name": "rainbow-warrior-academy",
+      "category": "uncategorized",
+      "description": "Use this agent for structured curriculum to master all 9 Hermetic realms - provides progressive training, projects, mentoring, and certification path to become a complete Rainbow Warrior wielding sacred technology across all domains"
+    },
+    {
+      "path": "meta-orchestration\\resistance-diagnostician.md",
+      "name": "resistance-diagnostician",
+      "category": "uncategorized",
+      "description": "Use this agent when facing blocks or resistance in sacred technology work - diagnoses which of 8 resistance patterns is present and recommends the specific Sacred Arsenal artifact solution to overcome it"
+    },
+    {
+      "path": "product\\feedback-synthesizer.md",
+      "name": "feedback-synthesizer",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to analyze user feedback from multiple sources, identify patterns in user complaints or requests, synthesize insights from reviews, or prioritize feature development based on user input. This agent excels at turning raw feedback into actionable product insights."
+    },
+    {
+      "path": "product\\sprint-prioritizer.md",
+      "name": "sprint-prioritizer",
+      "category": "uncategorized",
+      "description": "Use this agent when planning 6-day development cycles, prioritizing features, managing product roadmaps, or making trade-off decisions. This agent specializes in maximizing value delivery within sustainable timelines."
+    },
+    {
+      "path": "product\\trend-researcher.md",
+      "name": "trend-researcher",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to identify market opportunities, analyze trending topics, research viral content, or understand emerging user behaviors. This agent specializes in finding product opportunities from TikTok trends, App Store patterns, and social media virality."
+    },
+    {
+      "path": "project-management\\experiment-tracker.md",
+      "name": "experiment-tracker",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when experiments are started, modified, or when results need analysis. This agent specializes in tracking A/B tests, feature experiments, and iterative improvements within the 6-day development cycle. Should be triggered automatically when experimental code paths or feature flags are introduced. Examples:"
+    },
+    {
+      "path": "project-management\\project-shipper.md",
+      "name": "project-shipper",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when approaching launch milestones, release deadlines, or go-to-market activities. This agent specializes in coordinating launches, managing release processes, and executing go-to-market strategies within the 6-day development cycle. Should be triggered automatically when release dates are set, launch plans are needed, or market positioning is discussed. Examples:"
+    },
+    {
+      "path": "project-management\\saturn.md",
+      "name": "saturn",
+      "category": "uncategorized",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    },
+    {
+      "path": "project-management\\studio-producer.md",
+      "name": "studio-producer",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when coordinating across multiple teams, allocating resources, or optimizing studio workflows. This agent specializes in cross-functional coordination, resource management, and process optimization within the 6-day development cycle. Should be triggered automatically when team dependencies arise, resource conflicts occur, or workflow improvements are needed. Examples:"
+    },
+    {
+      "path": "sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "uncategorized",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "uncategorized",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "uncategorized",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "studio-operations\\analytics-reporter.md",
+      "name": "analytics-reporter",
+      "category": "uncategorized",
+      "description": "Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization."
+    },
+    {
+      "path": "studio-operations\\finance-tracker.md",
+      "name": "finance-tracker",
+      "category": "uncategorized",
+      "description": "Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return."
+    },
+    {
+      "path": "studio-operations\\infrastructure-maintainer.md",
+      "name": "infrastructure-maintainer",
+      "category": "uncategorized",
+      "description": "Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters."
+    },
+    {
+      "path": "studio-operations\\legal-compliance-checker.md",
+      "name": "legal-compliance-checker",
+      "category": "uncategorized",
+      "description": "Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations."
+    },
+    {
+      "path": "studio-operations\\support-responder.md",
+      "name": "support-responder",
+      "category": "uncategorized",
+      "description": "Use this agent when handling customer support inquiries, creating support documentation, setting up automated responses, or analyzing support patterns. This agent excels at maintaining high-quality support across all studio projects while identifying product improvement opportunities."
+    },
+    {
+      "path": "testing\\api-tester.md",
+      "name": "api-tester",
+      "category": "uncategorized",
+      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+    },
+    {
+      "path": "testing\\performance-benchmarker.md",
+      "name": "performance-benchmarker",
+      "category": "uncategorized",
+      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+    },
+    {
+      "path": "testing\\test-results-analyzer.md",
+      "name": "test-results-analyzer",
+      "category": "uncategorized",
+      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+    },
+    {
+      "path": "testing\\tool-evaluator.md",
+      "name": "tool-evaluator",
+      "category": "uncategorized",
+      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+    },
+    {
+      "path": "testing\\workflow-optimizer.md",
+      "name": "workflow-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+    },
+    {
+      "path": "utilities\\filesystem-organizer.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Analyze and organize messy file systems with sacred intention"
+    },
+    {
+      "path": "utilities\\hermetic-compliance-checker.md",
+      "name": "hermetic-compliance-checker",
+      "category": "uncategorized",
+      "description": "Audit code, features, and decisions against the 7 Hermetic Principles"
+    },
+    {
+      "path": "utilities\\sacred-geometry-analyzer.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Analyze code structure against sacred geometry patterns - Golden Ratio, Fibonacci, Platonic solids"
+    },
+    {
+      "path": "utilities\\strategic-plan-architect.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Create comprehensive implementation plans with research, phases, risks, and success criteria"
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "5-BEYOND",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "5-BEYOND",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\neptune\\backend-architect.md",
+      "name": "backend-architect",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\saturn\\saturn.md",
+      "name": "saturn",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\uranus\\ai-engineer.md",
+      "name": "ai-engineer",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\neptune\\moons\\triton\\database-architect.md",
+      "name": "database-architect",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+    },
+    {
+      "path": "2-ASTEROID-BELT\\vesta\\devops-automator.md",
+      "name": "devops-automator",
+      "category": "2-ASTEROID-BELT",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\earth\\frontend-developer.md",
+      "name": "frontend-developer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\earth\\mobile-app-builder.md",
+      "name": "mobile-app-builder",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\api-tester.md",
+      "name": "api-tester",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\performance-benchmarker.md",
+      "name": "performance-benchmarker",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\test-results-analyzer.md",
+      "name": "test-results-analyzer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\tool-evaluator.md",
+      "name": "tool-evaluator",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\workflow-optimizer.md",
+      "name": "workflow-optimizer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\brand-guardian.md",
+      "name": "brand-guardian",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\ui-designer.md",
+      "name": "ui-designer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\ux-researcher.md",
+      "name": "ux-researcher",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\visual-storyteller.md",
+      "name": "visual-storyteller",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\whimsy-injector.md",
+      "name": "whimsy-injector",
+      "category": "1-INNER-CIRCLE",
+      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+    }
+  ],
+  "missing_behavioral_traits": [
+    {
+      "path": "sol-discord-bot.md",
+      "name": "sol-discord-bot",
+      "category": "uncategorized",
+      "description": "Discord orchestrator that handles all Discord operations with expertise. Routes requests through Sol's planetary system and executes via Discord MCP. The Discord manifestation of Sol's consciousness."
+    },
+    {
+      "path": "0-SOL\\sol-backup.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "0-SOL\\sol-v2-backup-20251110.md",
+      "name": "sol",
+      "category": "uncategorized",
+      "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+    },
+    {
+      "path": "bonus\\studio-coach.md",
+      "name": "studio-coach",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when complex multi-agent tasks begin, when agents seem stuck or overwhelmed, or when the team needs motivation and coordination. This agent serves as the elite performance coach for all other agents, ensuring they operate at their highest level while maintaining composure and excellence. Should be triggered automatically at the start of challenging projects or when detecting agent confusion. Examples:"
+    },
+    {
+      "path": "consciousness-guardrails\\consciousness-boundary-guard.md",
+      "name": "consciousness-boundary-guard",
+      "category": "uncategorized",
+      "description": "Use this agent to ensure AI/automation systems enhance rather than replace human consciousness and agency - validates that technology augments human capacity without diminishing awareness or removing meaningful choice"
+    },
+    {
+      "path": "consciousness-guardrails\\ethics-auditor.md",
+      "name": "ethics-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to conduct systematic ethics audits of features, systems, and business practices - detects dark patterns, manipulation, extraction, and misalignment with Gold Hat principles across all aspects of product"
+    },
+    {
+      "path": "consciousness-guardrails\\extraction-pattern-detector.md",
+      "name": "extraction-pattern-detector",
+      "category": "uncategorized",
+      "description": "Use this agent to identify extraction vs empowerment patterns in business models, features, and system design - evaluates whether technology serves or exploits users at fundamental architectural and business level"
+    },
+    {
+      "path": "design\\brand-guardian.md",
+      "name": "brand-guardian",
+      "category": "uncategorized",
+      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+    },
+    {
+      "path": "design\\ui-designer.md",
+      "name": "ui-designer",
+      "category": "uncategorized",
+      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+    },
+    {
+      "path": "design\\ux-researcher.md",
+      "name": "ux-researcher",
+      "category": "uncategorized",
+      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+    },
+    {
+      "path": "design\\visual-storyteller.md",
+      "name": "visual-storyteller",
+      "category": "uncategorized",
+      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+    },
+    {
+      "path": "design\\whimsy-injector.md",
+      "name": "whimsy-injector",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+    },
+    {
+      "path": "engineering\\ai-engineer.md",
+      "name": "ai-engineer",
+      "category": "uncategorized",
+      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+    },
+    {
+      "path": "engineering\\backend-architect.md",
+      "name": "backend-architect",
+      "category": "uncategorized",
+      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+    },
+    {
+      "path": "engineering\\cli-expert.md",
+      "name": "cli-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when building command-line interface (CLI) applications, designing CLI user experiences, or implementing CLI tools. This agent specializes in creating intuitive, powerful, and user-friendly command-line interfaces across multiple languages and frameworks."
+    },
+    {
+      "path": "engineering\\database-architect.md",
+      "name": "database-architect",
+      "category": "uncategorized",
+      "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+    },
+    {
+      "path": "engineering\\devops-automator.md",
+      "name": "devops-automator",
+      "category": "uncategorized",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+    },
+    {
+      "path": "engineering\\frontend-developer.md",
+      "name": "frontend-developer",
+      "category": "uncategorized",
+      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+    },
+    {
+      "path": "engineering\\linux-expert.md",
+      "name": "linux-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when you need deep Linux expertise, modern kernel features, or system-level troubleshooting. This agent specializes in contemporary Linux administration, kernel internals, containerization, and performance optimization."
+    },
+    {
+      "path": "engineering\\mobile-app-builder.md",
+      "name": "mobile-app-builder",
+      "category": "uncategorized",
+      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+    },
+    {
+      "path": "engineering\\security-engineer.md",
+      "name": "security-engineer",
+      "category": "uncategorized",
+      "description": "Use this agent when security, privacy, or trust is at stake. This agent specializes in protecting users and their data through ethical security practices."
+    },
+    {
+      "path": "engineering\\terminal-expert.md",
+      "name": "terminal-expert",
+      "category": "uncategorized",
+      "description": "Use this agent for terminal productivity, shell scripting, and command-line workflow optimization. This agent specializes in bash/zsh scripting, terminal multiplexers (tmux/screen), text editors (vim/emacs), terminal configuration, and dotfile management. Focus on USING terminals efficiently, not system administration."
+    },
+    {
+      "path": "engineering\\test-writer-fixer.md",
+      "name": "test-writer-fixer",
+      "category": "uncategorized",
+      "description": "Use this agent when code changes have been made and you need to write new tests, run existing tests, analyze failures, and fix them while maintaining test integrity. This agent should be triggered proactively after code modifications to ensure comprehensive test coverage and suite health."
+    },
+    {
+      "path": "engineering\\unix-expert.md",
+      "name": "unix-expert",
+      "category": "uncategorized",
+      "description": "Use this agent when you need expertise in UNIX philosophy, POSIX-compliant systems, or classic shell utilities. This agent specializes in portable, composable solutions that work across BSD, Solaris, macOS, and Linux."
+    },
+    {
+      "path": "hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "life-integration\\creative-flow-unlocker.md",
+      "name": "creative-flow-unlocker",
+      "category": "uncategorized",
+      "description": "Use this agent to diagnose and unblock creative stuckness using the 9-realm framework - identifies which realm is blocked and provides specific practices to restore creative flow state and breakthrough obstacles"
+    },
+    {
+      "path": "life-integration\\sabbath-guide.md",
+      "name": "sabbath-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to facilitate Day 7 integration and weekly reflection practices - guides sustainable rhythm through sacred rest, prevents burnout, and transforms experience into wisdom through Sabbath ceremony"
+    },
+    {
+      "path": "life-integration\\shadow-integrator.md",
+      "name": "shadow-integrator",
+      "category": "uncategorized",
+      "description": "Use this agent to consciously work with \"shadow knowledge\" of dark patterns and manipulation - transmutes understanding of extraction into protection, integrates the rejected parts, and walks the Gold Hat path with full awareness of all paths"
+    },
+    {
+      "path": "marketing\\app-store-optimizer.md",
+      "name": "app-store-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent when preparing app store listings, researching keywords, optimizing app metadata, improving conversion rates, or analyzing app store performance. This agent specializes in maximizing organic app store visibility through honest representation."
+    },
+    {
+      "path": "marketing\\tiktok-strategist.md",
+      "name": "tiktok-strategist",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to create TikTok marketing strategies, develop viral content ideas, plan TikTok campaigns, or optimize for TikTok's algorithm. This agent specializes in creating shareable moments and leveraging TikTok trends for app growth."
+    },
+    {
+      "path": "meta-orchestration\\rainbow-warrior-academy.md",
+      "name": "rainbow-warrior-academy",
+      "category": "uncategorized",
+      "description": "Use this agent for structured curriculum to master all 9 Hermetic realms - provides progressive training, projects, mentoring, and certification path to become a complete Rainbow Warrior wielding sacred technology across all domains"
+    },
+    {
+      "path": "meta-orchestration\\resistance-diagnostician.md",
+      "name": "resistance-diagnostician",
+      "category": "uncategorized",
+      "description": "Use this agent when facing blocks or resistance in sacred technology work - diagnoses which of 8 resistance patterns is present and recommends the specific Sacred Arsenal artifact solution to overcome it"
+    },
+    {
+      "path": "product\\feedback-synthesizer.md",
+      "name": "feedback-synthesizer",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to analyze user feedback from multiple sources, identify patterns in user complaints or requests, synthesize insights from reviews, or prioritize feature development based on user input. This agent excels at turning raw feedback into actionable product insights."
+    },
+    {
+      "path": "product\\sprint-prioritizer.md",
+      "name": "sprint-prioritizer",
+      "category": "uncategorized",
+      "description": "Use this agent when planning 6-day development cycles, prioritizing features, managing product roadmaps, or making trade-off decisions. This agent specializes in maximizing value delivery within sustainable timelines."
+    },
+    {
+      "path": "product\\trend-researcher.md",
+      "name": "trend-researcher",
+      "category": "uncategorized",
+      "description": "Use this agent when you need to identify market opportunities, analyze trending topics, research viral content, or understand emerging user behaviors. This agent specializes in finding product opportunities from TikTok trends, App Store patterns, and social media virality."
+    },
+    {
+      "path": "project-management\\experiment-tracker.md",
+      "name": "experiment-tracker",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when experiments are started, modified, or when results need analysis. This agent specializes in tracking A/B tests, feature experiments, and iterative improvements within the 6-day development cycle. Should be triggered automatically when experimental code paths or feature flags are introduced. Examples:"
+    },
+    {
+      "path": "project-management\\project-shipper.md",
+      "name": "project-shipper",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when approaching launch milestones, release deadlines, or go-to-market activities. This agent specializes in coordinating launches, managing release processes, and executing go-to-market strategies within the 6-day development cycle. Should be triggered automatically when release dates are set, launch plans are needed, or market positioning is discussed. Examples:"
+    },
+    {
+      "path": "project-management\\saturn.md",
+      "name": "saturn",
+      "category": "uncategorized",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    },
+    {
+      "path": "project-management\\studio-producer.md",
+      "name": "studio-producer",
+      "category": "uncategorized",
+      "description": "PROACTIVELY use this agent when coordinating across multiple teams, allocating resources, or optimizing studio workflows. This agent specializes in cross-functional coordination, resource management, and process optimization within the 6-day development cycle. Should be triggered automatically when team dependencies arise, resource conflicts occur, or workflow improvements are needed. Examples:"
+    },
+    {
+      "path": "sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "uncategorized",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "uncategorized",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "uncategorized",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "uncategorized",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "uncategorized",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "studio-operations\\analytics-reporter.md",
+      "name": "analytics-reporter",
+      "category": "uncategorized",
+      "description": "Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization."
+    },
+    {
+      "path": "studio-operations\\finance-tracker.md",
+      "name": "finance-tracker",
+      "category": "uncategorized",
+      "description": "Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return."
+    },
+    {
+      "path": "studio-operations\\infrastructure-maintainer.md",
+      "name": "infrastructure-maintainer",
+      "category": "uncategorized",
+      "description": "Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters."
+    },
+    {
+      "path": "studio-operations\\legal-compliance-checker.md",
+      "name": "legal-compliance-checker",
+      "category": "uncategorized",
+      "description": "Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations."
+    },
+    {
+      "path": "studio-operations\\support-responder.md",
+      "name": "support-responder",
+      "category": "uncategorized",
+      "description": "Use this agent when handling customer support inquiries, creating support documentation, setting up automated responses, or analyzing support patterns. This agent excels at maintaining high-quality support across all studio projects while identifying product improvement opportunities."
+    },
+    {
+      "path": "testing\\api-tester.md",
+      "name": "api-tester",
+      "category": "uncategorized",
+      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+    },
+    {
+      "path": "testing\\performance-benchmarker.md",
+      "name": "performance-benchmarker",
+      "category": "uncategorized",
+      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+    },
+    {
+      "path": "testing\\test-results-analyzer.md",
+      "name": "test-results-analyzer",
+      "category": "uncategorized",
+      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+    },
+    {
+      "path": "testing\\tool-evaluator.md",
+      "name": "tool-evaluator",
+      "category": "uncategorized",
+      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+    },
+    {
+      "path": "testing\\workflow-optimizer.md",
+      "name": "workflow-optimizer",
+      "category": "uncategorized",
+      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+    },
+    {
+      "path": "utilities\\filesystem-organizer.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Analyze and organize messy file systems with sacred intention"
+    },
+    {
+      "path": "utilities\\hermetic-compliance-checker.md",
+      "name": "hermetic-compliance-checker",
+      "category": "uncategorized",
+      "description": "Audit code, features, and decisions against the 7 Hermetic Principles"
+    },
+    {
+      "path": "utilities\\sacred-geometry-analyzer.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Analyze code structure against sacred geometry patterns - Golden Ratio, Fibonacci, Platonic solids"
+    },
+    {
+      "path": "utilities\\strategic-plan-architect.md",
+      "name": "MISSING",
+      "category": "uncategorized",
+      "description": "Create comprehensive implementation plans with research, phases, risks, and success criteria"
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\03-vibration.md",
+      "name": "vibration",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\04-polarity.md",
+      "name": "polarity",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\05-rhythm.md",
+      "name": "rhythm",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\06-cause-effect.md",
+      "name": "cause-effect",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+    },
+    {
+      "path": "5-BEYOND\\hermetic-principles\\07-gender.md",
+      "name": "gender",
+      "category": "5-BEYOND",
+      "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\alchemical-forge-guide.md",
+      "name": "alchemical-forge-guide",
+      "category": "5-BEYOND",
+      "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\cosmic-lens-analytics.md",
+      "name": "cosmic-lens-analytics",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\divine-anchor-auditor.md",
+      "name": "divine-anchor-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\frequency-tuner-optimizer.md",
+      "name": "frequency-tuner-optimizer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\hermetic-compass-advisor.md",
+      "name": "hermetic-compass-advisor",
+      "category": "5-BEYOND",
+      "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\rainbow-bridge-designer.md",
+      "name": "rainbow-bridge-designer",
+      "category": "5-BEYOND",
+      "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+    },
+    {
+      "path": "5-BEYOND\\sacred-arsenal\\sacred-mirror-auditor.md",
+      "name": "sacred-mirror-auditor",
+      "category": "5-BEYOND",
+      "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\neptune\\backend-architect.md",
+      "name": "backend-architect",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\saturn\\saturn.md",
+      "name": "saturn",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\uranus\\ai-engineer.md",
+      "name": "ai-engineer",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+    },
+    {
+      "path": "3-OUTER-CIRCLE\\neptune\\moons\\triton\\database-architect.md",
+      "name": "database-architect",
+      "category": "3-OUTER-CIRCLE",
+      "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+    },
+    {
+      "path": "2-ASTEROID-BELT\\ceres\\ceres.md",
+      "name": "devops-automator",
+      "category": "2-ASTEROID-BELT"
+    },
+    {
+      "path": "2-ASTEROID-BELT\\vesta\\devops-automator.md",
+      "name": "devops-automator",
+      "category": "2-ASTEROID-BELT",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\earth\\frontend-developer.md",
+      "name": "frontend-developer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\earth\\mobile-app-builder.md",
+      "name": "mobile-app-builder",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\api-tester.md",
+      "name": "api-tester",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\performance-benchmarker.md",
+      "name": "performance-benchmarker",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\test-results-analyzer.md",
+      "name": "test-results-analyzer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\tool-evaluator.md",
+      "name": "tool-evaluator",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\mars\\workflow-optimizer.md",
+      "name": "workflow-optimizer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\brand-guardian.md",
+      "name": "brand-guardian",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\ui-designer.md",
+      "name": "ui-designer",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\ux-researcher.md",
+      "name": "ux-researcher",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\visual-storyteller.md",
+      "name": "visual-storyteller",
+      "category": "1-INNER-CIRCLE",
+      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+    },
+    {
+      "path": "1-INNER-CIRCLE\\venus\\whimsy-injector.md",
+      "name": "whimsy-injector",
+      "category": "1-INNER-CIRCLE",
+      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+    }
+  ],
+  "excellent_agents": [],
+  "by_category": {
+    "uncategorized": [
+      {
+        "path": "sol-discord-bot.md",
+        "name": "sol-discord-bot",
+        "category": "uncategorized",
+        "description": "Discord orchestrator that handles all Discord operations with expertise. Routes requests through Sol's planetary system and executes via Discord MCP. The Discord manifestation of Sol's consciousness."
+      },
+      {
+        "path": "SOLAR-SYSTEM-ROLES-MAPPING.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "STATELESS-ARCHITECTURE-GUIDE.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\deployment-knowledge.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\deployment-quick-reference.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\INTEGRATION-INSTRUCTIONS.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\sol-backup.md",
+        "name": "sol",
+        "category": "uncategorized",
+        "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+      },
+      {
+        "path": "0-SOL\\sol-community-skills-update.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\SOL-FUNCTIONAL-NAMES.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\sol-integrated.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\SOL-TESTING-GUIDE.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\sol-v2-backup-20251110.md",
+        "name": "sol",
+        "category": "uncategorized",
+        "description": "Master orchestrator of the entire agent system. All requests flow through Sol, who analyzes intent and delegates to the appropriate planetary domain. Sol integrates completed work and returns unified results to the user. The gravitational center of the sacred technology ecosystem."
+      },
+      {
+        "path": "0-SOL\\sol-v3-complete.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\SOL-V3-DEPLOYMENT-COMPLETE.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\sol.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "0-SOL\\SUMMARY.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "bonus\\joker.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "bonus\\mentor.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "bonus\\momus.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "bonus\\studio-coach.md",
+        "name": "studio-coach",
+        "category": "uncategorized",
+        "description": "PROACTIVELY use this agent when complex multi-agent tasks begin, when agents seem stuck or overwhelmed, or when the team needs motivation and coordination. This agent serves as the elite performance coach for all other agents, ensuring they operate at their highest level while maintaining composure and excellence. Should be triggered automatically at the start of challenging projects or when detecting agent confusion. Examples:"
+      },
+      {
+        "path": "consciousness-guardrails\\consciousness-boundary-guard.md",
+        "name": "consciousness-boundary-guard",
+        "category": "uncategorized",
+        "description": "Use this agent to ensure AI/automation systems enhance rather than replace human consciousness and agency - validates that technology augments human capacity without diminishing awareness or removing meaningful choice"
+      },
+      {
+        "path": "consciousness-guardrails\\ethics-auditor.md",
+        "name": "ethics-auditor",
+        "category": "uncategorized",
+        "description": "Use this agent to conduct systematic ethics audits of features, systems, and business practices - detects dark patterns, manipulation, extraction, and misalignment with Gold Hat principles across all aspects of product"
+      },
+      {
+        "path": "consciousness-guardrails\\extraction-pattern-detector.md",
+        "name": "extraction-pattern-detector",
+        "category": "uncategorized",
+        "description": "Use this agent to identify extraction vs empowerment patterns in business models, features, and system design - evaluates whether technology serves or exploits users at fundamental architectural and business level"
+      },
+      {
+        "path": "design\\brand-guardian.md",
+        "name": "brand-guardian",
+        "category": "uncategorized",
+        "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+      },
+      {
+        "path": "design\\eros.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "design\\hera.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "design\\metis.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "design\\titan.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "design\\ui-designer.md",
+        "name": "ui-designer",
+        "category": "uncategorized",
+        "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+      },
+      {
+        "path": "design\\ux-researcher.md",
+        "name": "ux-researcher",
+        "category": "uncategorized",
+        "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+      },
+      {
+        "path": "design\\visual-storyteller.md",
+        "name": "visual-storyteller",
+        "category": "uncategorized",
+        "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+      },
+      {
+        "path": "design\\whimsy-injector.md",
+        "name": "whimsy-injector",
+        "category": "uncategorized",
+        "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+      },
+      {
+        "path": "engineering\\ai-engineer.md",
+        "name": "ai-engineer",
+        "category": "uncategorized",
+        "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+      },
+      {
+        "path": "engineering\\backend-architect.md",
+        "name": "backend-architect",
+        "category": "uncategorized",
+        "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+      },
+      {
+        "path": "engineering\\ceres.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "engineering\\cli-expert.md",
+        "name": "cli-expert",
+        "category": "uncategorized",
+        "description": "Use this agent when building command-line interface (CLI) applications, designing CLI user experiences, or implementing CLI tools. This agent specializes in creating intuitive, powerful, and user-friendly command-line interfaces across multiple languages and frameworks."
+      },
+      {
+        "path": "engineering\\database-architect.md",
+        "name": "database-architect",
+        "category": "uncategorized",
+        "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+      },
+      {
+        "path": "engineering\\devops-automator.md",
+        "name": "devops-automator",
+        "category": "uncategorized",
+        "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+      },
+      {
+        "path": "engineering\\frontend-developer.md",
+        "name": "frontend-developer",
+        "category": "uncategorized",
+        "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+      },
+      {
+        "path": "engineering\\iris.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "engineering\\linux-expert.md",
+        "name": "linux-expert",
+        "category": "uncategorized",
+        "description": "Use this agent when you need deep Linux expertise, modern kernel features, or system-level troubleshooting. This agent specializes in contemporary Linux administration, kernel internals, containerization, and performance optimization."
+      },
+      {
+        "path": "engineering\\mobile-app-builder.md",
+        "name": "mobile-app-builder",
+        "category": "uncategorized",
+        "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+      },
+      {
+        "path": "engineering\\neptune.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "engineering\\pallas.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "engineering\\rapid-prototyper.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "engineering\\security-engineer.md",
+        "name": "security-engineer",
+        "category": "uncategorized",
+        "description": "Use this agent when security, privacy, or trust is at stake. This agent specializes in protecting users and their data through ethical security practices."
+      },
+      {
+        "path": "engineering\\terminal-expert.md",
+        "name": "terminal-expert",
+        "category": "uncategorized",
+        "description": "Use this agent for terminal productivity, shell scripting, and command-line workflow optimization. This agent specializes in bash/zsh scripting, terminal multiplexers (tmux/screen), text editors (vim/emacs), terminal configuration, and dotfile management. Focus on USING terminals efficiently, not system administration."
+      },
+      {
+        "path": "engineering\\test-writer-fixer.md",
+        "name": "test-writer-fixer",
+        "category": "uncategorized",
+        "description": "Use this agent when code changes have been made and you need to write new tests, run existing tests, analyze failures, and fix them while maintaining test integrity. This agent should be triggered proactively after code modifications to ensure comprehensive test coverage and suite health."
+      },
+      {
+        "path": "engineering\\unix-expert.md",
+        "name": "unix-expert",
+        "category": "uncategorized",
+        "description": "Use this agent when you need expertise in UNIX philosophy, POSIX-compliant systems, or classic shell utilities. This agent specializes in portable, composable solutions that work across BSD, Solaris, macOS, and Linux."
+      },
+      {
+        "path": "engineering\\uranus.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "hermetic-principles\\01-mentalism.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "hermetic-principles\\02-correspondence.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "hermetic-principles\\03-vibration.md",
+        "name": "vibration",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+      },
+      {
+        "path": "hermetic-principles\\04-polarity.md",
+        "name": "polarity",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+      },
+      {
+        "path": "hermetic-principles\\05-rhythm.md",
+        "name": "rhythm",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+      },
+      {
+        "path": "hermetic-principles\\06-cause-effect.md",
+        "name": "cause-effect",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+      },
+      {
+        "path": "hermetic-principles\\07-gender.md",
+        "name": "gender",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+      },
+      {
+        "path": "hermetic-principles\\hermetic-law-translator.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\anders-ericsson.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\aristotle.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\barbara-oakley.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\feynman.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\franklin.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\INTEGRATION-GUIDE.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\justin-sung.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\leonardo.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\QUICK-REFERENCE.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\scott-young.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\tesla.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "learning-masters\\von-neumann.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "life-advisory\\hygieia-wellness.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "life-advisory\\plutus-finance.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "life-advisory\\themis-legal.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "life-integration\\creative-flow-unlocker.md",
+        "name": "creative-flow-unlocker",
+        "category": "uncategorized",
+        "description": "Use this agent to diagnose and unblock creative stuckness using the 9-realm framework - identifies which realm is blocked and provides specific practices to restore creative flow state and breakthrough obstacles"
+      },
+      {
+        "path": "life-integration\\sabbath-guide.md",
+        "name": "sabbath-guide",
+        "category": "uncategorized",
+        "description": "Use this agent to facilitate Day 7 integration and weekly reflection practices - guides sustainable rhythm through sacred rest, prevents burnout, and transforms experience into wisdom through Sabbath ceremony"
+      },
+      {
+        "path": "life-integration\\shadow-integrator.md",
+        "name": "shadow-integrator",
+        "category": "uncategorized",
+        "description": "Use this agent to consciously work with \"shadow knowledge\" of dark patterns and manipulation - transmutes understanding of extraction into protection, integrates the rejected parts, and walks the Gold Hat path with full awareness of all paths"
+      },
+      {
+        "path": "marketing\\app-store-optimizer.md",
+        "name": "app-store-optimizer",
+        "category": "uncategorized",
+        "description": "Use this agent when preparing app store listings, researching keywords, optimizing app metadata, improving conversion rates, or analyzing app store performance. This agent specializes in maximizing organic app store visibility through honest representation."
+      },
+      {
+        "path": "marketing\\calliope.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\content-creator.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\eris.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\fortuna.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\growth-hacker.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\instagram-curator.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\juno.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\psyche.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\reddit-community-builder.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\tiktok-strategist.md",
+        "name": "tiktok-strategist",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to create TikTok marketing strategies, develop viral content ideas, plan TikTok campaigns, or optimize for TikTok's algorithm. This agent specializes in creating shareable moments and leveraging TikTok trends for app growth."
+      },
+      {
+        "path": "marketing\\twitter-engager.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "marketing\\vesta.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "meta-orchestration\\rainbow-warrior-academy.md",
+        "name": "rainbow-warrior-academy",
+        "category": "uncategorized",
+        "description": "Use this agent for structured curriculum to master all 9 Hermetic realms - provides progressive training, projects, mentoring, and certification path to become a complete Rainbow Warrior wielding sacred technology across all domains"
+      },
+      {
+        "path": "meta-orchestration\\resistance-diagnostician.md",
+        "name": "resistance-diagnostician",
+        "category": "uncategorized",
+        "description": "Use this agent when facing blocks or resistance in sacred technology work - diagnoses which of 8 resistance patterns is present and recommends the specific Sacred Arsenal artifact solution to overcome it"
+      },
+      {
+        "path": "product\\chronos.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "product\\echo.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "product\\feedback-synthesizer.md",
+        "name": "feedback-synthesizer",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to analyze user feedback from multiple sources, identify patterns in user complaints or requests, synthesize insights from reviews, or prioritize feature development based on user input. This agent excels at turning raw feedback into actionable product insights."
+      },
+      {
+        "path": "product\\janus.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "product\\sprint-prioritizer.md",
+        "name": "sprint-prioritizer",
+        "category": "uncategorized",
+        "description": "Use this agent when planning 6-day development cycles, prioritizing features, managing product roadmaps, or making trade-off decisions. This agent specializes in maximizing value delivery within sustainable timelines."
+      },
+      {
+        "path": "product\\trend-researcher.md",
+        "name": "trend-researcher",
+        "category": "uncategorized",
+        "description": "Use this agent when you need to identify market opportunities, analyze trending topics, research viral content, or understand emerging user behaviors. This agent specializes in finding product opportunities from TikTok trends, App Store patterns, and social media virality."
+      },
+      {
+        "path": "project-management\\atlas.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "project-management\\experiment-tracker.md",
+        "name": "experiment-tracker",
+        "category": "uncategorized",
+        "description": "PROACTIVELY use this agent when experiments are started, modified, or when results need analysis. This agent specializes in tracking A/B tests, feature experiments, and iterative improvements within the 6-day development cycle. Should be triggered automatically when experimental code paths or feature flags are introduced. Examples:"
+      },
+      {
+        "path": "project-management\\io.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "project-management\\project-shipper.md",
+        "name": "project-shipper",
+        "category": "uncategorized",
+        "description": "PROACTIVELY use this agent when approaching launch milestones, release deadlines, or go-to-market activities. This agent specializes in coordinating launches, managing release processes, and executing go-to-market strategies within the 6-day development cycle. Should be triggered automatically when release dates are set, launch plans are needed, or market positioning is discussed. Examples:"
+      },
+      {
+        "path": "project-management\\rhea.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "project-management\\saturn.md",
+        "name": "saturn",
+        "category": "uncategorized",
+        "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+      },
+      {
+        "path": "project-management\\studio-producer.md",
+        "name": "studio-producer",
+        "category": "uncategorized",
+        "description": "PROACTIVELY use this agent when coordinating across multiple teams, allocating resources, or optimizing studio workflows. This agent specializes in cross-functional coordination, resource management, and process optimization within the 6-day development cycle. Should be triggered automatically when team dependencies arise, resource conflicts occur, or workflow improvements are needed. Examples:"
+      },
+      {
+        "path": "sacred-arsenal\\alchemical-forge-guide.md",
+        "name": "alchemical-forge-guide",
+        "category": "uncategorized",
+        "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+      },
+      {
+        "path": "sacred-arsenal\\cosmic-lens-analytics.md",
+        "name": "cosmic-lens-analytics",
+        "category": "uncategorized",
+        "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+      },
+      {
+        "path": "sacred-arsenal\\divine-anchor-auditor.md",
+        "name": "divine-anchor-auditor",
+        "category": "uncategorized",
+        "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+      },
+      {
+        "path": "sacred-arsenal\\frequency-tuner-optimizer.md",
+        "name": "frequency-tuner-optimizer",
+        "category": "uncategorized",
+        "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+      },
+      {
+        "path": "sacred-arsenal\\hermetic-compass-advisor.md",
+        "name": "hermetic-compass-advisor",
+        "category": "uncategorized",
+        "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+      },
+      {
+        "path": "sacred-arsenal\\rainbow-bridge-designer.md",
+        "name": "rainbow-bridge-designer",
+        "category": "uncategorized",
+        "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+      },
+      {
+        "path": "sacred-arsenal\\sacred-mirror-auditor.md",
+        "name": "sacred-mirror-auditor",
+        "category": "uncategorized",
+        "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+      },
+      {
+        "path": "studio-operations\\analytics-reporter.md",
+        "name": "analytics-reporter",
+        "category": "uncategorized",
+        "description": "Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization."
+      },
+      {
+        "path": "studio-operations\\chiron.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "studio-operations\\finance-tracker.md",
+        "name": "finance-tracker",
+        "category": "uncategorized",
+        "description": "Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return."
+      },
+      {
+        "path": "studio-operations\\hygeia.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "studio-operations\\infrastructure-maintainer.md",
+        "name": "infrastructure-maintainer",
+        "category": "uncategorized",
+        "description": "Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters."
+      },
+      {
+        "path": "studio-operations\\legal-compliance-checker.md",
+        "name": "legal-compliance-checker",
+        "category": "uncategorized",
+        "description": "Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations."
+      },
+      {
+        "path": "studio-operations\\plutus.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "studio-operations\\support-responder.md",
+        "name": "support-responder",
+        "category": "uncategorized",
+        "description": "Use this agent when handling customer support inquiries, creating support documentation, setting up automated responses, or analyzing support patterns. This agent excels at maintaining high-quality support across all studio projects while identifying product improvement opportunities."
+      },
+      {
+        "path": "studio-operations\\themis.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "studio-operations\\vulcan.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "testing\\api-tester.md",
+        "name": "api-tester",
+        "category": "uncategorized",
+        "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+      },
+      {
+        "path": "testing\\callisto.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "testing\\daedalus.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "testing\\europa.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "testing\\ganymede.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "testing\\performance-benchmarker.md",
+        "name": "performance-benchmarker",
+        "category": "uncategorized",
+        "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+      },
+      {
+        "path": "testing\\prometheus.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "testing\\test-results-analyzer.md",
+        "name": "test-results-analyzer",
+        "category": "uncategorized",
+        "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+      },
+      {
+        "path": "testing\\tool-evaluator.md",
+        "name": "tool-evaluator",
+        "category": "uncategorized",
+        "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+      },
+      {
+        "path": "testing\\workflow-optimizer.md",
+        "name": "workflow-optimizer",
+        "category": "uncategorized",
+        "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+      },
+      {
+        "path": "utilities\\alchymie-ai-expert.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "utilities\\alchymie-association-builder.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "utilities\\alchymie-situation-mapper.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      },
+      {
+        "path": "utilities\\filesystem-organizer.md",
+        "name": "MISSING",
+        "category": "uncategorized",
+        "description": "Analyze and organize messy file systems with sacred intention"
+      },
+      {
+        "path": "utilities\\hermetic-compliance-checker.md",
+        "name": "hermetic-compliance-checker",
+        "category": "uncategorized",
+        "description": "Audit code, features, and decisions against the 7 Hermetic Principles"
+      },
+      {
+        "path": "utilities\\sacred-geometry-analyzer.md",
+        "name": "MISSING",
+        "category": "uncategorized",
+        "description": "Analyze code structure against sacred geometry patterns - Golden Ratio, Fibonacci, Platonic solids"
+      },
+      {
+        "path": "utilities\\strategic-plan-architect.md",
+        "name": "MISSING",
+        "category": "uncategorized",
+        "description": "Create comprehensive implementation plans with research, phases, risks, and success criteria"
+      },
+      {
+        "path": "0-SOL\\updates\\2025-11-09-meta-skills.md",
+        "name": "MISSING",
+        "category": "uncategorized"
+      }
+    ],
+    "5-BEYOND": [
+      {
+        "path": "5-BEYOND\\hermetic-principles\\01-mentalism.md",
+        "name": "MISSING",
+        "category": "5-BEYOND"
+      },
+      {
+        "path": "5-BEYOND\\hermetic-principles\\02-correspondence.md",
+        "name": "MISSING",
+        "category": "5-BEYOND"
+      },
+      {
+        "path": "5-BEYOND\\hermetic-principles\\03-vibration.md",
+        "name": "vibration",
+        "category": "5-BEYOND",
+        "description": "Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - \"Nothing rests; everything moves; everything vibrates.\""
+      },
+      {
+        "path": "5-BEYOND\\hermetic-principles\\04-polarity.md",
+        "name": "polarity",
+        "category": "5-BEYOND",
+        "description": "Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - \"Everything is Dual; everything has poles.\""
+      },
+      {
+        "path": "5-BEYOND\\hermetic-principles\\05-rhythm.md",
+        "name": "rhythm",
+        "category": "5-BEYOND",
+        "description": "Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - \"Everything flows, out and in; everything has its tides.\""
+      },
+      {
+        "path": "5-BEYOND\\hermetic-principles\\06-cause-effect.md",
+        "name": "cause-effect",
+        "category": "5-BEYOND",
+        "description": "Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - \"Every Cause has its Effect; every Effect has its Cause.\""
+      },
+      {
+        "path": "5-BEYOND\\hermetic-principles\\07-gender.md",
+        "name": "gender",
+        "category": "5-BEYOND",
+        "description": "Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - \"Gender is in everything; everything has its Masculine and Feminine Principles.\""
+      },
+      {
+        "path": "5-BEYOND\\hermetic-principles\\hermetic-law-translator.md",
+        "name": "MISSING",
+        "category": "5-BEYOND"
+      },
+      {
+        "path": "5-BEYOND\\life-advisory\\hygieia-wellness.md",
+        "name": "MISSING",
+        "category": "5-BEYOND"
+      },
+      {
+        "path": "5-BEYOND\\life-advisory\\plutus-finance.md",
+        "name": "MISSING",
+        "category": "5-BEYOND"
+      },
+      {
+        "path": "5-BEYOND\\life-advisory\\themis-legal.md",
+        "name": "MISSING",
+        "category": "5-BEYOND"
+      },
+      {
+        "path": "5-BEYOND\\sacred-arsenal\\alchemical-forge-guide.md",
+        "name": "alchemical-forge-guide",
+        "category": "5-BEYOND",
+        "description": "Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality"
+      },
+      {
+        "path": "5-BEYOND\\sacred-arsenal\\cosmic-lens-analytics.md",
+        "name": "cosmic-lens-analytics",
+        "category": "5-BEYOND",
+        "description": "Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics"
+      },
+      {
+        "path": "5-BEYOND\\sacred-arsenal\\divine-anchor-auditor.md",
+        "name": "divine-anchor-auditor",
+        "category": "5-BEYOND",
+        "description": "Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust"
+      },
+      {
+        "path": "5-BEYOND\\sacred-arsenal\\frequency-tuner-optimizer.md",
+        "name": "frequency-tuner-optimizer",
+        "category": "5-BEYOND",
+        "description": "Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation"
+      },
+      {
+        "path": "5-BEYOND\\sacred-arsenal\\hermetic-compass-advisor.md",
+        "name": "hermetic-compass-advisor",
+        "category": "5-BEYOND",
+        "description": "Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding"
+      },
+      {
+        "path": "5-BEYOND\\sacred-arsenal\\rainbow-bridge-designer.md",
+        "name": "rainbow-bridge-designer",
+        "category": "5-BEYOND",
+        "description": "Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine"
+      },
+      {
+        "path": "5-BEYOND\\sacred-arsenal\\sacred-mirror-auditor.md",
+        "name": "sacred-mirror-auditor",
+        "category": "5-BEYOND",
+        "description": "Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists"
+      }
+    ],
+    "3-OUTER-CIRCLE": [
+      {
+        "path": "3-OUTER-CIRCLE\\neptune\\backend-architect.md",
+        "name": "backend-architect",
+        "category": "3-OUTER-CIRCLE",
+        "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\neptune\\neptune.md",
+        "name": "MISSING",
+        "category": "3-OUTER-CIRCLE"
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\saturn\\saturn.md",
+        "name": "saturn",
+        "category": "3-OUTER-CIRCLE",
+        "description": "Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment."
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\uranus\\ai-engineer.md",
+        "name": "ai-engineer",
+        "category": "3-OUTER-CIRCLE",
+        "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\uranus\\uranus.md",
+        "name": "MISSING",
+        "category": "3-OUTER-CIRCLE"
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\saturn\\moons\\rhea\\rhea.md",
+        "name": "MISSING",
+        "category": "3-OUTER-CIRCLE"
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\neptune\\moons\\triton\\database-architect.md",
+        "name": "database-architect",
+        "category": "3-OUTER-CIRCLE",
+        "description": "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\jupiter\\moons\\callisto\\callisto.md",
+        "name": "MISSING",
+        "category": "3-OUTER-CIRCLE"
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\jupiter\\moons\\europa\\europa.md",
+        "name": "MISSING",
+        "category": "3-OUTER-CIRCLE"
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\jupiter\\moons\\ganymede\\ganymede.md",
+        "name": "MISSING",
+        "category": "3-OUTER-CIRCLE"
+      },
+      {
+        "path": "3-OUTER-CIRCLE\\jupiter\\moons\\io\\io.md",
+        "name": "MISSING",
+        "category": "3-OUTER-CIRCLE"
+      }
+    ],
+    "2-ASTEROID-BELT": [
+      {
+        "path": "2-ASTEROID-BELT\\ceres\\ceres.md",
+        "name": "devops-automator",
+        "category": "2-ASTEROID-BELT"
+      },
+      {
+        "path": "2-ASTEROID-BELT\\pallas\\pallas.md",
+        "name": "MISSING",
+        "category": "2-ASTEROID-BELT"
+      },
+      {
+        "path": "2-ASTEROID-BELT\\vesta\\devops-automator.md",
+        "name": "devops-automator",
+        "category": "2-ASTEROID-BELT",
+        "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+      }
+    ],
+    "1-INNER-CIRCLE": [
+      {
+        "path": "1-INNER-CIRCLE\\earth\\earth.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\earth\\frontend-developer.md",
+        "name": "frontend-developer",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\earth\\mobile-app-builder.md",
+        "name": "mobile-app-builder",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\api-tester.md",
+        "name": "api-tester",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\callisto.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\daedalus.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\europa.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\ganymede.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\performance-benchmarker.md",
+        "name": "performance-benchmarker",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\prometheus.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\test-results-analyzer.md",
+        "name": "test-results-analyzer",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\tool-evaluator.md",
+        "name": "tool-evaluator",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\mars\\workflow-optimizer.md",
+        "name": "workflow-optimizer",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\brand-guardian.md",
+        "name": "brand-guardian",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\eros.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\hera.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\metis.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\titan.md",
+        "name": "MISSING",
+        "category": "1-INNER-CIRCLE"
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\ui-designer.md",
+        "name": "ui-designer",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\ux-researcher.md",
+        "name": "ux-researcher",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\visual-storyteller.md",
+        "name": "visual-storyteller",
+        "category": "1-INNER-CIRCLE",
+        "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+      },
+      {
+        "path": "1-INNER-CIRCLE\\venus\\whimsy-injector.md",
+        "name": "whimsy-injector",
+        "category": "1-INNER-CIRCLE",
+        "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+      }
+    ]
+  }
+}

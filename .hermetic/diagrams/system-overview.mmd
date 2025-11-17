@@ -1,0 +1,70 @@
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#FFD700',
+    'primaryTextColor': '#000',
+    'primaryBorderColor': '#B8860B',
+    'secondaryColor': '#4B0082',
+    'secondaryTextColor': '#fff',
+    'tertiaryColor': '#50C878',
+    'tertiaryTextColor': '#fff',
+    'background': '#1a1a1a',
+    'mainBkg': '#2d2d2d',
+    'secondBkg': '#3d3d3d',
+    'lineColor': '#708090',
+    'textColor': '#E0E0E0',
+    'fontSize': '16px',
+    'fontFamily': 'Inter, system-ui, sans-serif'
+  }
+}}%%
+
+flowchart TB
+    Start["⚡ GOLD HAT CORE QUESTION<br/>Does this empower or extract?"]
+
+    subgraph Principles["🏛️ 7 HERMETIC PRINCIPLES"]
+        P1[Mentalism<br/>Clarity First]
+        P2[Correspondence<br/>Structure = Values]
+        P3[Vibration<br/>Ship & Iterate]
+        P4[Polarity<br/>Balance Opposites]
+        P5[Rhythm<br/>Sustainable Pace]
+        P6[Cause-Effect<br/>Conscious Consequences]
+        P7[Gender<br/>Doing + Being]
+    end
+
+    subgraph Tools["🛠️ IMPLEMENTATION LAYER"]
+        Commands["📜 COMMANDS<br/>18 total<br/><br/>Essential 5:<br/>/gnosis<br/>/align<br/>/verify<br/>/dev-docs<br/>/celebrate"]
+        Skills["💎 SKILLS<br/>12 total<br/><br/>Auto-activated<br/>based on<br/>keywords"]
+        Agents["🤖 AGENTS<br/>103 total<br/><br/>Essential 3:<br/>strategic-plan<br/>filesystem-org<br/>sacred-mirror"]
+    end
+
+    subgraph Outputs["📦 OUTPUTS"]
+        DevDocs["Dev Docs<br/>Plan + Context + Tasks"]
+        Code["Code<br/>Quality + Tests + Clear"]
+        Projects["Projects<br/>Midnight Sun<br/>Learning Dir"]
+    end
+
+    subgraph Feedback["🔄 FEEDBACK LAYER"]
+        Retro["Retrospectives<br/>Weekly → Monthly → Quarterly<br/>Alignment Scores • Drift Check"]
+    end
+
+    subgraph AntiPatterns["❌ REJECT ALWAYS"]
+        AP1[Dark Patterns]
+        AP2[Surveillance]
+        AP3[Manipulation]
+        AP4[Addiction Mechanics]
+    end
+
+    Start --> Principles
+    Principles --> Tools
+    Tools --> Outputs
+    Outputs --> Feedback
+    Feedback -.->|Improve| Principles
+
+    Start -.->|Never Build| AntiPatterns
+
+    style Start fill:#FFD700,stroke:#B8860B,stroke-width:4px,color:#000
+    style Principles fill:#4B0082,stroke:#6A0DAD,stroke-width:3px,color:#fff
+    style Tools fill:#4B0082,stroke:#6A0DAD,stroke-width:3px,color:#fff
+    style Outputs fill:#50C878,stroke:#3CB371,stroke-width:3px,color:#fff
+    style Feedback fill:#50C878,stroke:#3CB371,stroke-width:3px,color:#fff
+    style AntiPatterns fill:#8B0000,stroke:#DC143C,stroke-width:3px,color:#fff

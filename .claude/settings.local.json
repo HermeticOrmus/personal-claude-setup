@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch(domain:*)",
+      "Task",
+      "NotebookEdit",
+      "TodoWrite",
+      "SlashCommand",
+      "Skill",
+      "AskUserQuestion",
+      "BashOutput",
+      "KillShell",
+      "ExitPlanMode"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "bypassPermissions"
+  }
+}

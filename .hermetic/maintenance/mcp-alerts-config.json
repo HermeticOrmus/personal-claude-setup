@@ -1,0 +1,21 @@
+{
+  "responseTimeThresholds": {
+    "warning": 2000,
+    "critical": 5000,
+    "description": "Response time thresholds in milliseconds"
+  },
+  "failureThresholds": {
+    "recentFailures": 5,
+    "timeWindow": 3600,
+    "description": "Alert if N failures occur within time window (seconds)"
+  },
+  "healthThresholds": {
+    "warning": 80,
+    "critical": 50,
+    "description": "Overall health percentage thresholds"
+  },
+  "checkInterval": {
+    "seconds": 300,
+    "description": "How often to run health checks (5 minutes default)"
+  }
+}

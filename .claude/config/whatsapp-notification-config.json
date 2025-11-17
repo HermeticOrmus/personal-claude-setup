@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "purpose": "WhatsApp notification configuration for Claude Code agents",
+    "created": "2025-11-10",
+    "version": "1.0"
+  },
+
+  "ormus_contact": {
+    "whatsapp_api_format": "50769815142@c.us",
+    "display_name": "Ormus",
+    "auto_notify": true
+  },
+
+  "notification_triggers": {
+    "always_notify": [
+      "major_task_completion",
+      "research_completion",
+      "deployment_complete",
+      "error_requiring_attention",
+      "user_requested_notification"
+    ],
+    "optional_notify": [
+      "file_updates",
+      "minor_completions",
+      "status_updates"
+    ],
+    "never_notify": [
+      "routine_file_reads",
+      "search_operations"
+    ]
+  },
+
+  "message_templates": {
+    "task_completion": {
+      "format": "✅ {task_name} complete\n\n{summary}\n\n📊 Stats:\n{stats}\n\n🎯 Next: {next_steps}",
+      "max_length": 4096
+    },
+    "research_completion": {
+      "format": "🔍 Research complete: {topic}\n\n{key_findings}\n\n📁 Output: {file_location}\n\n{next_actions}",
+      "max_length": 4096
+    },
+    "deployment": {
+      "format": "🚀 Deployed: {project}\n\nCommit: {commit_hash}\n\n{changes_summary}\n\nStatus: {status}",
+      "max_length": 4096
+    },
+    "error": {
+      "format": "⚠️ Attention needed: {error_type}\n\n{description}\n\n🔧 Suggested fix:\n{suggestion}",
+      "max_length": 4096
+    }
+  },
+
+  "mcp_integration": {
+    "server": "whatsapp",
+    "tool": "periskope_send_message",
+    "phone_field": "phone",
+    "message_field": "message"
+  }
+}

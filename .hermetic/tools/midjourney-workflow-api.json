@@ -1,0 +1,90 @@
+{
+  "name": "Midjourney Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": ["message"]
+      },
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.message.text }}",
+              "operation": "startsWith",
+              "value2": "/mj "
+            }
+          ]
+        }
+      },
+      "id": "filter-mj",
+      "name": "Filter MJ Commands",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const message = $input.item.json.message;\nconst text = message.text || '';\nconst prompt = text.replace('/mj ', '').trim();\nconst chatId = message.chat.id;\nconst messageId = message.message_id;\nconst userId = message.from.id;\nconst jobId = `mj_${Date.now()}_${userId}`;\n\nreturn {\n  json: {\n    prompt: prompt,\n    chatId: chatId,\n    messageId: messageId,\n    userId: userId,\n    jobId: jobId,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "parse-prompt",
+      "name": "Parse Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://discord.com/api/v10/channels/{{ $env.MIDJOURNEY_CHANNEL_ID }}/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"content\": \"/imagine prompt: {{ $json.prompt }}\" }"
+      },
+      "id": "send-discord",
+      "name": "Send to Midjourney",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8005622076:AAGwEKcZHWokqyHY8c711D1Rs9r97dbEErs/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"chat_id\": \"{{ $('Parse Prompt').item.json.chatId }}\", \"text\": \"🎨 Generating: {{ $('Parse Prompt').item.json.prompt }}\\n\\n⏳ Takes ~60 seconds...\", \"reply_to_message_id\": \"{{ $('Parse Prompt').item.json.messageId }}\" }"
+      },
+      "id": "confirm",
+      "name": "Send Confirmation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [[{ "node": "Filter MJ Commands", "type": "main", "index": 0 }]]
+    },
+    "Filter MJ Commands": {
+      "main": [[{ "node": "Parse Prompt", "type": "main", "index": 0 }]]
+    },
+    "Parse Prompt": {
+      "main": [[{ "node": "Send to Midjourney", "type": "main", "index": 0 }]]
+    },
+    "Send to Midjourney": {
+      "main": [[{ "node": "Send Confirmation", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

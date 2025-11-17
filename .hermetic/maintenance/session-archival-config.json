@@ -1,0 +1,20 @@
+{
+  "sessionsDirectory": "$HOME/.claude/sessions",
+  "archiveBase": "$HOME/.hermetic/archives/sessions",
+  "retentionDays": 30,
+  "archiveFormat": "tar.gz",
+  "compression": {
+    "enabled": true,
+    "level": 6,
+    "description": "Gzip compression level (1-9, default: 6)"
+  },
+  "organization": {
+    "structure": "YYYY/MM",
+    "description": "Archives organized by year and month"
+  },
+  "cleanup": {
+    "enabled": false,
+    "deleteArchivesOlderThanDays": 365,
+    "description": "Auto-delete archives older than 1 year (disabled by default)"
+  }
+}

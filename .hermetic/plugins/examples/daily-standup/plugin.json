@@ -1,0 +1,23 @@
+{
+  "name": "daily-standup",
+  "version": "1.0.0",
+  "type": "agent",
+  "category": "analyzer",
+  "description": "Generates daily standup reports from yesterday's usage patterns and today's planned work",
+  "author": "Hermetic Community",
+  "hermetic_version": "2.0.0",
+  "dependencies": [],
+  "activation": {
+    "auto": false,
+    "requires": ["analytics/usage.csv"]
+  },
+  "files": {
+    "agent": "daily-standup.md"
+  },
+  "hermetic_principles": [
+    "mentalism",
+    "rhythm",
+    "correspondence"
+  ],
+  "tags": ["productivity", "team", "communication", "standup"]
+}

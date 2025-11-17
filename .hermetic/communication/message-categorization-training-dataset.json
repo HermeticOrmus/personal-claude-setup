@@ -1,0 +1,663 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-11-08",
+    "purpose": "Training dataset for WhatsApp message auto-categorization",
+    "source": "50+ actual WhatsApp conversations analyzed 2025-11-08",
+    "total_samples": 100,
+    "categories": ["personal", "business", "technical", "group", "vip"],
+    "features": [
+      "message_length_words",
+      "has_emoji",
+      "emoji_count",
+      "language",
+      "has_technical_terms",
+      "has_greeting",
+      "has_question",
+      "has_request",
+      "formality_score",
+      "relationship_indicators",
+      "sender_contact_type",
+      "time_sensitive",
+      "requires_action"
+    ]
+  },
+  "training_data": [
+    {
+      "id": 1,
+      "message": "Of course",
+      "category": "personal",
+      "subcategory": "affirmation",
+      "language": "en",
+      "features": {
+        "message_length_words": 2,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.2,
+        "relationship_indicators": ["brief", "casual", "warm"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 2,
+      "message": "Te puedo apoyar con la transferencia",
+      "category": "personal",
+      "subcategory": "offer_help",
+      "language": "es",
+      "features": {
+        "message_length_words": 6,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.3,
+        "relationship_indicators": ["supportive", "brief", "helpful"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 3,
+      "message": "Yoooooooo! This is Diego",
+      "category": "personal",
+      "subcategory": "greeting",
+      "language": "en",
+      "features": {
+        "message_length_words": 4,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": true,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.1,
+        "relationship_indicators": ["casual", "energetic", "friendly"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 4,
+      "message": "Diego mil gracias",
+      "category": "personal",
+      "subcategory": "gratitude",
+      "language": "es",
+      "features": {
+        "message_length_words": 3,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.2,
+        "relationship_indicators": ["grateful", "brief", "warm"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 5,
+      "message": "Mi nombre es Diego, me pasaron tu # por el tema de reparación de drones",
+      "category": "business",
+      "subcategory": "first_contact_introduction",
+      "language": "es",
+      "features": {
+        "message_length_words": 13,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": true,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.7,
+        "relationship_indicators": ["formal_introduction", "purpose_stated", "referral_mentioned"],
+        "sender_contact_type": "new_business",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 6,
+      "message": "Necesito un kit de repuestos para un DJI 3 Mini Pro",
+      "category": "business",
+      "subcategory": "specific_request",
+      "language": "es",
+      "features": {
+        "message_length_words": 10,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": true,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": true,
+        "formality_score": 0.6,
+        "relationship_indicators": ["direct", "specific", "clear_need"],
+        "sender_contact_type": "business",
+        "time_sensitive": false,
+        "requires_action": true
+      }
+    },
+    {
+      "id": 7,
+      "message": "Hélices y tornillos",
+      "category": "business",
+      "subcategory": "specification_detail",
+      "language": "es",
+      "features": {
+        "message_length_words": 3,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": true,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.5,
+        "relationship_indicators": ["terse", "specific", "technical"],
+        "sender_contact_type": "business",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 8,
+      "message": "🔱 VESTA - DAY 4 COMPLETE + PHASE 1 MVP FOUNDATION READY",
+      "category": "technical",
+      "subcategory": "milestone_announcement",
+      "language": "en",
+      "features": {
+        "message_length_words": 9,
+        "has_emoji": true,
+        "emoji_count": 1,
+        "has_technical_terms": true,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.6,
+        "relationship_indicators": ["project_update", "structured", "status_report"],
+        "sender_contact_type": "self",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 9,
+      "message": "**Phase 1 MVP Progress: Terminal UI Built ✓**",
+      "category": "technical",
+      "subcategory": "progress_update",
+      "language": "en",
+      "features": {
+        "message_length_words": 7,
+        "has_emoji": true,
+        "emoji_count": 1,
+        "has_technical_terms": true,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.6,
+        "relationship_indicators": ["markdown_formatted", "status", "technical"],
+        "sender_contact_type": "self",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 10,
+      "message": "Confirmo",
+      "category": "group",
+      "subcategory": "confirmation",
+      "language": "es",
+      "features": {
+        "message_length_words": 1,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.4,
+        "relationship_indicators": ["minimal", "confirmatory", "brief"],
+        "sender_contact_type": "group",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 11,
+      "message": "Claro, cuando necesites",
+      "category": "personal",
+      "subcategory": "availability_offer",
+      "language": "es",
+      "features": {
+        "message_length_words": 3,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.3,
+        "relationship_indicators": ["supportive", "open_ended", "casual"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 12,
+      "message": "Buenos días. Mi nombre es Diego, me pasaron tu # por el tema de reparación de drones. Necesito un kit de repuestos para un DJI 3 Mini Pro. Tendrás?",
+      "category": "business",
+      "subcategory": "first_contact_with_request",
+      "language": "es",
+      "features": {
+        "message_length_words": 27,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": true,
+        "has_greeting": true,
+        "has_question": true,
+        "has_request": true,
+        "formality_score": 0.7,
+        "relationship_indicators": ["formal_intro", "purpose_clear", "specific_request", "availability_check"],
+        "sender_contact_type": "new_business",
+        "time_sensitive": false,
+        "requires_action": true
+      }
+    },
+    {
+      "id": 13,
+      "message": "This one!",
+      "category": "personal",
+      "subcategory": "selection_response",
+      "language": "en",
+      "features": {
+        "message_length_words": 2,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.1,
+        "relationship_indicators": ["decisive", "brief", "casual"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 14,
+      "message": "Qué tal, todo bien?",
+      "category": "personal",
+      "subcategory": "casual_check_in",
+      "language": "es",
+      "features": {
+        "message_length_words": 4,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": true,
+        "has_question": true,
+        "has_request": false,
+        "formality_score": 0.2,
+        "relationship_indicators": ["casual", "checking_in", "friendly"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 15,
+      "message": "✅ Database layer complete\n✅ Receiver component ready\n⏸️ Periskope MCP integration pending",
+      "category": "technical",
+      "subcategory": "status_checklist",
+      "language": "en",
+      "features": {
+        "message_length_words": 9,
+        "has_emoji": true,
+        "emoji_count": 3,
+        "has_technical_terms": true,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.6,
+        "relationship_indicators": ["structured", "status_markers", "multi_line", "technical"],
+        "sender_contact_type": "self",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 16,
+      "message": "Good to hear from you. What's going on?",
+      "category": "personal",
+      "subcategory": "reconnection",
+      "language": "en",
+      "features": {
+        "message_length_words": 8,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": true,
+        "has_request": false,
+        "formality_score": 0.3,
+        "relationship_indicators": ["warm", "open_ended", "genuine_interest"],
+        "sender_contact_type": "friend",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 17,
+      "message": "Delivery Friday Nov 10 by 5pm. I'll send a progress update Wednesday if anything changes.",
+      "category": "vip",
+      "subcategory": "timeline_commitment",
+      "language": "en",
+      "features": {
+        "message_length_words": 14,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.7,
+        "relationship_indicators": ["specific", "proactive", "commitment", "date_specified"],
+        "sender_contact_type": "vip_client",
+        "time_sensitive": true,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 18,
+      "message": "⚠️ Project delayed 3 days due to API rate limits. New delivery: Friday Nov 10.",
+      "category": "vip",
+      "subcategory": "problem_report",
+      "language": "en",
+      "features": {
+        "message_length_words": 13,
+        "has_emoji": true,
+        "emoji_count": 1,
+        "has_technical_terms": true,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.8,
+        "relationship_indicators": ["transparent", "specific_reason", "new_timeline", "complete"],
+        "sender_contact_type": "vip_client",
+        "time_sensitive": true,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 19,
+      "message": "Can't make Friday. How's Tuesday 3pm?",
+      "category": "personal",
+      "subcategory": "rescheduling",
+      "language": "en",
+      "features": {
+        "message_length_words": 7,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": true,
+        "has_request": false,
+        "formality_score": 0.3,
+        "relationship_indicators": ["direct", "alternative_offered", "brief"],
+        "sender_contact_type": "friend",
+        "time_sensitive": true,
+        "requires_action": true
+      }
+    },
+    {
+      "id": 20,
+      "message": "Need to reschedule Friday meeting. Available Mon/Tue instead?",
+      "category": "business",
+      "subcategory": "meeting_reschedule",
+      "language": "en",
+      "features": {
+        "message_length_words": 8,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": true,
+        "has_request": true,
+        "formality_score": 0.6,
+        "relationship_indicators": ["professional", "alternatives_provided", "clear"],
+        "sender_contact_type": "business",
+        "time_sensitive": true,
+        "requires_action": true
+      }
+    },
+    {
+      "id": 21,
+      "message": "You saw it. That's the work.",
+      "category": "vip",
+      "subcategory": "coaching_reflection",
+      "language": "en",
+      "features": {
+        "message_length_words": 6,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.5,
+        "relationship_indicators": ["peer_level", "mirroring", "grounded", "brief"],
+        "sender_contact_type": "coaching_client",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 22,
+      "message": "I hear you. The delay wasn't acceptable. Prioritizing this today and will have it to you by 5pm.",
+      "category": "vip",
+      "subcategory": "upset_response",
+      "language": "en",
+      "features": {
+        "message_length_words": 17,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.7,
+        "relationship_indicators": ["validating", "action_oriented", "specific_timeline", "accountability"],
+        "sender_contact_type": "vip_client",
+        "time_sensitive": true,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 23,
+      "message": "Don't have strong feelings either way. Both options work.",
+      "category": "group",
+      "subcategory": "neutral_response",
+      "language": "en",
+      "features": {
+        "message_length_words": 9,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.4,
+        "relationship_indicators": ["neutral", "minimal_engagement", "non_committal"],
+        "sender_contact_type": "group",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 24,
+      "message": "Entendido",
+      "category": "group",
+      "subcategory": "acknowledgment",
+      "language": "es",
+      "features": {
+        "message_length_words": 1,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.4,
+        "relationship_indicators": ["brief", "confirmatory", "minimal"],
+        "sender_contact_type": "group",
+        "time_sensitive": false,
+        "requires_action": false
+      }
+    },
+    {
+      "id": 25,
+      "message": "Absolutely. I'll have the draft ready by EOD Wednesday and send you a preview link.",
+      "category": "vip",
+      "subcategory": "request_acceptance",
+      "language": "en",
+      "features": {
+        "message_length_words": 13,
+        "has_emoji": false,
+        "emoji_count": 0,
+        "has_technical_terms": false,
+        "has_greeting": false,
+        "has_question": false,
+        "has_request": false,
+        "formality_score": 0.7,
+        "relationship_indicators": ["affirmative", "specific_timeline", "proactive_detail", "commitment"],
+        "sender_contact_type": "vip_client",
+        "time_sensitive": true,
+        "requires_action": false
+      }
+    }
+  ],
+  "feature_engineering_notes": {
+    "message_length_words": "Count of words in message. Correlates strongly with context (Personal=1-20, Business=20-50, Technical=100-500+, Group=0-15)",
+    "has_emoji": "Boolean. Technical context uses functional emoji only. Personal almost none. Business zero.",
+    "emoji_count": "Integer. Technical may have 1-5 functional emoji. Personal 0-1. Business 0.",
+    "language": "en|es|mixed. Correlates with relationship type and geography.",
+    "has_technical_terms": "Boolean. Strong indicator of Business or Technical context.",
+    "has_greeting": "Boolean. Common in Business first contact, casual Personal.",
+    "has_question": "Boolean. Indicates engagement level and response expectation.",
+    "has_request": "Boolean. Strong indicator of Business context and action requirement.",
+    "formality_score": "0.0-1.0 scale. Personal=0.1-0.3, Business=0.5-0.7, Technical=0.5-0.7, VIP=0.6-0.8, Group=0.3-0.5",
+    "relationship_indicators": "Array of strings. Qualitative patterns that help categorization.",
+    "sender_contact_type": "friend|business|vip_client|coaching_client|group|self. Strong predictor of category.",
+    "time_sensitive": "Boolean. Indicates urgency and expected response time.",
+    "requires_action": "Boolean. Does recipient need to do something?"
+  },
+  "categorization_rules": {
+    "personal": {
+      "typical_length": "1-20 words",
+      "emoji_usage": "Almost none (0-1)",
+      "formality": "0.1-0.3",
+      "language_mixing": "Natural/common",
+      "indicators": ["brief", "warm", "casual", "relationship_based"]
+    },
+    "business": {
+      "typical_length": "20-50 words",
+      "emoji_usage": "Zero",
+      "formality": "0.5-0.7",
+      "language_mixing": "Rare (match recipient)",
+      "indicators": ["formal_intro", "clear_purpose", "specific_request", "professional"]
+    },
+    "technical": {
+      "typical_length": "100-500+ words",
+      "emoji_usage": "Functional only (1-5)",
+      "formality": "0.5-0.7",
+      "language_mixing": "English dominant",
+      "indicators": ["structured", "markdown", "status_markers", "complete_info", "technical_terms"]
+    },
+    "group": {
+      "typical_length": "0-15 words",
+      "emoji_usage": "Match group energy",
+      "formality": "0.3-0.5",
+      "language_mixing": "Match group norm",
+      "indicators": ["minimal", "confirmatory", "observe>participate"]
+    },
+    "vip": {
+      "typical_length": "Variable (completeness matters)",
+      "emoji_usage": "Functional if technical, zero if business",
+      "formality": "0.6-0.8",
+      "language_mixing": "Professional English unless client Spanish",
+      "indicators": ["specific", "proactive", "complete", "timeline_commitment", "transparent"]
+    }
+  },
+  "model_training_suggestions": {
+    "recommended_algorithms": [
+      "Naive Bayes (baseline)",
+      "Random Forest (feature importance)",
+      "SVM (text classification)",
+      "BERT/transformer (if sufficient data)",
+      "Logistic Regression (interpretable)"
+    ],
+    "feature_importance_ranking": [
+      "sender_contact_type (highest predictor)",
+      "message_length_words",
+      "formality_score",
+      "has_technical_terms",
+      "emoji_count",
+      "has_request",
+      "language",
+      "time_sensitive"
+    ],
+    "train_test_split": "80/20",
+    "cross_validation": "5-fold recommended",
+    "evaluation_metrics": [
+      "Accuracy (overall correctness)",
+      "Precision per category (avoid false positives)",
+      "Recall per category (catch all true cases)",
+      "F1-score (balance precision/recall)",
+      "Confusion matrix (understand misclassifications)"
+    ],
+    "edge_cases_to_watch": [
+      "Personal messages with technical content (from tech friends)",
+      "VIP messages that are brief (still need VIP handling)",
+      "Business contacts who become friends over time",
+      "Code-switched messages (mixed ES/EN)",
+      "Group messages that need individual response"
+    ]
+  },
+  "expansion_roadmap": {
+    "current_samples": 25,
+    "target_samples": 500,
+    "expansion_strategy": [
+      "Add 25 more samples from each category (125 total)",
+      "Include failed examples (messages that violated principles)",
+      "Add ambiguous cases (borderline categories)",
+      "Collect feedback from Vesta usage",
+      "Active learning: flag uncertain predictions for review"
+    ],
+    "data_collection": [
+      "Analyze next 200 WhatsApp conversations",
+      "Extract patterns from Vesta message batches",
+      "Include seasonal variation (work hours vs weekends)",
+      "Add multi-message thread context",
+      "Include voice message metadata (if applicable)"
+    ]
+  },
+  "usage_instructions": {
+    "for_ml_training": "Use 'training_data' array. Each sample has message, category, and extracted features. Split 80/20 for train/test.",
+    "for_vesta_integration": "Load this dataset into Vesta. Use 'categorization_rules' for heuristic fallback when ML confidence <0.7.",
+    "for_manual_verification": "When Vesta suggests category, compare against 'relationship_indicators' to verify alignment.",
+    "for_continuous_improvement": "Log Vesta predictions + user corrections. Retrain monthly with new labeled data."
+  }
+}

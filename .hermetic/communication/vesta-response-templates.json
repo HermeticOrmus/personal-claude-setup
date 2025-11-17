@@ -1,0 +1,471 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-11-08",
+    "purpose": "Vesta WhatsApp response templates with variable substitution",
+    "based_on": "whatsapp-style-guide.md analysis",
+    "usage": "Auto-suggest responses based on message categorization"
+  },
+  "contexts": {
+    "personal": {
+      "description": "Friends, family, close relationships",
+      "language_preference": "Match relationship (ES/EN natural code-switching)",
+      "max_length_words": 20,
+      "emoji_policy": "Almost none (maybe one if genuine)",
+      "templates": [
+        {
+          "id": "personal_affirmative",
+          "name": "Simple Affirmation",
+          "trigger_keywords": ["help", "favor", "can you", "could you"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "Of course",
+              "variables": []
+            },
+            {
+              "language": "es",
+              "template": "Claro",
+              "variables": []
+            }
+          ]
+        },
+        {
+          "id": "personal_affirmative_with_action",
+          "name": "Affirmation + Brief Action",
+          "trigger_keywords": ["help", "need", "support"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "Of course. {{action}}",
+              "variables": ["action"],
+              "example": "Of course. Happy to help"
+            },
+            {
+              "language": "es",
+              "template": "Claro. {{action}}",
+              "variables": ["action"],
+              "example": "Claro. Cuando necesites"
+            }
+          ]
+        },
+        {
+          "id": "personal_greeting_casual",
+          "name": "Casual Greeting",
+          "trigger_keywords": ["hey", "hi", "what's up", "qué tal"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "Yoooooooo! {{response}}",
+              "variables": ["response"],
+              "example": "Yoooooooo! What's up?"
+            },
+            {
+              "language": "es",
+              "template": "Qué tal, {{response}}",
+              "variables": ["response"],
+              "example": "Qué tal, todo bien?"
+            }
+          ]
+        },
+        {
+          "id": "personal_location_update",
+          "name": "Location/Status Update",
+          "trigger_keywords": ["where", "how are you", "what's up"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "{{location}}",
+              "variables": ["location"],
+              "example": "Highlands of Panama now"
+            },
+            {
+              "language": "es",
+              "template": "{{location}}",
+              "variables": ["location"],
+              "example": "En las montañas de Panamá"
+            }
+          ]
+        },
+        {
+          "id": "personal_simple_answer",
+          "name": "Direct Answer to Question",
+          "trigger_keywords": ["?"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "{{answer}}",
+              "variables": ["answer"],
+              "example": "This one!"
+            },
+            {
+              "language": "es",
+              "template": "{{answer}}",
+              "variables": ["answer"],
+              "example": "Este!"
+            }
+          ]
+        },
+        {
+          "id": "personal_gratitude",
+          "name": "Brief Thanks",
+          "trigger_keywords": ["thanks", "gracias", "thank you"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "Thanks {{name}}",
+              "variables": ["name"],
+              "example": "Thanks Leo"
+            },
+            {
+              "language": "es",
+              "template": "{{name}} mil gracias",
+              "variables": ["name"],
+              "example": "Diego mil gracias"
+            }
+          ]
+        }
+      ]
+    },
+    "business": {
+      "description": "New contacts, transactions, professional inquiries",
+      "language_preference": "Match their language",
+      "max_length_words": 50,
+      "emoji_policy": "Zero",
+      "templates": [
+        {
+          "id": "business_introduction",
+          "name": "First Contact Introduction",
+          "trigger_keywords": ["first contact", "new inquiry"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "{{greeting}}. Mi nombre es Diego, {{context}}. {{request}}.",
+              "variables": ["greeting", "context", "request"],
+              "example": "Buenos días. Mi nombre es Diego, me pasaron tu # por el tema de reparación de drones. Necesito un kit de repuestos para un DJI 3 Mini Pro."
+            },
+            {
+              "language": "en",
+              "template": "{{greeting}}. My name is Diego, {{context}}. {{request}}.",
+              "variables": ["greeting", "context", "request"],
+              "example": "Hi. My name is Diego, I was referred to you for drone repairs. I need a parts kit for a DJI 3 Mini Pro."
+            }
+          ]
+        },
+        {
+          "id": "business_specific_request",
+          "name": "Direct Request (Established Contact)",
+          "trigger_keywords": ["need", "want", "looking for"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "{{request}}. {{details}}.",
+              "variables": ["request", "details"],
+              "example": "Necesito un kit de repuestos para un DJI 3 Mini Pro. Hélices y tornillos."
+            },
+            {
+              "language": "en",
+              "template": "{{request}}. {{details}}.",
+              "variables": ["request", "details"],
+              "example": "I need a parts kit for DJI 3 Mini Pro. Propellers and screws."
+            }
+          ]
+        },
+        {
+          "id": "business_availability_check",
+          "name": "Availability Question",
+          "trigger_keywords": ["have", "available", "stock"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "Tendrás {{item}}?",
+              "variables": ["item"],
+              "example": "Tendrás disponible?"
+            },
+            {
+              "language": "en",
+              "template": "Do you have {{item}}?",
+              "variables": ["item"],
+              "example": "Do you have it available?"
+            }
+          ]
+        },
+        {
+          "id": "business_confirmation",
+          "name": "Confirmation/Acknowledgment",
+          "trigger_keywords": ["confirm", "received", "ok"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "Perfecto. {{next_step}}.",
+              "variables": ["next_step"],
+              "example": "Perfecto. Te escribo cuando esté listo."
+            },
+            {
+              "language": "en",
+              "template": "Perfect. {{next_step}}.",
+              "variables": ["next_step"],
+              "example": "Perfect. I'll reach out when ready."
+            }
+          ]
+        },
+        {
+          "id": "business_referral_share",
+          "name": "Sharing Contact/Referral",
+          "trigger_keywords": ["contact", "referral", "recommend"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "[Contact card shared directly]",
+              "variables": [],
+              "note": "Action-based template - share contact without commentary"
+            },
+            {
+              "language": "en",
+              "template": "[Contact card shared directly]",
+              "variables": [],
+              "note": "Action-based template - share contact without commentary"
+            }
+          ]
+        }
+      ]
+    },
+    "technical": {
+      "description": "Project updates, documentation, stakeholder communication",
+      "language_preference": "English (unless client is Spanish)",
+      "max_length_words": 500,
+      "emoji_policy": "Functional only (headers, status, organization)",
+      "templates": [
+        {
+          "id": "technical_milestone_complete",
+          "name": "Milestone Completion",
+          "trigger_keywords": ["complete", "finished", "done", "shipped"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "🔱 {{project_name}} - {{milestone}}\n\n**{{summary}}**\n\n---\n\n## What's Built:\n\n{{components}}\n\n## What Works NOW:\n\n{{working_features}}\n\n## Next Steps:\n\n{{next_steps}}\n\n---\n\n{{closing_insight}}",
+              "variables": ["project_name", "milestone", "summary", "components", "working_features", "next_steps", "closing_insight"],
+              "example": "🔱 VESTA - DAY 4 COMPLETE + PHASE 1 MVP FOUNDATION READY\n\n**Phase 1 MVP Progress: Terminal UI Built ✓**\n\n---\n\n## What's Built:\n\n🖥️ **Terminal UI:**\n• Batch list view\n• Message review screen\n• Keyboard navigation\n• Status indicators\n\n## What Works NOW:\n\n✅ Database layer\n✅ Receiver component\n✅ Scheduler\n⏸️ Periskope MCP (pending)\n\n## Next Steps:\n\n1. Live MCP integration\n2. End-to-end testing\n\n---\n\nFoundation is solid. Integration next."
+            }
+          ]
+        },
+        {
+          "id": "technical_status_update",
+          "name": "Status Update",
+          "trigger_keywords": ["status", "progress", "update"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "**{{component}}**: {{status}}\n\n{{details}}",
+              "variables": ["component", "status", "details"],
+              "example": "**Database Integration**: ✅ Complete\n\nAll CRUD operations tested and verified."
+            }
+          ]
+        },
+        {
+          "id": "technical_blocker_report",
+          "name": "Blocker/Issue Report",
+          "trigger_keywords": ["blocked", "issue", "problem"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "⚠️ **{{issue_title}}**\n\n**Impact**: {{impact}}\n\n**Details**: {{details}}\n\n**Options**:\n{{options}}\n\n**Recommendation**: {{recommendation}}",
+              "variables": ["issue_title", "impact", "details", "options", "recommendation"],
+              "example": "⚠️ **API Rate Limit Hit**\n\n**Impact**: Testing delayed by ~2 hours\n\n**Details**: Third-party API limited to 100 req/hour\n\n**Options**:\n1. Wait for rate limit reset\n2. Use staging environment\n3. Implement caching layer\n\n**Recommendation**: Option 3 - prevents future blocks"
+            }
+          ]
+        },
+        {
+          "id": "technical_config_change",
+          "name": "Configuration Change Notice",
+          "trigger_keywords": ["config", "environment", "settings"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "⚙️ **Config Update**\n\n**Changed**: {{what_changed}}\n\n**Reason**: {{why}}\n\n**Action Required**: {{action_required}}",
+              "variables": ["what_changed", "why", "action_required"],
+              "example": "⚙️ **Config Update**\n\n**Changed**: Database connection pooling increased to 20\n\n**Reason**: Preventing timeout errors under load\n\n**Action Required**: None - already deployed"
+            }
+          ]
+        },
+        {
+          "id": "technical_integration_ready",
+          "name": "Integration Announcement",
+          "trigger_keywords": ["integration", "ready", "connected"],
+          "variants": [
+            {
+              "language": "en",
+              "template": "📡 **{{integration_name}} Integration Ready**\n\n**Status**: {{status}}\n\n**Capabilities**:\n{{capabilities}}\n\n**Tested**: {{tested_scenarios}}",
+              "variables": ["integration_name", "status", "capabilities", "tested_scenarios"],
+              "example": "📡 **Periskope MCP Integration Ready**\n\n**Status**: ✅ Live\n\n**Capabilities**:\n• Read WhatsApp messages\n• Send responses\n• Batch processing\n\n**Tested**: 50+ messages across all contexts"
+            }
+          ]
+        }
+      ]
+    },
+    "group": {
+      "description": "Group chats - observe > participate",
+      "language_preference": "Match group norm",
+      "max_length_words": 15,
+      "emoji_policy": "Match group energy (don't lead)",
+      "templates": [
+        {
+          "id": "group_confirmation",
+          "name": "Simple Confirmation",
+          "trigger_keywords": ["confirm", "agree", "yes"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "Confirmo",
+              "variables": []
+            },
+            {
+              "language": "en",
+              "template": "Confirmed",
+              "variables": []
+            }
+          ]
+        },
+        {
+          "id": "group_acknowledgment",
+          "name": "Brief Acknowledgment",
+          "trigger_keywords": ["got it", "understood", "ok"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "Entendido",
+              "variables": []
+            },
+            {
+              "language": "en",
+              "template": "Got it",
+              "variables": []
+            }
+          ]
+        },
+        {
+          "id": "group_silence",
+          "name": "Intentional Silence",
+          "trigger_keywords": ["observe", "nothing to add"],
+          "variants": [
+            {
+              "language": "neutral",
+              "template": "[No response - observing]",
+              "variables": [],
+              "note": "Template represents intentional non-participation"
+            }
+          ]
+        },
+        {
+          "id": "group_value_add",
+          "name": "Valuable Contribution",
+          "trigger_keywords": ["insight", "clarification", "important"],
+          "variants": [
+            {
+              "language": "es",
+              "template": "{{contribution}}",
+              "variables": ["contribution"],
+              "example": "Importante: La reunión es a las 3pm, no 2pm"
+            },
+            {
+              "language": "en",
+              "template": "{{contribution}}",
+              "variables": ["contribution"],
+              "example": "Important: Meeting is 3pm, not 2pm"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "emoji_reference": {
+    "technical_only": {
+      "🔱": "Project header/brand",
+      "✅": "Complete/working",
+      "⏸️": "Pending/paused",
+      "🔥": "Energy/emphasis (sparingly)",
+      "⚙️": "Configuration/system",
+      "📡": "Integration/connection",
+      "🛡️": "Protection/security",
+      "⚠️": "Warning/blocker",
+      "🖥️": "UI/interface",
+      "📅": "Scheduling/time"
+    },
+    "personal_policy": "Almost none - maybe one if genuinely feeling it",
+    "business_policy": "Zero",
+    "group_policy": "Match group energy, don't lead"
+  },
+  "language_selection": {
+    "spanish_when": [
+      "Personal relationships (family, close friends)",
+      "Local business in Panama",
+      "Recipient initiated in Spanish",
+      "Cultural/regional context"
+    ],
+    "english_when": [
+      "Technical/professional work",
+      "International contacts",
+      "Recipient initiated in English",
+      "Documentation/formal writing"
+    ],
+    "code_switching": {
+      "allowed": true,
+      "rule": "Natural, not forced. Use what fits relationship organically.",
+      "never": "Never use Spanish to 'seem authentic' or English to 'seem professional'"
+    }
+  },
+  "quality_filters": {
+    "performance_check": [
+      "Am I using emoji to seem friendly? (Remove them)",
+      "Am I writing longer to seem more professional? (Cut it)",
+      "Am I apologizing unnecessarily? (Remove it)",
+      "Am I using 'just' to soften? (Remove it)"
+    ],
+    "authenticity_check": [
+      "Would I say this in person?",
+      "Does this sound like me?",
+      "Am I trying to impress?"
+    ],
+    "value_check": [
+      "Does this message serve them?",
+      "Or am I messaging for my own validation?",
+      "Could silence be better?"
+    ]
+  },
+  "vesta_integration": {
+    "categorization_triggers": {
+      "personal": ["friend", "family", "personal contact"],
+      "business": ["new contact", "transaction", "professional inquiry"],
+      "technical": ["project update", "stakeholder", "documentation"],
+      "group": ["group chat", "multiple participants"]
+    },
+    "auto_suggest_logic": {
+      "step_1": "Analyze incoming message context",
+      "step_2": "Match trigger keywords to templates",
+      "step_3": "Select top 3 relevant templates",
+      "step_4": "Pre-fill variables from message context",
+      "step_5": "Present for user review/edit",
+      "step_6": "Apply quality filters before send"
+    },
+    "variable_extraction": {
+      "name": "Extract from contact name or message content",
+      "location": "Extract from message context or user profile",
+      "action": "Infer from request type",
+      "context": "Extract from conversation history",
+      "request": "Extract from message intent"
+    }
+  },
+  "hermetic_alignment": {
+    "principles_applied": {
+      "Mentalism": "Clarity of thought → clarity of communication",
+      "Correspondence": "Message structure mirrors relationship structure",
+      "Vibration": "Brief when brief serves, complete when completeness serves",
+      "Polarity": "Professional AND authentic (not either/or)",
+      "Rhythm": "Respect natural communication rhythms (don't force responses)",
+      "Cause_Effect": "Every message has downstream effects (choose consciously)",
+      "Gender": "Structure (templates) + Flow (adaptation to context)"
+    },
+    "gold_hat_test": "Does this message empower the recipient or extract from them?",
+    "midnight_sun_test": "Is this brief, genuine, grounded, peer-level?"
+  }
+}

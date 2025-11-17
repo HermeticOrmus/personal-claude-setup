@@ -1,0 +1,276 @@
+{
+  "name": "📝 Interactive Response Logger - Hermetic Daily Tracking",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ]
+      },
+      "id": "telegram-trigger",
+      "name": "Listen for Telegram Messages",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [250, 300],
+      "webhookId": "telegram-webhook-hermetic",
+      "credentials": {
+        "telegramApi": {
+          "id": "YOUR_TELEGRAM_CREDENTIALS_ID",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// INTERACTIVE RESPONSE PARSER\n// Detects and logs user replies to daily check-ins\n\nconst message = $input.first().json.message;\nconst text = message.text || '';\nconst messageDate = new Date(message.date * 1000);\nconst today = new Date();\nconst dateStr = today.toISOString().split('T')[0];\n\n// Calculate sprint day\nconst sprintStartDate = new Date('2025-10-30');\nconst daysSinceStart = Math.floor((today - sprintStartDate) / (1000 * 60 * 60 * 24));\nconst currentDay = daysSinceStart + 1;\n\n// Response type detection patterns\nconst patterns = {\n  morningEnergy: /^\\s*\\d{1,2}\\s*$/,  // Just a number (1-10)\n  todayRating: /today[:\\s]*(\\d{1,2})/i,\n  energyRating: /energy[:\\s]*(\\d{1,2})/i,\n  shipped: /shipped[:\\s]*(.+)/i,\n  boundaries: /boundaries[:\\s]*(yes|no|mostly)/i,\n  clientActivity: /client|lead|activity[:\\s]*(.+)/i,\n  general: /.+/  // Catch-all for general reflections\n};\n\n// Determine response type and extract data\nlet responseType = 'general';\nlet extractedValue = text.trim();\nlet structuredData = {};\n\nif (patterns.morningEnergy.test(text)) {\n  responseType = 'morning-energy';\n  structuredData = {\n    energyLevel: parseInt(text.trim()),\n    timestamp: messageDate.toISOString()\n  };\n} else if (patterns.todayRating.test(text)) {\n  responseType = 'today-rating';\n  const match = text.match(patterns.todayRating);\n  structuredData = {\n    rating: parseInt(match[1]),\n    timestamp: messageDate.toISOString()\n  };\n} else if (patterns.energyRating.test(text)) {\n  responseType = 'energy-rating';\n  const match = text.match(patterns.energyRating);\n  structuredData = {\n    energyLevel: parseInt(match[1]),\n    timestamp: messageDate.toISOString()\n  };\n} else if (patterns.shipped.test(text)) {\n  responseType = 'what-shipped';\n  const match = text.match(patterns.shipped);\n  structuredData = {\n    shipped: match[1].trim(),\n    timestamp: messageDate.toISOString()\n  };\n} else if (patterns.boundaries.test(text)) {\n  responseType = 'boundaries-check';\n  const match = text.match(patterns.boundaries);\n  structuredData = {\n    boundaries: match[1].toLowerCase(),\n    timestamp: messageDate.toISOString()\n  };\n} else if (patterns.clientActivity.test(text)) {\n  responseType = 'client-activity';\n  const match = text.match(patterns.clientActivity);\n  structuredData = {\n    activity: match[1].trim(),\n    timestamp: messageDate.toISOString()\n  };\n} else {\n  // General reflection\n  structuredData = {\n    reflection: text.trim(),\n    timestamp: messageDate.toISOString()\n  };\n}\n\n// Build the response object\nconst response = {\n  date: dateStr,\n  sprintDay: currentDay,\n  responseType: responseType,\n  rawMessage: text,\n  data: structuredData,\n  messageId: message.message_id,\n  telegramTimestamp: message.date\n};\n\nreturn [{ json: response }];"
+      },
+      "id": "parse-response",
+      "name": "Parse Response Type",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.responseType }}",
+              "operation": "notEqual",
+              "value2": "general"
+            }
+          ]
+        }
+      },
+      "id": "check-structured",
+      "name": "Is Structured Response?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "fileName": "=C:/Users/ormus/.hermetic/daily-logs/responses-{{ $json.date }}.json"
+      },
+      "id": "read-existing-log",
+      "name": "Read Existing Log",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [850, 200],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// MERGE WITH EXISTING LOG\n// Combines new response with existing daily log\n\nconst newResponse = $input.first().json;\n\n// Try to get existing log data\nlet existingLog = {};\ntry {\n  const fileContent = $node[\"Read Existing Log\"].json.data;\n  existingLog = JSON.parse(fileContent);\n} catch (e) {\n  // File doesn't exist yet or is empty\n  existingLog = {\n    date: newResponse.date,\n    sprintDay: newResponse.sprintDay,\n    responses: []\n  };\n}\n\n// Add new response to array\nif (!existingLog.responses) {\n  existingLog.responses = [];\n}\nexistingLog.responses.push({\n  type: newResponse.responseType,\n  data: newResponse.data,\n  raw: newResponse.rawMessage,\n  timestamp: newResponse.data.timestamp\n});\n\n// Return merged log\nreturn [{ json: existingLog }];"
+      },
+      "id": "merge-log",
+      "name": "Merge with Existing Log",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:/Users/ormus/.hermetic/daily-logs/responses-{{ $json.date }}.json",
+        "options": {}
+      },
+      "id": "save-structured-log",
+      "name": "Save Structured Log",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1250, 200]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $json.telegramChatId }}",
+        "text": "=✅ Logged: {{ $json.responseType }}\n\n{{ $json.confirmation }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "send-confirmation",
+      "name": "Send Confirmation",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1450, 200],
+      "credentials": {
+        "telegramApi": {
+          "id": "YOUR_TELEGRAM_CREDENTIALS_ID",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// BUILD CONFIRMATION MESSAGE\n\nconst response = $input.first().json;\nconst type = response.responseType;\nlet confirmation = '';\n\nswitch(type) {\n  case 'morning-energy':\n    confirmation = `Energy level: ${response.data.energyLevel}/10`;\n    break;\n  case 'today-rating':\n    confirmation = `Today's rating: ${response.data.rating}/10`;\n    break;\n  case 'energy-rating':\n    confirmation = `Energy: ${response.data.energyLevel}/10`;\n    break;\n  case 'what-shipped':\n    confirmation = `Shipped: ${response.data.shipped}`;\n    break;\n  case 'boundaries-check':\n    confirmation = `Boundaries: ${response.data.boundaries}`;\n    break;\n  case 'client-activity':\n    confirmation = `Activity: ${response.data.activity}`;\n    break;\n  default:\n    confirmation = 'Reflection noted';\n}\n\nreturn [{ \n  json: {\n    ...response,\n    confirmation,\n    telegramChatId: $env.TELEGRAM_CHAT_ID\n  }\n}];"
+      },
+      "id": "build-confirmation",
+      "name": "Build Confirmation Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 400]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:/Users/ormus/.hermetic/daily-logs/general-reflections-{{ $json.date }}.txt",
+        "options": {
+          "append": true
+        }
+      },
+      "id": "save-general-log",
+      "name": "Append General Reflection",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1250, 400]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// FORMAT GENERAL REFLECTION FOR APPEND\n\nconst response = $input.first().json;\nconst timestamp = new Date(response.data.timestamp).toLocaleTimeString('en-US', {\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\nconst entry = `\\n[${timestamp}] ${response.rawMessage}\\n`;\n\nreturn [{ \n  json: {\n    ...response,\n    data: entry,\n    telegramChatId: $env.TELEGRAM_CHAT_ID,\n    confirmation: 'General reflection saved'\n  }\n}];"
+      },
+      "id": "format-general",
+      "name": "Format General Reflection",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 400]
+    }
+  ],
+  "connections": {
+    "Listen for Telegram Messages": {
+      "main": [
+        [
+          {
+            "node": "Parse Response Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Response Type": {
+      "main": [
+        [
+          {
+            "node": "Is Structured Response?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Structured Response?": {
+      "main": [
+        [
+          {
+            "node": "Read Existing Log",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build Confirmation Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Existing Log": {
+      "main": [
+        [
+          {
+            "node": "Merge with Existing Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge with Existing Log": {
+      "main": [
+        [
+          {
+            "node": "Save Structured Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Structured Log": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Confirmation Message": {
+      "main": [
+        [
+          {
+            "node": "Format General Reflection",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format General Reflection": {
+      "main": [
+        [
+          {
+            "node": "Append General Reflection",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append General Reflection": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "Hermetic",
+      "id": "hermetic-automation"
+    },
+    {
+      "name": "Daily Rhythm",
+      "id": "daily-rhythm"
+    },
+    {
+      "name": "Interactive",
+      "id": "interactive-logging"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-30T00:00:00.000Z",
+  "versionId": "1"
+}

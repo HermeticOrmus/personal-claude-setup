@@ -1,0 +1,171 @@
+{
+  "name": "Creator Economy Digest - Indie Web Watch",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * *"
+            }
+          ]
+        }
+      },
+      "id": "daily-creator-trigger",
+      "name": "Daily Creator Updates (10 AM ET)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://hn.algolia.com/api/v1/search?tags=show_hn&hitsPerPage=20",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-show-hn",
+      "name": "Fetch Show HN",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 200]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://hn.algolia.com/api/v1/search?tags=ask_hn&hitsPerPage=20",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-ask-hn",
+      "name": "Fetch Ask HN",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 350]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/search/repositories?q=created:>{{ new Date(Date.now() - 86400000).toISOString().split('T')[0] }}&sort=stars&order=desc&per_page=10",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-github-trending",
+      "name": "Fetch GitHub Trending",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Show HN posts\nconst items = [];\nconst data = $input.item.json;\nconst source = $node.name;\n\nif (source.includes('Show HN')) {\n  if (data.hits) {\n    data.hits.forEach(hit => {\n      items.push({\n        title: hit.title,\n        url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,\n        points: hit.points || 0,\n        comments: hit.num_comments || 0,\n        created: hit.created_at,\n        type: 'show_hn',\n        source: 'Hacker News'\n      });\n    });\n  }\n} else if (source.includes('Ask HN')) {\n  if (data.hits) {\n    data.hits.forEach(hit => {\n      items.push({\n        title: hit.title,\n        url: `https://news.ycombinator.com/item?id=${hit.objectID}`,\n        points: hit.points || 0,\n        comments: hit.num_comments || 0,\n        created: hit.created_at,\n        type: 'ask_hn',\n        source: 'Hacker News'\n      });\n    });\n  }\n} else if (source.includes('GitHub')) {\n  if (data.items) {\n    data.items.forEach(repo => {\n      items.push({\n        title: repo.full_name,\n        url: repo.html_url,\n        description: repo.description || '',\n        stars: repo.stargazers_count,\n        language: repo.language || 'N/A',\n        created: repo.created_at,\n        type: 'github',\n        source: 'GitHub'\n      });\n    });\n  }\n}\n\nreturn items.map(item => ({ json: item }));"
+      },
+      "id": "parse-sources",
+      "name": "Parse All Sources",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Hermetic Creator Filter\nconst item = $input.item.json;\n\n// Boost signals (indie web, tools, education)\nconst positiveSignals = [\n  'open source', 'indie', 'built', 'made', 'created',\n  'tool', 'framework', 'library', 'app',\n  'tutorial', 'guide', 'learn', 'course',\n  'ai', 'ml', 'automation', 'productivity'\n];\n\n// Noise signals (marketing, crypto scams, etc)\nconst negativeSignals = [\n  'crypto', 'nft', 'blockchain', 'web3',\n  'get rich', 'make money fast', 'affiliate',\n  'clickbait', 'viral', 'hack'\n];\n\nconst text = (item.title + ' ' + (item.description || '')).toLowerCase();\n\nlet positiveScore = 0;\nlet negativeScore = 0;\n\npositiveSignals.forEach(signal => {\n  if (text.includes(signal)) positiveScore++;\n});\n\nnegativeSignals.forEach(signal => {\n  if (text.includes(signal)) negativeScore++;\n});\n\n// Quality thresholds\nlet meetsThreshold = false;\n\nif (item.type === 'show_hn' || item.type === 'ask_hn') {\n  meetsThreshold = item.points >= 50 || item.comments >= 20;\n} else if (item.type === 'github') {\n  meetsThreshold = item.stars >= 50;\n}\n\n// Check recency (last 24 hours)\nconst hoursAgo = (new Date() - new Date(item.created)) / (1000 * 60 * 60);\nconst isRecent = hoursAgo < 24;\n\nreturn {\n  json: {\n    ...item,\n    positiveScore: positiveScore,\n    negativeScore: negativeScore,\n    hoursAgo: Math.round(hoursAgo),\n    shouldInclude: negativeScore === 0 && meetsThreshold && isRecent\n  }\n};"
+      },
+      "id": "filter-creators",
+      "name": "Apply Creator Filter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 350]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.shouldInclude }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "filter-quality",
+      "name": "Filter Quality",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [1050, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate and categorize\nconst allItems = $input.all().map(item => item.json);\n\nif (allItems.length === 0) {\n  return {\n    json: {\n      hasContent: false,\n      timestamp: new Date().toISOString()\n    }\n  };\n}\n\n// Sort by positive score, then by engagement\nconst sorted = allItems.sort((a, b) => {\n  if (b.positiveScore !== a.positiveScore) {\n    return b.positiveScore - a.positiveScore;\n  }\n  if (a.type === 'github' && b.type === 'github') {\n    return b.stars - a.stars;\n  }\n  return b.points - a.points;\n});\n\nconst showHN = sorted.filter(i => i.type === 'show_hn').slice(0, 3);\nconst askHN = sorted.filter(i => i.type === 'ask_hn').slice(0, 2);\nconst github = sorted.filter(i => i.type === 'github').slice(0, 2);\n\nconst today = new Date().toLocaleDateString('en-US', { \n  weekday: 'long', \n  year: 'numeric', \n  month: 'long', \n  day: 'numeric' \n});\n\nreturn {\n  json: {\n    hasContent: true,\n    date: today,\n    showHN: showHN,\n    askHN: askHN,\n    github: github,\n    totalScanned: allItems.length,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "aggregate-digest",
+      "name": "Aggregate Digest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format for Telegram\nconst data = $input.item.json;\n\nif (!data.hasContent) {\n  const message = `🚀 **CREATOR ECONOMY UPDATE**\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `📊 **QUIET DAY**\\n\\n` +\n    `No major launches or discussions today.\\n` +\n    `The indie web is in build mode.\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `✅ **WHAT THIS MEANS**\\n\\n` +\n    `Good day to:\\n` +\n    `• Ship your own project\\n` +\n    `• Work on your build\\n` +\n    `• Study others' code\\n` +\n    `• Plan your next move\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `💭 *\"Builders build when no one's watching\"*\\n\\n` +\n    `Next update: Tomorrow 10 AM ET\\n`;\n  \n  return {\n    json: {\n      message: message\n    }\n  };\n}\n\n// Has content\nlet message = `🚀 **CREATOR ECONOMY UPDATE**\\n`;\nmessage += `${data.date}\\n\\n`;\n\nif (data.showHN.length > 0) {\n  message += `━━━━━━━━━━━━━━━\\n`;\n  message += `🛠️ **SHOW HN** (${data.showHN.length})\\n\\n`;\n  \n  data.showHN.forEach((item, i) => {\n    message += `${i + 1}. **${item.title}**\\n`;\n    message += `   👍 ${item.points} points | 💬 ${item.comments} comments\\n`;\n    message += `   🔗 [View](${item.url})\\n\\n`;\n  });\n}\n\nif (data.github.length > 0) {\n  message += `━━━━━━━━━━━━━━━\\n`;\n  message += `⭐ **TRENDING REPOS** (${data.github.length})\\n\\n`;\n  \n  data.github.forEach((item, i) => {\n    message += `${i + 1}. **${item.title}**\\n`;\n    if (item.description) {\n      message += `   ${item.description.substring(0, 100)}...\\n`;\n    }\n    message += `   ⭐ ${item.stars} stars | 📝 ${item.language}\\n`;\n    message += `   🔗 [View](${item.url})\\n\\n`;\n  });\n}\n\nif (data.askHN.length > 0) {\n  message += `━━━━━━━━━━━━━━━\\n`;\n  message += `💭 **ASK HN** (${data.askHN.length})\\n\\n`;\n  \n  data.askHN.forEach((item, i) => {\n    message += `${i + 1}. ${item.title}\\n`;\n    message += `   👍 ${item.points} points | 💬 ${item.comments} comments\\n`;\n    message += `   🔗 [Discuss](${item.url})\\n\\n`;\n  });\n}\n\nmessage += `━━━━━━━━━━━━━━━\\n`;\nmessage += `🎯 **INDIE WEB WATCH**\\n\\n`;\nmessage += `Scanned ${data.totalScanned} projects\\n`;\nmessage += `Filtered for genuine builders\\n`;\nmessage += `Zero crypto/NFT noise\\n\\n`;\n\nmessage += `━━━━━━━━━━━━━━━\\n`;\nmessage += `💭 *\"Build in public, ship often\"*\\n\\n`;\nmessage += `Next update: Tomorrow 10 AM ET\\n`;\n\nreturn {\n  json: {\n    message: message\n  }\n};"
+      },
+      "id": "format-telegram",
+      "name": "Format for Telegram",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 350]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8005622076:AAGwEKcZHWokqyHY8c711D1Rs9r97dbEErs/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"chat_id\": \"1540112442\", \"text\": \"{{ $json.message }}\", \"parse_mode\": \"Markdown\", \"disable_web_page_preview\": true }"
+      },
+      "id": "send-telegram",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1650, 350]
+    }
+  ],
+  "connections": {
+    "Daily Creator Updates (10 AM ET)": {
+      "main": [[
+        { "node": "Fetch Show HN", "type": "main", "index": 0 },
+        { "node": "Fetch Ask HN", "type": "main", "index": 0 },
+        { "node": "Fetch GitHub Trending", "type": "main", "index": 0 }
+      ]]
+    },
+    "Fetch Show HN": {
+      "main": [[{ "node": "Parse All Sources", "type": "main", "index": 0 }]]
+    },
+    "Fetch Ask HN": {
+      "main": [[{ "node": "Parse All Sources", "type": "main", "index": 0 }]]
+    },
+    "Fetch GitHub Trending": {
+      "main": [[{ "node": "Parse All Sources", "type": "main", "index": 0 }]]
+    },
+    "Parse All Sources": {
+      "main": [[{ "node": "Apply Creator Filter", "type": "main", "index": 0 }]]
+    },
+    "Apply Creator Filter": {
+      "main": [[{ "node": "Filter Quality", "type": "main", "index": 0 }]]
+    },
+    "Filter Quality": {
+      "main": [[{ "node": "Aggregate Digest", "type": "main", "index": 0 }]]
+    },
+    "Aggregate Digest": {
+      "main": [[{ "node": "Format for Telegram", "type": "main", "index": 0 }]]
+    },
+    "Format for Telegram": {
+      "main": [[{ "node": "Send to Telegram", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

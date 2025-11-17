@@ -1,0 +1,24 @@
+{
+  "name": "pomodoro-integrator",
+  "version": "1.0.0",
+  "type": "integration",
+  "category": "productivity",
+  "description": "Integrates Pomodoro Technique with Hermetic rhythm principles for sustainable focus and productivity",
+  "author": "Hermetic Community",
+  "hermetic_version": "2.0.0",
+  "dependencies": [],
+  "activation": {
+    "auto": false,
+    "requires": []
+  },
+  "files": {
+    "integration": "pomodoro-integrator.md",
+    "script": "pomodoro.sh"
+  },
+  "hermetic_principles": [
+    "rhythm",
+    "vibration",
+    "polarity"
+  ],
+  "tags": ["productivity", "focus", "rhythm", "time-management"]
+}

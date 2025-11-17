@@ -1,0 +1,12 @@
+{
+  "name": "claude-hooks",
+  "version": "1.0.0",
+  "description": "Hermetic hooks for Claude Code - Sacred automation for conscious development",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Hooks are sacred ceremonies, not test subjects\""
+  },
+  "keywords": ["claude", "hooks", "hermetic", "gold-hat"],
+  "author": "Hermetic Ormus",
+  "license": "MIT"
+}

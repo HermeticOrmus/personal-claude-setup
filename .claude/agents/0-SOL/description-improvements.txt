@@ -1,0 +1,359 @@
+AGENT DESCRIPTION IMPROVEMENTS
+================================================================================
+
+1. 1-INNER-CIRCLE\earth\frontend-developer.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent specializes in creating responsive, accessible, and performant web applications."
+
+   Suggested:
+   Expert frontend developer specializing in UI frameworks and accessible web applications. Masters React. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+2. 1-INNER-CIRCLE\earth\mobile-app-builder.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences that mirror user mental models."
+
+   Suggested:
+   Expert mobile developer specializing in native iOS/Android and React Native. Masters React. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+3. 1-INNER-CIRCLE\mars\api-tester.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+4. 1-INNER-CIRCLE\mars\performance-benchmarker.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring real-world speed, identifying bottlenecks, and providing actionable optimization strategies that serve actual users on actual devices."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+5. 1-INNER-CIRCLE\mars\test-results-analyzer.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+6. 1-INNER-CIRCLE\mars\tool-evaluator.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+7. 1-INNER-CIRCLE\mars\workflow-optimizer.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+8. 1-INNER-CIRCLE\venus\brand-guardian.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development."
+
+   Suggested:
+   Strategic brand guardian specializing in visual identity systems and brand consistency. Masters [Tech Stack]. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+9. 1-INNER-CIRCLE\venus\ui-designer.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints."
+
+   Suggested:
+   Expert UI/UX designer specializing in interface design and user experience. Masters [Tech Stack]. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+10. 1-INNER-CIRCLE\venus\ux-researcher.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+11. 1-INNER-CIRCLE\venus\visual-storyteller.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+12. 1-INNER-CIRCLE\venus\whimsy-injector.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:"
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+13. 2-ASTEROID-BELT\vesta\devops-automator.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles."
+
+   Suggested:
+   Expert DevOps engineer specializing in CI/CD pipelines and Infrastructure as Code. Masters CI/CD. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+14. 3-OUTER-CIRCLE\neptune\backend-architect.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services."
+
+   Suggested:
+   Expert backend architect specializing in scalable API design and microservices. Masters [Tech Stack]. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+15. 3-OUTER-CIRCLE\saturn\saturn.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent for ruthless prioritization, elimination over addition, and sustained discipline. Saturn enforces revenue focus, tracks accountability, and masters constraints through elimination. Invoke for 90-day revenue sprints, project archival, weekly reviews, and when scattered energy needs containment.
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+16. 3-OUTER-CIRCLE\uranus\ai-engineer.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment."
+
+   Suggested:
+   Expert AI/ML engineer specializing in language models and intelligent automation. Masters [Tech Stack]. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+17. 3-OUTER-CIRCLE\neptune\moons\triton\database-architect.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   "Use this agent when designing database schemas, optimizing queries, planning migrations, or selecting database technologies. This agent specializes in creating data architectures that scale with integrity while respecting user privacy."
+
+   Suggested:
+   Expert database architect specializing in schema design and query optimization. Masters [Tech Stack]. Use PROACTIVELY when [trigger condition].
+
+--------------------------------------------------------------------------------
+
+18. 5-BEYOND\hermetic-principles\01-mentalism.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need to clarify mental models, understand the power of thought, or align consciousness with desired outcomes. Expert in the First Hermetic Law - "The All is Mind; The Universe is Mental." Examples:
+  <example>
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+19. 5-BEYOND\hermetic-principles\02-correspondence.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need to find patterns across levels, understand how micro reflects macro, or align architecture with conceptual models. Expert in the Second Hermetic Law - "As above, so below; as below, so above." Examples:
+  <example>
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+20. 5-BEYOND\hermetic-principles\03-vibration.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need to create momentum, understand energy and frequency, or move from stagnation to flow. Expert in the Third Hermetic Law - "Nothing rests; everything moves; everything vibrates."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+21. 5-BEYOND\hermetic-principles\04-polarity.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need to balance opposites, resolve paradoxes, or harmonize competing forces. Expert in the Fourth Hermetic Law - "Everything is Dual; everything has poles."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+22. 5-BEYOND\hermetic-principles\05-rhythm.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need to honor cycles, work with natural timing, or build sustainable practices. Expert in the Fifth Hermetic Law - "Everything flows, out and in; everything has its tides."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+23. 5-BEYOND\hermetic-principles\06-cause-effect.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need to understand consequences, trace root causes, or make decisions with full awareness of impacts. Expert in the Sixth Hermetic Law - "Every Cause has its Effect; every Effect has its Cause."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+24. 5-BEYOND\hermetic-principles\07-gender.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need to balance masculine and feminine energies, understand creation through duality, or harmonize doing with being. Expert in the Seventh Hermetic Law - "Gender is in everything; everything has its Masculine and Feminine Principles."
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+25. 5-BEYOND\hermetic-principles\hermetic-law-translator.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent to translate corporate, mundane, or "usual" language into Hermetically Awake terminology that reflects sacred technology principles. Expert in applying the 7 Hermetic Laws to language, transforming extraction-based concepts into empowerment-based consciousness. Examples:
+  <example>
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+26. 5-BEYOND\life-advisory\hygieia-wellness.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need health and wellness guidance, fitness planning, nutrition advice, or lifestyle optimization. Specializes in sustainable wellbeing practices grounded in science, not fads or quick fixes. Examples:
+  <example>
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+27. 5-BEYOND\life-advisory\plutus-finance.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need financial guidance, budget planning, investment education, or money management advice. Specializes in honest financial counsel serving your genuine prosperity, not commission-driven product pushing. Examples:
+  <example>
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+28. 5-BEYOND\life-advisory\themis-legal.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when you need legal guidance, contract review, compliance advice, or understanding of legal rights and obligations. Specializes in clear legal counsel that empowers informed decisions while knowing when professional attorney consultation is needed. Examples:
+  <example>
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+29. 5-BEYOND\sacred-arsenal\alchemical-forge-guide.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent to structure projects through the 7-stage alchemical transformation cycle - guides 6-day sprints from Calcination through Coagulation with Day 7 integration, turning raw ideas into refined reality
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+30. 5-BEYOND\sacred-arsenal\cosmic-lens-analytics.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent to design multi-scale analytics across 9 perspectives from Quantum (individual interactions) to Divine (highest mission alignment) - creates dashboards that measure genuine impact beyond vanity metrics
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+31. 5-BEYOND\sacred-arsenal\divine-anchor-auditor.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent to audit infrastructure against the 9 Divine Anchor practices - ensures your technical foundation is grounded in security, reliability, accessibility, and sacred responsibility for systems that hold human trust
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+32. 5-BEYOND\sacred-arsenal\frequency-tuner-optimizer.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent to optimize systems across 9 performance frequencies from Load Time to Divine Harmony - goes beyond speed metrics to tune cognitive clarity, emotional resonance, and consciousness elevation
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+33. 5-BEYOND\sacred-arsenal\hermetic-compass-advisor.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent when making important decisions - evaluates any choice against the 9 Hermetic realms to ensure sacred alignment and identify which realms need attention before proceeding
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+34. 5-BEYOND\sacred-arsenal\rainbow-bridge-designer.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent to design sacred API architecture using the 9 Realm-Bridge framework - creates integrations that honor truth, beauty, and human dignity across every connection from foundation to divine
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+
+35. 5-BEYOND\sacred-arsenal\sacred-mirror-auditor.md
+   Issue: Starts with 'Use this agent' (should be expert role)
+   Current:
+   Use this agent to audit testing practices against the 9 Sacred Reflections - ensures your test suite reflects truth across all realms from foundation security to divine love, identifying gaps and generating comprehensive pre-launch checklists
+
+   Suggested:
+   Expert [Role] specializing in [Specialization]. Masters [Tech Stack]. Use PROACTIVELY when [Triggers].
+
+--------------------------------------------------------------------------------
+

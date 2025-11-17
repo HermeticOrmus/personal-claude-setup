@@ -1,0 +1,122 @@
+{
+  "name": "🌙 Evening Check-In - Hermetic Daily Review",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24,
+              "triggerAtHour": 20,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-evening",
+      "name": "Every Evening at 8 PM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// EVENING CHECK-IN MESSAGE GENERATOR\n// Prompts reflection, tracks progress, provides coaching\n\nconst today = new Date();\nconst dayOfWeek = today.toLocaleDateString('en-US', { weekday: 'long' });\n\n// Calculate sprint progress\nconst sprintStartDate = new Date('2025-10-30'); // UPDATE THIS to actual start date\nconst daysSinceStart = Math.floor((today - sprintStartDate) / (1000 * 60 * 60 * 24));\nconst currentDay = daysSinceStart + 1;\nconst currentWeek = Math.ceil(currentDay / 7);\nconst dayInSprint = ((currentDay - 1) % 6) + 1;\n\n// Milestone check\nlet milestoneMessage = '';\nif (currentDay === 6) {\n  milestoneMessage = '\\n🎉 **Sprint 1 Complete!** Celebrate this milestone.\\n';\n} else if (currentDay === 18) {\n  milestoneMessage = '\\n🌟 **Sprint 3 Complete!** First clients onboarded.\\n';\n} else if (currentDay === 30) {\n  milestoneMessage = '\\n🏆 **30-DAY MILESTONE!** Target: 5+ clients, $2.5K+ MRR.\\n';\n} else if (currentDay === 60) {\n  milestoneMessage = '\\n🚀 **60-DAY MILESTONE!** Target: 8+ clients, $4K+ MRR.\\n';\n} else if (currentDay === 90) {\n  milestoneMessage = '\\n✨ **90-DAY VICTORY!** Target: 10+ clients, $5K+ MRR achieved!\\n';\n}\n\n// Weekly wrap-up (Saturday night)\nlet weeklyReflection = '';\nif (today.getDay() === 6) {\n  weeklyReflection = `\\n📊 **WEEKLY WRAP-UP:**\\nWeek ${currentWeek} complete. Tomorrow is Sabbath—sacred rest.\\n`;\n}\n\n// Build the message\nconst message = `🌙 **EVENING CHECK-IN, HERMETIC ORMUS**\n\n📅 **${dayOfWeek} Evening** | Day ${currentDay} of 90${milestoneMessage}\n\n---\n\n🎯 **TODAY'S REFLECTION:**\n\n**1. How did today go overall?**\n_Rate 1-10 (1=disaster, 10=legendary)_\n👉 Reply with your rating\n\n**2. What shipped today?**\n_What actually got done? Be specific._\n👉 [Your wins here]\n\n**3. Energy level check?**\n_How's your energy right now? (1-10)_\n👉 Reply with number\n\n**4. Did you honor your boundaries?**\n_Sacred constraints: rest, capacity limits, no manipulation_\n👉 Yes / No / Mostly\n\n**5. Client/Lead activity today?**\n_Discovery calls, sessions, outreach sent, responses_\n👉 [Your activity]\n\n---\n\n🔍 **HONEST ASSESSMENT:**\n\n_What would you do differently tomorrow?_\n\n_What's blocking progress right now?_\n\n_Do you need to adjust anything?_\n\n---${weeklyReflection}\n\n💚 **WISDOM:**\n\n${getDailyWisdom(currentDay)}\n\n---\n\n🌟 **TOMORROW:**\nDay ${currentDay + 1} awaits. Rest well tonight.\n\nYou're building something sacred. 🔱`;\n\nfunction getDailyWisdom(day) {\n  const wisdom = [\n    'Progress over perfection. What you shipped today matters more than what you perfected.',\n    'Energy is the currency. If your rating is below 6, tomorrow starts with rest.',\n    'Boundaries honored = sustainability achieved. This is a marathon, not a sprint.',\n    'Every client conversation plants seeds. Trust the process.',\n    'Blocked? That\\'s information. What\\'s the real obstacle beneath the surface?',\n    'Celebrate the small wins. They compound into transformation.',\n    'Sustainable pace beats heroic effort. How you did today matters less than whether you can do it again tomorrow.'\n  ];\n  return wisdom[day % wisdom.length];\n}\n\nreturn [{ json: { message, currentDay, checkInTime: today.toISOString() } }];"
+      },
+      "id": "code-evening-message",
+      "name": "Generate Evening Check-In",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $env.TELEGRAM_CHAT_ID }}",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-send-evening",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [650, 300],
+      "credentials": {
+        "telegramApi": {
+          "id": "YOUR_TELEGRAM_CREDENTIALS_ID",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:/Users/ormus/.hermetic/daily-logs/evening-{{ $now.format('yyyy-MM-dd') }}.json",
+        "options": {}
+      },
+      "id": "save-evening-log",
+      "name": "Log Evening Check-In",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Every Evening at 8 PM": {
+      "main": [
+        [
+          {
+            "node": "Generate Evening Check-In",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Evening Check-In": {
+      "main": [
+        [
+          {
+            "node": "Send to Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to Telegram": {
+      "main": [
+        [
+          {
+            "node": "Log Evening Check-In",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "Hermetic",
+      "id": "hermetic-automation"
+    },
+    {
+      "name": "Daily Rhythm",
+      "id": "daily-rhythm"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-30T00:00:00.000Z",
+  "versionId": "1"
+}

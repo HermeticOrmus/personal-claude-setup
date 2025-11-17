@@ -1,0 +1,60 @@
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#FFD700','primaryTextColor':'#000','secondaryColor':'#4B0082','tertiaryColor':'#50C878','lineColor':'#708090'}}}%%
+
+flowchart TD
+    Start([New Task/Request])
+
+    Understand{Understand<br/>it fully?}
+    Gnosis[/Run /gnosis<br/>Understand deeply/]
+
+    Empower{Empowers<br/>users?}
+    Align[/Run /align<br/>Check ethics/]
+
+    Alternative{Can find<br/>empowering<br/>alternative?}
+    Boundary{Hard<br/>boundary?}
+
+    Stop([❌ STOP<br/>Don't Build])
+    Document[Document objection<br/>Build runway for<br/>future refusal]
+
+    MultiSession{Multi-session<br/>work?}
+    DevDocs[/Run /dev-docs<br/>Preserve context/]
+
+    Build[🛠️ BUILD<br/>Apply Hermetic Principles]
+
+    Verify[/Run /verify<br/>Tests pass?/]
+
+    Ship[🚀 SHIP]
+
+    Celebrate[/Run /celebrate<br/>Mark complete/]
+
+    End([Task Complete])
+
+    Start --> Understand
+    Understand -->|No| Gnosis
+    Gnosis --> Understand
+    Understand -->|Yes| Empower
+
+    Empower -->|No| Align
+    Align --> Alternative
+    Alternative -->|Yes| Empower
+    Alternative -->|No| Boundary
+    Boundary -->|Yes| Stop
+    Boundary -->|No| Document
+    Document --> MultiSession
+
+    Empower -->|Yes| MultiSession
+    MultiSession -->|Yes| DevDocs
+    MultiSession -->|No| Build
+    DevDocs --> Build
+
+    Build --> Verify
+    Verify -->|Fail| Build
+    Verify -->|Pass| Ship
+
+    Ship --> Celebrate
+    Celebrate --> End
+
+    style Start fill:#708090,stroke:#333,stroke-width:3px
+    style Stop fill:#8B0000,stroke:#DC143C,stroke-width:3px,color:#fff
+    style Build fill:#4B0082,stroke:#6A0DAD,stroke-width:3px,color:#fff
+    style Ship fill:#50C878,stroke:#3CB371,stroke-width:3px,color:#fff
+    style End fill:#FFD700,stroke:#B8860B,stroke-width:3px,color:#000

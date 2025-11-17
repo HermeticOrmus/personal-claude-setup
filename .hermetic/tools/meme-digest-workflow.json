@@ -1,0 +1,184 @@
+{
+  "name": "Daily Meme Digest - Sacred Comedy",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 19 * * *"
+            }
+          ]
+        }
+      },
+      "id": "daily-meme-trigger",
+      "name": "Daily Memes (7 PM ET)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.reddit.com/r/ProgrammerHumor/top.json?t=day&limit=25",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-programmer-humor",
+      "name": "Fetch r/ProgrammerHumor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 200]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.reddit.com/r/wholesomememes/top.json?t=day&limit=25",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-wholesome",
+      "name": "Fetch r/WholesomeMemes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 350]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.reddit.com/r/me_irl/top.json?t=day&limit=25",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-meirl",
+      "name": "Fetch r/me_irl",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Reddit response\nconst memes = [];\nconst data = $input.item.json;\n\nif (data.data && data.data.children) {\n  data.data.children.forEach(child => {\n    const post = child.data;\n    \n    // Only include image posts\n    if (post.post_hint === 'image' || post.url.match(/\\.(jpg|jpeg|png|gif)$/i)) {\n      memes.push({\n        title: post.title,\n        url: post.url,\n        permalink: `https://reddit.com${post.permalink}`,\n        subreddit: post.subreddit,\n        upvotes: post.ups,\n        created: post.created_utc,\n        isVideo: post.is_video || false\n      });\n    }\n  });\n}\n\nreturn memes.map(meme => ({ json: meme }));"
+      },
+      "id": "parse-reddit",
+      "name": "Parse Reddit Posts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Hermetic Comedy Filter\nconst meme = $input.item.json;\n\n// Negative signals (filter out)\nconst negativeKeywords = [\n  'trump', 'biden', 'politics', 'election',\n  'cringe', 'roast', 'drama', 'controversy',\n  'nsfw', 'depression', 'anxiety', 'suicide'\n];\n\n// Positive signals (boost)\nconst positiveKeywords = [\n  'wholesome', 'pure', 'clever', 'programming',\n  'coding', 'dev', 'pun', 'wordplay',\n  'relatable', 'accurate', 'literally me'\n];\n\nconst title = meme.title.toLowerCase();\n\n// Calculate scores\nlet negativeScore = 0;\nlet positiveScore = 0;\n\nnegativeKeywords.forEach(keyword => {\n  if (title.includes(keyword)) negativeScore++;\n});\n\npositiveKeywords.forEach(keyword => {\n  if (title.includes(keyword)) positiveScore++;\n});\n\n// Filter criteria\nconst hasNegative = negativeScore > 0;\nconst meetsUpvoteThreshold = meme.upvotes >= 500;\nconst isRecent = (Date.now() / 1000 - meme.created) < 86400; // 24 hours\n\nreturn {\n  json: {\n    ...meme,\n    positiveScore: positiveScore,\n    negativeScore: negativeScore,\n    shouldInclude: !hasNegative && meetsUpvoteThreshold && isRecent\n  }\n};"
+      },
+      "id": "filter-memes",
+      "name": "Apply Comedy Filter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 350]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.shouldInclude }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "filter-quality",
+      "name": "Filter Quality",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [1050, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate and select top memes\nconst allMemes = $input.all().map(item => item.json);\n\nif (allMemes.length === 0) {\n  return {\n    json: {\n      hasMemes: false,\n      timestamp: new Date().toISOString()\n    }\n  };\n}\n\n// Sort by upvotes and positive score\nconst sorted = allMemes.sort((a, b) => {\n  if (b.positiveScore !== a.positiveScore) {\n    return b.positiveScore - a.positiveScore;\n  }\n  return b.upvotes - a.upvotes;\n});\n\n// Take top 3\nconst topMemes = sorted.slice(0, 3);\n\nreturn {\n  json: {\n    hasMemes: true,\n    memes: topMemes,\n    totalScanned: allMemes.length,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "aggregate-memes",
+      "name": "Select Top 3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format for Telegram\nconst data = $input.item.json;\n\nif (!data.hasMemes) {\n  const message = `😂 **DAILY LAUGH BREAK**\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `📊 **QUIET DAY**\\n\\n` +\n    `No quality memes passed the Sacred Comedy Filter today.\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `✅ **WHAT THIS MEANS**\\n\\n` +\n    `Either:\\n` +\n    `• Reddit's having an off day\\n` +\n    `• The internet needs better jokes\\n` +\n    `• Good time to make your own humor\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `💭 *\"Sometimes silence is the funniest response\"*\\n\\n` +\n    `Next laugh break: Tomorrow 7 PM ET\\n`;\n  \n  return {\n    json: {\n      messages: [{ text: message, hasImage: false }]\n    }\n  };\n}\n\n// Has memes - create messages\nconst messages = [];\n\n// Header message\nlet header = `😂 **DAILY LAUGH BREAK**\\n\\n`;\nheader += `━━━━━━━━━━━━━━━\\n`;\nheader += `🎭 TOP 3 FROM TODAY\\n\\n`;\nheader += `Scanned ${data.totalScanned} quality candidates\\n`;\nheader += `Hermetic Comedy Filter applied\\n\\n`;\nheader += `━━━━━━━━━━━━━━━\\n`;\n\nmessages.push({ text: header, hasImage: false });\n\n// Individual meme messages\ndata.memes.forEach((meme, i) => {\n  let memeMsg = `${i + 1}. r/${meme.subreddit}\\n`;\n  memeMsg += `**${meme.title}**\\n\\n`;\n  memeMsg += `👍 ${(meme.upvotes / 1000).toFixed(1)}k upvotes\\n`;\n  memeMsg += `[View on Reddit](${meme.permalink})\\n`;\n  \n  messages.push({\n    text: memeMsg,\n    hasImage: true,\n    imageUrl: meme.url\n  });\n});\n\n// Footer message\nlet footer = `\\n━━━━━━━━━━━━━━━\\n`;\nfooter += `💡 3 minutes of joy, zero doomscroll\\n`;\nfooter += `Next laugh break: Tomorrow 7 PM ET\\n`;\n\nmessages.push({ text: footer, hasImage: false });\n\nreturn {\n  json: {\n    messages: messages\n  }\n};"
+      },
+      "id": "format-telegram",
+      "name": "Format for Telegram",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Split messages into individual items for sending\nconst data = $input.item.json;\nreturn data.messages.map(msg => ({ json: msg }));"
+      },
+      "id": "split-messages",
+      "name": "Split Messages",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 350]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.hasImage ? 'https://api.telegram.org/bot8005622076:AAGwEKcZHWokqyHY8c711D1Rs9r97dbEErs/sendPhoto' : 'https://api.telegram.org/bot8005622076:AAGwEKcZHWokqyHY8c711D1Rs9r97dbEErs/sendMessage' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.hasImage ? JSON.stringify({ chat_id: '1540112442', photo: $json.imageUrl, caption: $json.text, parse_mode: 'Markdown' }) : JSON.stringify({ chat_id: '1540112442', text: $json.text, parse_mode: 'Markdown' }) }}"
+      },
+      "id": "send-telegram",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1850, 350]
+    }
+  ],
+  "connections": {
+    "Daily Memes (7 PM ET)": {
+      "main": [[
+        { "node": "Fetch r/ProgrammerHumor", "type": "main", "index": 0 },
+        { "node": "Fetch r/WholesomeMemes", "type": "main", "index": 0 },
+        { "node": "Fetch r/me_irl", "type": "main", "index": 0 }
+      ]]
+    },
+    "Fetch r/ProgrammerHumor": {
+      "main": [[{ "node": "Parse Reddit Posts", "type": "main", "index": 0 }]]
+    },
+    "Fetch r/WholesomeMemes": {
+      "main": [[{ "node": "Parse Reddit Posts", "type": "main", "index": 0 }]]
+    },
+    "Fetch r/me_irl": {
+      "main": [[{ "node": "Parse Reddit Posts", "type": "main", "index": 0 }]]
+    },
+    "Parse Reddit Posts": {
+      "main": [[{ "node": "Apply Comedy Filter", "type": "main", "index": 0 }]]
+    },
+    "Apply Comedy Filter": {
+      "main": [[{ "node": "Filter Quality", "type": "main", "index": 0 }]]
+    },
+    "Filter Quality": {
+      "main": [[{ "node": "Select Top 3", "type": "main", "index": 0 }]]
+    },
+    "Select Top 3": {
+      "main": [[{ "node": "Format for Telegram", "type": "main", "index": 0 }]]
+    },
+    "Format for Telegram": {
+      "main": [[{ "node": "Split Messages", "type": "main", "index": 0 }]]
+    },
+    "Split Messages": {
+      "main": [[{ "node": "Send to Telegram", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

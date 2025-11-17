@@ -1,0 +1,562 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Hermetic Skill Auto-Activation Rules - Sacred automation for conscious development",
+  "version": "1.0.0",
+
+  "skills": {
+    "apply-mentalism": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "The All is Mind - Clear mental models create clear code",
+      "promptTriggers": {
+        "keywords": [
+          "architecture", "design", "mental model", "clarity", "concept",
+          "planning", "structure", "organize", "confused", "messy"
+        ],
+        "intentPatterns": [
+          "(design|architect|plan).*?(system|feature|project)",
+          "(clarify|understand).*?(concept|model|architecture)",
+          "(mental|thinking).*?(model|clarity)",
+          "how (should|does).*?(work|organize)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/*.architecture.md",
+          "**/docs/architecture/**",
+          "**/design/**",
+          "**/*-plan.md"
+        ]
+      }
+    },
+
+    "apply-correspondence": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "As Above, So Below - Patterns align across all levels",
+      "promptTriggers": {
+        "keywords": [
+          "consistency", "pattern", "align", "mismatch", "inconsistent",
+          "structure", "organization", "hierarchy", "levels"
+        ],
+        "intentPatterns": [
+          "(align|match|mirror).*?(pattern|structure)",
+          "(inconsistent|mismatch).*?(pattern|structure|design)",
+          "frontend.*?backend",
+          "database.*?api"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/frontend/**",
+          "**/backend/**",
+          "**/api/**",
+          "**/database/**"
+        ]
+      }
+    },
+
+    "apply-vibration": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "hermetic_principle": "Nothing rests - Ship to learn, iterate to perfect",
+      "promptTriggers": {
+        "keywords": [
+          "ship", "deploy", "launch", "release", "momentum", "stuck",
+          "paralysis", "analysis paralysis", "perfectionism", "iterate"
+        ],
+        "intentPatterns": [
+          "(ship|deploy|launch|release).*?(feature|project)",
+          "(stuck|blocked|paralysis)",
+          "analysis.*?paralysis",
+          "(mvp|minimum.*?viable)"
+        ]
+      }
+    },
+
+    "apply-polarity": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "hermetic_principle": "Everything is Dual - Balance opposing forces",
+      "promptTriggers": {
+        "keywords": [
+          "balance", "trade-off", "vs", "versus", "conflict",
+          "contradiction", "opposing", "both", "either or"
+        ],
+        "intentPatterns": [
+          "(balance|trade-?off).*?(speed|quality|performance|cost)",
+          "(speed|fast).*?(vs|versus).*?(quality|correct)",
+          "(either|or).*?(both|and)"
+        ]
+      }
+    },
+
+    "apply-rhythm": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "hermetic_principle": "Everything flows - Honor sustainable cycles",
+      "promptTriggers": {
+        "keywords": [
+          "burnout", "sustainable", "pace", "cycle", "rhythm",
+          "sprint", "marathon", "energy", "rest", "breaks"
+        ],
+        "intentPatterns": [
+          "(sustainable|healthy).*?pace",
+          "(burnout|exhausted|tired)",
+          "(plan|schedule).*?(sprint|cycle|rhythm)"
+        ]
+      }
+    },
+
+    "apply-cause-effect": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "Every Cause has its Effect - Understand consequences",
+      "promptTriggers": {
+        "keywords": [
+          "consequences", "effects", "impact", "downstream",
+          "ripple", "cascade", "breaking change", "migration"
+        ],
+        "intentPatterns": [
+          "(consequence|effect|impact).*?(change|decision)",
+          "what (happens|breaks) (if|when)",
+          "(downstream|ripple).*?(effect|impact)",
+          "(breaking|major).*?change"
+        ]
+      }
+    },
+
+    "apply-gender": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "hermetic_principle": "Gender is in everything - Balance doing with being",
+      "promptTriggers": {
+        "keywords": [
+          "intuition", "logic", "analysis", "feeling",
+          "masculine", "feminine", "creative", "analytical"
+        ],
+        "intentPatterns": [
+          "(balance|harmonize).*(doing|being|logic|intuition)",
+          "(all|only).*(doing|planning|analyzing|building)",
+          "(creative|intuitive).*(vs|and).*(logical|analytical)"
+        ]
+      }
+    },
+
+    "debug-like-master": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "Systematic debugging with Hermetic principles",
+      "promptTriggers": {
+        "keywords": [
+          "bug", "debug", "error", "issue", "broken", "failing",
+          "crash", "exception", "not working", "problem"
+        ],
+        "intentPatterns": [
+          "(fix|debug|solve|investigate).*?(bug|error|issue|problem)",
+          "(not|isn't|doesn't).*?(work|working)",
+          "(crash|fail|throw).*?(error|exception)"
+        ]
+      },
+      "fileTriggers": {
+        "contentPatterns": [
+          "throw new Error",
+          "console\\.error",
+          "try\\s*{[\\s\\S]*catch",
+          "\\.catch\\(",
+          "Promise\\.reject"
+        ]
+      }
+    },
+
+    "design-perfect-architecture": {
+      "type": "hermetic-combined",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "Mentalism + Correspondence + Polarity for architecture",
+      "promptTriggers": {
+        "keywords": [
+          "architecture", "system design", "structure",
+          "refactor", "redesign", "architect"
+        ],
+        "intentPatterns": [
+          "(design|architect|refactor).*?(system|architecture)",
+          "(system|application).*?(design|architecture)",
+          "how.*?(architect|structure|organize)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/*.architecture.md",
+          "**/architecture/**",
+          "**/system-design/**"
+        ]
+      }
+    },
+
+    "ship-sustainably": {
+      "type": "hermetic-combined",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "hermetic_principle": "Vibration + Rhythm + Gender for sustainable shipping",
+      "promptTriggers": {
+        "keywords": [
+          "ship", "release", "deploy", "launch", "sustainable",
+          "deadline", "timeline", "schedule"
+        ],
+        "intentPatterns": [
+          "(ship|release|deploy).*?(sustainable|safely|smoothly)",
+          "(plan|schedule).*(release|launch|deployment)",
+          "(6-day|sprint|cycle).*?(ship|release)"
+        ]
+      }
+    },
+
+    "master-complex-decisions": {
+      "type": "hermetic-combined",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "Mentalism + Cause-Effect + Polarity + Gender for decisions",
+      "promptTriggers": {
+        "keywords": [
+          "decision", "choice", "should we", "which approach",
+          "trade-off", "pros and cons", "evaluate"
+        ],
+        "intentPatterns": [
+          "(make|making).*?decision",
+          "(should|which).*(approach|method|technology|framework)",
+          "(pros|cons|trade-?off)",
+          "(evaluate|compare|assess).*?(option|choice|approach)"
+        ]
+      }
+    },
+
+    "learn-any-skill-fast": {
+      "type": "hermetic-workflow",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "Rapid skill acquisition with Hermetic principles",
+      "promptTriggers": {
+        "keywords": [
+          "learn", "learning", "study", "master", "skill",
+          "new technology", "getting started", "tutorial"
+        ],
+        "intentPatterns": [
+          "(learn|master|study).*(new|skill|technology|framework)",
+          "(getting started|how to learn).*?(with|using)",
+          "(quick|fast|rapid).*?(learn|tutorial)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/Learning/**",
+          "**/*-learning*.md",
+          "**/*-study*.md",
+          "**/tutorials/**"
+        ]
+      }
+    },
+
+    "apply-feynman-technique": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Richard Feynman",
+      "promptTriggers": {
+        "keywords": [
+          "explain", "simple", "understand", "confused",
+          "eli5", "teach", "simplify"
+        ],
+        "intentPatterns": [
+          "(explain|simplify).*?(simple|clearly)",
+          "(don't|doesn't).*?understand",
+          "(teach|show).*(how|what)"
+        ]
+      }
+    },
+
+    "apply-encoding-method": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Justin Sung",
+      "promptTriggers": {
+        "keywords": [
+          "remember", "retain", "memorize", "recall",
+          "forget", "forgetting", "memory"
+        ],
+        "intentPatterns": [
+          "(remember|retain|recall).*?(information|knowledge)",
+          "(keep|can't).*?forget",
+          "improve.*?memory"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": ["**/Learning/**"]
+      }
+    },
+
+    "apply-metalearning": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "high",
+      "learning_master": "Scott Young",
+      "promptTriggers": {
+        "keywords": [
+          "how to learn", "learning strategy", "study plan",
+          "learning plan", "metalearning"
+        ],
+        "intentPatterns": [
+          "how.*?learn.*?(effectively|efficiently|fast)",
+          "(create|plan).*?(learning|study).*?plan",
+          "best.*?way.*?learn"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": ["**/Learning/**"]
+      }
+    },
+
+    "apply-deliberate-practice": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Anders Ericsson",
+      "promptTriggers": {
+        "keywords": [
+          "practice", "improve", "get better", "skill",
+          "plateau", "stuck", "not improving"
+        ],
+        "intentPatterns": [
+          "(improve|get better).*?(skill|ability)",
+          "(practice|train).*?(deliberately|effectively)",
+          "(stuck|plateau|not improving)"
+        ]
+      }
+    },
+
+    "apply-focused-diffuse": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Barbara Oakley",
+      "promptTriggers": {
+        "keywords": [
+          "stuck", "breakthrough", "insight", "procrastinating",
+          "focus", "concentration", "distracted"
+        ],
+        "intentPatterns": [
+          "(stuck|can't solve|no progress)",
+          "(procrastinat|avoid|putting off)",
+          "(focus|concentrate).*?(better|more)"
+        ]
+      }
+    },
+
+    "apply-observation-method": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Leonardo da Vinci",
+      "promptTriggers": {
+        "keywords": [
+          "observe", "observation", "pattern", "notice",
+          "detail", "cross-domain", "connection"
+        ],
+        "intentPatterns": [
+          "(observe|notice|see).*?(pattern|detail)",
+          "(connect|relate).*?(domain|field|area)",
+          "how.*?(relate|connect|similar)"
+        ]
+      }
+    },
+
+    "apply-visualization": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Nikola Tesla",
+      "promptTriggers": {
+        "keywords": [
+          "visualize", "mental model", "imagine", "picture",
+          "see", "diagram", "mental simulation"
+        ],
+        "intentPatterns": [
+          "(visualize|imagine|picture).*?(how|system|flow)",
+          "mental.*?(model|image|simulation)",
+          "(diagram|draw|sketch).*?understanding"
+        ]
+      }
+    },
+
+    "apply-tracking-discipline": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Benjamin Franklin",
+      "promptTriggers": {
+        "keywords": [
+          "track", "measure", "progress", "metrics",
+          "discipline", "consistency", "daily practice"
+        ],
+        "intentPatterns": [
+          "(track|measure).*?progress",
+          "(daily|consistent).*?(practice|habit)",
+          "how.*?(stay|maintain).*?(consistent|disciplined)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/progress*.md",
+          "**/journal*.md",
+          "**/tracking*.md"
+        ]
+      }
+    },
+
+    "apply-pattern-recognition": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "John von Neumann",
+      "promptTriggers": {
+        "keywords": [
+          "pattern", "recurring", "similar", "common",
+          "formula", "framework", "abstraction"
+        ],
+        "intentPatterns": [
+          "(find|identify|recognize).*?pattern",
+          "(similar|same|recurring).*?(problem|solution)",
+          "(abstract|generalize|formalize)"
+        ]
+      }
+    },
+
+    "apply-classification": {
+      "type": "learning-method",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "learning_master": "Aristotle",
+      "promptTriggers": {
+        "keywords": [
+          "organize", "categorize", "classify", "taxonomy",
+          "structure", "group", "systematic"
+        ],
+        "intentPatterns": [
+          "(organize|categorize|classify).*?(knowledge|information)",
+          "(taxonomy|classification|system)",
+          "systematic.*?(approach|organization)"
+        ]
+      }
+    },
+
+    "organize-filesystem": {
+      "type": "utility",
+      "enforcement": "suggest",
+      "priority": "low",
+      "hermetic_principle": "Correspondence - Physical structure mirrors mental clarity",
+      "promptTriggers": {
+        "keywords": [
+          "organize files", "clean up", "file organization",
+          "directory structure", "messy files", "cluttered"
+        ],
+        "intentPatterns": [
+          "(organize|clean|tidy).*?(files|directory|folder|project)",
+          "(messy|cluttered|disorganized).*?(files|directory)",
+          "(file|directory).*?(organization|structure)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/projects/**",
+          "~/Downloads/**"
+        ]
+      }
+    },
+
+    "n8n-wizard": {
+      "type": "automation-workflow",
+      "enforcement": "suggest",
+      "priority": "high",
+      "hermetic_principle": "Rhythm + Vibration + Correspondence - Automate workflow imports sustainably",
+      "promptTriggers": {
+        "keywords": [
+          "import n8n workflow", "n8n wizard", "setup n8n automation",
+          "import workflow", "n8n json", "workflow import",
+          "n8n database", "supabase workflow"
+        ],
+        "intentPatterns": [
+          "(import|setup|configure).*?(n8n|workflow)",
+          "n8n.*?(import|setup|wizard|automation)",
+          "(workflow|automation).*?(import|setup|database)",
+          "(analyze|import).*?workflow.*?json"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/n8n-workflows/**/*.json",
+          "**/automation/**/*.json",
+          "**/workflows/**/*.json"
+        ],
+        "fileNames": [
+          "*workflow*.json",
+          "*n8n*.json"
+        ]
+      }
+    },
+
+    "notify-ormus-whatsapp": {
+      "type": "communication",
+      "enforcement": "auto-trigger",
+      "priority": "high",
+      "hermetic_principle": "Rhythm - Timely communication maintains flow",
+      "promptTriggers": {
+        "keywords": [
+          "send me a whatsapp", "notify me on whatsapp", "whatsapp me",
+          "message me on whatsapp", "let me know on whatsapp",
+          "whatsapp when done", "whatsapp notification"
+        ],
+        "intentPatterns": [
+          "(send|notify|message).*?whatsapp",
+          "whatsapp.*?(when|me|notification)",
+          "(complete|done|finished).*?(notify|whatsapp)"
+        ],
+        "completionKeywords": [
+          "research complete", "implementation complete", "refactoring complete",
+          "deployment complete", "task complete", "work complete",
+          "all done", "finished", "completed successfully"
+        ]
+      },
+      "autoTriggerConditions": {
+        "description": "Auto-send WhatsApp notification when major work completes",
+        "triggers": [
+          "User explicitly requests WhatsApp notification",
+          "Major task completion detected (research, refactoring, deployment)",
+          "Significant file changes committed to git",
+          "Error requiring Ormus's attention"
+        ]
+      }
+    }
+  },
+
+  "hermetic_notes": {
+    "philosophy": "Skills auto-activate based on sacred intention meeting material context",
+    "principles": {
+      "Mentalism": "Skills are invoked when mind (keywords) meets matter (files)",
+      "Correspondence": "Trigger patterns mirror conceptual hierarchies",
+      "Vibration": "Auto-activation creates continuous quality momentum",
+      "Polarity": "Balance automation (hooks) with intention (commands)",
+      "Rhythm": "Skills activate in natural workflow rhythm",
+      "Cause-Effect": "Skills prevent negative consequences automatically",
+      "Gender": "Hooks (doing) + Skills (wisdom) = Wholeness"
+    }
+  }
+}

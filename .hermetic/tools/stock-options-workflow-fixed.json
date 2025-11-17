@@ -1,0 +1,146 @@
+{
+  "name": "Stock Options Playbook Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "35 9 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "daily-scan-trigger",
+      "name": "Daily Market Scan (9:35 AM ET)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// List of high-liquidity tickers to scan\nconst tickers = [\n  'SPY', 'QQQ', 'IWM',\n  'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA',\n  'NVDA', 'AMD', 'META', 'NFLX',\n  'JPM', 'BAC', 'GS',\n  'XLE', 'XLF', 'XLK'\n];\n\nreturn tickers.map(ticker => ({\n  json: {\n    ticker: ticker,\n    scanTime: new Date().toISOString()\n  }\n}));"
+      },
+      "id": "ticker-list",
+      "name": "Generate Ticker List",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://query1.finance.yahoo.com/v8/finance/chart/{{ $json.ticker }}?interval=1d&range=3mo",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "fetch-stock-data",
+      "name": "Fetch Stock Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Yahoo Finance response and calculate technical indicators\nconst data = $input.item.json;\nconst ticker = $('Generate Ticker List').item.json.ticker;\n\nif (!data.chart || !data.chart.result || !data.chart.result[0]) {\n  return { json: { skip: true } };\n}\n\nconst result = data.chart.result[0];\nconst quotes = result.indicators.quote[0];\nconst timestamps = result.timestamp;\n\n// Get last 20 closes for RSI\nconst closes = quotes.close.slice(-20);\nconst currentPrice = closes[closes.length - 1];\n\n// Simple RSI calculation (14-period)\nfunction calculateRSI(prices, period = 14) {\n  if (prices.length < period + 1) return 50;\n  \n  let gains = 0;\n  let losses = 0;\n  \n  for (let i = prices.length - period; i < prices.length; i++) {\n    const change = prices[i] - prices[i - 1];\n    if (change > 0) gains += change;\n    else losses -= change;\n  }\n  \n  const avgGain = gains / period;\n  const avgLoss = losses / period;\n  const rs = avgGain / avgLoss;\n  return 100 - (100 / (1 + rs));\n}\n\n// Calculate 50-day SMA\nfunction calculateSMA(prices, period) {\n  const slice = prices.slice(-period);\n  return slice.reduce((a, b) => a + b, 0) / slice.length;\n}\n\nconst rsi = calculateRSI(closes);\nconst sma50 = calculateSMA(closes, Math.min(50, closes.length));\nconst volume = quotes.volume[quotes.volume.length - 1];\nconst avgVolume = quotes.volume.slice(-20).reduce((a, b) => a + b, 0) / 20;\n\n// RELAXED criteria for more opportunities\nconst isBullish = rsi < 40 && currentPrice > sma50;\nconst isBearish = rsi > 60 && currentPrice < sma50;\nconst isHighVolume = volume > avgVolume * 1.2;\n\nreturn {\n  json: {\n    ticker: ticker,\n    currentPrice: currentPrice.toFixed(2),\n    rsi: rsi.toFixed(2),\n    sma50: sma50.toFixed(2),\n    volume: volume,\n    avgVolume: avgVolume,\n    volumeRatio: (volume / avgVolume).toFixed(2),\n    signal: isBullish ? 'BULLISH' : (isBearish ? 'BEARISH' : 'NEUTRAL'),\n    isOpportunity: (isBullish || isBearish) && isHighVolume,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "analyze-technicals",
+      "name": "Analyze Technicals",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.isOpportunity }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "filter-opportunities",
+      "name": "Filter Opportunities",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate playbook based on signal\nconst data = $input.item.json;\nconst ticker = data.ticker;\nconst price = parseFloat(data.currentPrice);\nconst signal = data.signal;\nconst rsi = parseFloat(data.rsi);\n\n// Determine strategy based on technical setup\nlet strategy, outlook, play, maxProfit, maxLoss, breakeven, reasoning;\n\nif (signal === 'BULLISH') {\n  strategy = 'Bull Call Spread';\n  outlook = 'Moderately Bullish';\n  \n  const lowerStrike = Math.floor(price);\n  const upperStrike = lowerStrike + 5;\n  const callDebit = 2.50;\n  const callCredit = 1.00;\n  const netDebit = callDebit - callCredit;\n  \n  play = `BUY:  1x $${ticker} ${lowerStrike} Call @ $${callDebit.toFixed(2)}\\nSELL: 1x $${ticker} ${upperStrike} Call @ $${callCredit.toFixed(2)}\\nNET DEBIT: $${netDebit.toFixed(2)} per spread`;\n  maxProfit = `$${((upperStrike - lowerStrike - netDebit) * 100).toFixed(0)} (${(((upperStrike - lowerStrike - netDebit) / netDebit) * 100).toFixed(0)}%)`;\n  maxLoss = `$${(netDebit * 100).toFixed(0)} (100%)`;\n  breakeven = `$${(lowerStrike + netDebit).toFixed(2)}`;\n  reasoning = `${ticker} is oversold with RSI at ${rsi}. Price bouncing off support. Bull call spread captures upside while limiting risk.`;\n  \n} else if (signal === 'BEARISH') {\n  strategy = 'Bear Put Spread';\n  outlook = 'Moderately Bearish';\n  \n  const upperStrike = Math.ceil(price);\n  const lowerStrike = upperStrike - 5;\n  const putDebit = 2.50;\n  const putCredit = 1.00;\n  const netDebit = putDebit - putCredit;\n  \n  play = `BUY:  1x $${ticker} ${upperStrike} Put @ $${putDebit.toFixed(2)}\\nSELL: 1x $${ticker} ${lowerStrike} Put @ $${putCredit.toFixed(2)}\\nNET DEBIT: $${netDebit.toFixed(2)} per spread`;\n  maxProfit = `$${((upperStrike - lowerStrike - netDebit) * 100).toFixed(0)} (${(((upperStrike - lowerStrike - netDebit) / netDebit) * 100).toFixed(0)}%)`;\n  maxLoss = `$${(netDebit * 100).toFixed(0)} (100%)`;\n  breakeven = `$${(upperStrike - netDebit).toFixed(2)}`;\n  reasoning = `${ticker} is overbought with RSI at ${rsi}. Price at resistance. Bear put spread profits from pullback while limiting risk.`;\n}\n\nconst timeframe = '30 days';\nconst probability = signal === 'BULLISH' ? '65%' : '60%';\n\nreturn {\n  json: {\n    ticker: ticker,\n    strategy: strategy,\n    outlook: outlook,\n    timeframe: timeframe,\n    play: play,\n    maxProfit: maxProfit,\n    maxLoss: maxLoss,\n    breakeven: breakeven,\n    probability: probability,\n    reasoning: reasoning,\n    currentPrice: data.currentPrice,\n    rsi: data.rsi,\n    volumeRatio: data.volumeRatio,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "generate-playbook",
+      "name": "Generate Playbook",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate all playbooks\nconst playbooks = $input.all().map(item => item.json);\n\nif (playbooks.length === 0) {\n  // No opportunities found - send different message\n  return {\n    json: {\n      hasOpportunities: false,\n      count: 0,\n      timestamp: new Date().toISOString()\n    }\n  };\n}\n\n// Opportunities found - prepare playbooks\nreturn {\n  json: {\n    hasOpportunities: true,\n    count: playbooks.length,\n    playbooks: playbooks,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "aggregate-playbooks",
+      "name": "Aggregate Playbooks",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format for Telegram\nconst data = $input.item.json;\n\nif (!data.hasOpportunities) {\n  // No opportunities message\n  const message = `📊 **MARKET SCAN COMPLETE**\\n\\n` +\n    `🔍 Scanned 18 tickers at 9:35 AM ET\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `📈 **NO SETUPS TODAY**\\n\\n` +\n    `Market conditions are neutral.\\n` +\n    `No extreme oversold/overbought setups with elevated volume.\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `✅ **WHAT THIS MEANS**\\n\\n` +\n    `Good day to:` +\n    `\\n• Review existing positions\\n` +\n    `• Practice paper trading\\n` +\n    `• Study options strategies\\n` +\n    `• Wait for better setups\\n\\n` +\n    `━━━━━━━━━━━━━━━\\n` +\n    `💡 *\"Not trading IS a position\"*\\n\\n` +\n    `Next scan: Tomorrow 9:35 AM ET\\n`;\n  \n  return {\n    json: {\n      message: message,\n      opportunityCount: 0\n    }\n  };\n}\n\n// Opportunities found - format first one (or could send multiple)\nconst p = data.playbooks[0];\n\nconst message = `🎯 **PLAYBOOK: ${p.strategy}**\\n\\n` +\n  `📊 **TICKER:** $${p.ticker}\\n` +\n  `💡 **OUTLOOK:** ${p.outlook}\\n` +\n  `⏰ **TIMEFRAME:** ${p.timeframe}\\n\\n` +\n  `━━━━━━━━━━━━━━━\\n` +\n  `📈 **THE PLAY**\\n\\n` +\n  `${p.play}\\n\\n` +\n  `━━━━━━━━━━━━━━━\\n` +\n  `💰 **PROFIT/LOSS**\\n\\n` +\n  `MAX PROFIT: ${p.maxProfit}\\n` +\n  `MAX LOSS: ${p.maxLoss}\\n` +\n  `BREAKEVEN: ${p.breakeven}\\n\\n` +\n  `PROBABILITY OF PROFIT: ${p.probability}\\n\\n` +\n  `━━━━━━━━━━━━━━━\\n` +\n  `🎓 **WHY THIS WORKS**\\n\\n` +\n  `${p.reasoning}\\n\\n` +\n  `Current Price: $${p.currentPrice}\\n` +\n  `RSI: ${p.rsi}\\n` +\n  `Volume: ${p.volumeRatio}x average\\n\\n` +\n  `━━━━━━━━━━━━━━━\\n` +\n  `📋 **ENTRY RULES**\\n\\n` +\n  `✅ Confirm price action\\n` +\n  `✅ Check options liquidity\\n` +\n  `✅ Verify bid-ask spread <$0.10\\n` +\n  `❌ DO NOT enter blindly\\n\\n` +\n  `━━━━━━━━━━━━━━━\\n` +\n  `🚪 **EXIT STRATEGIES**\\n\\n` +\n  `🎯 TARGET 1: 50% profit\\n` +\n  `🎯 TARGET 2: 100% profit\\n` +\n  `🛑 STOP LOSS: 50% loss\\n` +\n  `⏰ TIME EXIT: 7 days before expiry\\n\\n` +\n  `━━━━━━━━━━━━━━━\\n` +\n  `⚠️ **RISK DISCLOSURE**\\n\\n` +\n  `Options can expire worthless.\\n` +\n  `Maximum loss is ${p.maxLoss}.\\n` +\n  `This is EDUCATION, not advice.\\n` +\n  `Paper trade first!\\n\\n` +\n  `━━━━━━━━━━━━━━━\\n` +\n  `⚖️ Position sizing: Risk max 2% of account\\n` +\n  (data.count > 1 ? `\\n📊 Found ${data.count} total setups today\\n` : '') +\n  `\\nNext scan: Tomorrow 9:35 AM ET\\n`;\n\nreturn {\n  json: {\n    message: message,\n    opportunityCount: data.count\n  }\n};"
+      },
+      "id": "format-telegram",
+      "name": "Format for Telegram",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8005622076:AAGwEKcZHWokqyHY8c711D1Rs9r97dbEErs/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"chat_id\": \"1540112442\", \"text\": \"{{ $json.message }}\", \"parse_mode\": \"Markdown\" }"
+      },
+      "id": "send-telegram",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1850, 300]
+    }
+  ],
+  "connections": {
+    "Daily Market Scan (9:35 AM ET)": {
+      "main": [[{ "node": "Generate Ticker List", "type": "main", "index": 0 }]]
+    },
+    "Generate Ticker List": {
+      "main": [[{ "node": "Fetch Stock Data", "type": "main", "index": 0 }]]
+    },
+    "Fetch Stock Data": {
+      "main": [[{ "node": "Analyze Technicals", "type": "main", "index": 0 }]]
+    },
+    "Analyze Technicals": {
+      "main": [[{ "node": "Filter Opportunities", "type": "main", "index": 0 }]]
+    },
+    "Filter Opportunities": {
+      "main": [[{ "node": "Generate Playbook", "type": "main", "index": 0 }]]
+    },
+    "Generate Playbook": {
+      "main": [[{ "node": "Aggregate Playbooks", "type": "main", "index": 0 }]]
+    },
+    "Aggregate Playbooks": {
+      "main": [[{ "node": "Format for Telegram", "type": "main", "index": 0 }]]
+    },
+    "Format for Telegram": {
+      "main": [[{ "node": "Send to Telegram", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

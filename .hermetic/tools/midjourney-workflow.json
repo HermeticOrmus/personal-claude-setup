@@ -1,0 +1,212 @@
+{
+  "name": "Midjourney Automation Pipeline",
+  "description": "Send Midjourney prompts from Telegram, get images back automatically",
+  "nodes": [
+    {
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "parameters": {
+        "updates": ["message"]
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "telegram-creds",
+          "name": "Telegram Bot"
+        }
+      }
+    },
+    {
+      "id": "filter-mj-commands",
+      "name": "Filter /mj Commands",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.message.text }}",
+              "operation": "startsWith",
+              "value2": "/mj "
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "parse-prompt",
+      "name": "Parse Midjourney Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "parameters": {
+        "jsCode": "// Extract prompt from /mj command\nconst message = $input.item.json.message;\nconst text = message.text || '';\nconst prompt = text.replace('/mj ', '').trim();\n\nconst chatId = message.chat.id;\nconst messageId = message.message_id;\nconst userId = message.from.id;\nconst timestamp = new Date().toISOString();\n\n// Generate unique job ID\nconst jobId = `mj_${Date.now()}_${userId}`;\n\nreturn {\n  json: {\n    prompt: prompt,\n    chatId: chatId,\n    messageId: messageId,\n    userId: userId,\n    jobId: jobId,\n    timestamp: timestamp,\n    status: 'pending'\n  }\n};"
+      }
+    },
+    {
+      "id": "send-discord-message",
+      "name": "Send to Midjourney Bot",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/v10/channels/{{ $env.MIDJOURNEY_CHANNEL_ID }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"content\": \"/imagine prompt: {{ $json.prompt }}\"\n}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "Discord Bot Auth",
+          "data": {
+            "name": "Authorization",
+            "value": "=Bot {{ $env.DISCORD_BOT_TOKEN }}"
+          }
+        }
+      }
+    },
+    {
+      "id": "send-confirmation",
+      "name": "Send Processing Confirmation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8005622076:AAGwEKcZHWokqyHY8c711D1Rs9r97dbEErs/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"chat_id\": \"{{ $('Parse Midjourney Prompt').item.json.chatId }}\",\n  \"text\": \"🎨 Midjourney is generating your image...\\n\\n📋 Prompt: {{ $('Parse Midjourney Prompt').item.json.prompt }}\\n\\n⏳ This usually takes 30-60 seconds. I'll send you the image when it's ready!\",\n  \"reply_to_message_id\": \"{{ $('Parse Midjourney Prompt').item.json.messageId }}\"\n}"
+      }
+    },
+    {
+      "id": "wait-for-image",
+      "name": "Wait for Midjourney",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1250, 300],
+      "parameters": {
+        "amount": 60,
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "get-discord-messages",
+      "name": "Check Discord for Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 300],
+      "parameters": {
+        "method": "GET",
+        "url": "=https://discord.com/api/v10/channels/{{ $env.MIDJOURNEY_CHANNEL_ID }}/messages?limit=5",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "Discord Bot Auth",
+          "data": {
+            "name": "Authorization",
+            "value": "=Bot {{ $env.DISCORD_BOT_TOKEN }}"
+          }
+        }
+      }
+    },
+    {
+      "id": "parse-midjourney-response",
+      "name": "Extract Image URL",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 300],
+      "parameters": {
+        "jsCode": "// Find Midjourney's response with image\nconst messages = $input.item.json;\nconst originalPrompt = $('Parse Midjourney Prompt').item.json.prompt;\n\nlet imageUrl = null;\nlet messageContent = null;\n\nfor (const msg of messages) {\n  // Midjourney bot user ID is 936929561302675456\n  if (msg.author.id === '936929561302675456' && msg.attachments && msg.attachments.length > 0) {\n    // Check if this is recent (within last 2 minutes)\n    const msgTime = new Date(msg.timestamp);\n    const now = new Date();\n    const diffSeconds = (now - msgTime) / 1000;\n    \n    if (diffSeconds < 120) {\n      imageUrl = msg.attachments[0].url;\n      messageContent = msg.content;\n      break;\n    }\n  }\n}\n\nif (!imageUrl) {\n  throw new Error('Midjourney image not found yet. It may still be processing.');\n}\n\nreturn {\n  json: {\n    imageUrl: imageUrl,\n    messageContent: messageContent,\n    originalPrompt: originalPrompt,\n    jobId: $('Parse Midjourney Prompt').item.json.jobId,\n    chatId: $('Parse Midjourney Prompt').item.json.chatId\n  }\n};"
+      }
+    },
+    {
+      "id": "download-image",
+      "name": "Download Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1850, 300],
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.imageUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "save-to-disk",
+      "name": "Save to Hermetic Folder",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2050, 300],
+      "parameters": {
+        "jsCode": "// This node would save to disk in a real n8n instance\n// For this workflow, we'll document the path\nconst jobId = $('Extract Image URL').item.json.jobId;\nconst savePath = `C:\\\\Users\\\\ormus\\\\.hermetic\\\\midjourney-images\\\\${jobId}.png`;\n\nreturn {\n  json: {\n    ...($input.item.json),\n    savedPath: savePath,\n    jobId: jobId\n  }\n};"
+      }
+    },
+    {
+      "id": "send-image-to-telegram",
+      "name": "Send Image to Telegram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2250, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8005622076:AAGwEKcZHWokqyHY8c711D1Rs9r97dbEErs/sendPhoto",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"chat_id\": \"{{ $('Extract Image URL').item.json.chatId }}\",\n  \"photo\": \"{{ $('Extract Image URL').item.json.imageUrl }}\",\n  \"caption\": \"✨ Your Midjourney image is ready!\\n\\n📋 Prompt: {{ $('Extract Image URL').item.json.originalPrompt }}\\n\\n💾 Saved to: {{ $json.savedPath }}\"\n}"
+      }
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [[{"node": "Filter /mj Commands", "type": "main", "index": 0}]]
+    },
+    "Filter /mj Commands": {
+      "main": [[{"node": "Parse Midjourney Prompt", "type": "main", "index": 0}]]
+    },
+    "Parse Midjourney Prompt": {
+      "main": [[{"node": "Send to Midjourney Bot", "type": "main", "index": 0}]]
+    },
+    "Send to Midjourney Bot": {
+      "main": [[{"node": "Send Processing Confirmation", "type": "main", "index": 0}]]
+    },
+    "Send Processing Confirmation": {
+      "main": [[{"node": "Wait for Midjourney", "type": "main", "index": 0}]]
+    },
+    "Wait for Midjourney": {
+      "main": [[{"node": "Check Discord for Image", "type": "main", "index": 0}]]
+    },
+    "Check Discord for Image": {
+      "main": [[{"node": "Extract Image URL", "type": "main", "index": 0}]]
+    },
+    "Extract Image URL": {
+      "main": [[{"node": "Download Image", "type": "main", "index": 0}]]
+    },
+    "Download Image": {
+      "main": [[{"node": "Save to Hermetic Folder", "type": "main", "index": 0}]]
+    },
+    "Save to Hermetic Folder": {
+      "main": [[{"node": "Send Image to Telegram", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "telegram": {
+    "enabled": true,
+    "chatId": "1540112442",
+    "severityFilter": ["WARNING", "CRITICAL"],
+    "description": "Telegram alerts via bot API. Set TELEGRAM_BOT_TOKEN env var."
+  },
+  "discord": {
+    "enabled": false,
+    "webhookUrl": "",
+    "severityFilter": ["CRITICAL"],
+    "description": "Discord alerts via webhook."
+  },
+  "throttling": {
+    "enabled": true,
+    "cooldownMinutes": 60,
+    "maxAlertsPerHour": 10,
+    "description": "Prevents alert fatigue. CRITICAL alerts bypass throttling."
+  }
+}

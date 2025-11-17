@@ -1,0 +1,19 @@
+[project]
+name = "hermetic-env-manager"
+version = "1.0.0"
+description = "Hermetic Environment Variables MCP Server - Sacred credential management across projects"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "cryptography>=42.0.0",
+    "pydantic>=2.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+hermetic-env-manager = "hermetic_env_manager.server:main"

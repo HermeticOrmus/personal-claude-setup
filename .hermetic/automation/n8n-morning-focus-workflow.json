@@ -1,0 +1,122 @@
+{
+  "name": "🌅 Morning Focus - Hermetic Daily Guidance",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24,
+              "triggerAtHour": 7,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-morning",
+      "name": "Every Morning at 7 AM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// MORNING FOCUS MESSAGE GENERATOR\n// Determines current sprint day, priorities, and Hermetic principle focus\n\nconst today = new Date();\nconst dayOfWeek = today.toLocaleDateString('en-US', { weekday: 'long' });\nconst dateStr = today.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });\n\n// Calculate which day of 90-day sprint we're on\nconst sprintStartDate = new Date('2025-10-30'); // UPDATE THIS to actual start date\nconst daysSinceStart = Math.floor((today - sprintStartDate) / (1000 * 60 * 60 * 24));\nconst currentDay = daysSinceStart + 1;\nconst currentWeek = Math.ceil(currentDay / 7);\nconst currentSprint = Math.ceil(currentDay / 6);\nconst dayInSprint = ((currentDay - 1) % 6) + 1;\n\n// Hermetic Principles cycle (7-day cycle)\nconst hermetic = [\n  { day: 0, name: 'Rest & Integration', focus: 'Reflect on the week, honor the Sabbath' },\n  { day: 1, name: 'Mentalism', focus: 'Clarity of vision - What\\'s the mental model for today?' },\n  { day: 2, name: 'Correspondence', focus: 'Patterns across levels - Does structure mirror values?' },\n  { day: 3, name: 'Vibration', focus: 'Create momentum - What ships today?' },\n  { day: 4, name: 'Polarity', focus: 'Balance opposites - Speed vs Quality, Doing vs Being' },\n  { day: 5, name: 'Rhythm', focus: 'Sustainable pace - Are you honoring your energy?' },\n  { day: 6, name: 'Cause & Effect', focus: 'Consequences matter - What ripples will today create?' }\n];\n\nconst dayOfWeekNum = today.getDay();\nconst todaysPrinciple = hermetic[dayOfWeekNum];\n\n// Sprint-based priorities (adjust based on current sprint)\nlet priorities = [];\n\nif (currentDay <= 6) {\n  // Sprint 1: Infrastructure + First Outreach\n  priorities = [\n    '🔧 Set up infrastructure (CRM, scheduling, payment)',\n    '👥 Identify 20 warm contacts for outreach',\n    '📞 Create discovery call script'\n  ];\n} else if (currentDay <= 12) {\n  // Sprint 2: Service Delivery Framework\n  priorities = [\n    '📋 Document 7-week client journey',\n    '🎯 Create session templates',\n    '✅ Conduct first discovery calls'\n  ];\n} else if (currentDay <= 18) {\n  // Sprint 3: First Client Onboarding\n  priorities = [\n    '🌟 Onboard first 1-2 clients',\n    '🔄 Refine templates based on experience',\n    '📨 Second outreach wave (30 messages)'\n  ];\n} else if (currentDay <= 30) {\n  // Sprints 4-5: Acquisition Acceleration\n  priorities = [\n    '📞 Conduct 10+ discovery calls',\n    '💰 Convert 3-4 new clients',\n    '📝 Document transformation stories'\n  ];\n} else if (currentDay <= 60) {\n  // Sprints 6-8: Systematize & Scale\n  priorities = [\n    '🔗 Launch referral system',\n    '✍️ Write client case studies',\n    '📢 Seed content marketing (LinkedIn/Medium)'\n  ];\n} else {\n  // Sprints 9-15: Push to 10+ and Sustain\n  priorities = [\n    '🎯 Push to 10+ clients',\n    '📊 Systematize delivery process',\n    '📖 Document acquisition playbook'\n  ];\n}\n\n// Sunday override\nif (dayOfWeekNum === 0) {\n  priorities = [\n    '🛌 REST - This is sacred and non-negotiable',\n    '🧘 Integration - Reflect on the week',\n    '📝 Planning - Prepare for next week (lightly)'\n  ];\n}\n\n// Inspiring quotes cycling\nconst quotes = [\n  '\"First serve humans. Then beautify the tools of service.\" - Illumination Wisdom',\n  '\"The system is ready. The plan is clear. The mission is sacred.\" - 90-Day Sprint',\n  '\"You don\\'t need more planning. You need to ship to actual paying clients.\" - Hermetic Truth',\n  '\"10 clients at $500/month is not a dream. It\\'s a decision backed by systems.\" - Studio Producer',\n  '\"Quality over quantity. 10 deeply served clients > 20 mediocre experiences.\" - Sacred Constraint',\n  '\"The Midnight Sun shines light at midnight - through darkness, not avoiding it.\" - Midnight Sun Philosophy',\n  '\"Build revenue. Serve transformation. Return to visuals when earned through success.\" - The Path'\n];\n\nconst todaysQuote = quotes[currentDay % quotes.length];\n\n// Build the message\nconst message = `🌅 **GOOD MORNING, HERMETIC ORMUS**\n\n📅 **${dayOfWeek}, ${dateStr}**\n🗓 Day ${currentDay} of 90 | Week ${currentWeek} | Sprint ${currentSprint} (Day ${dayInSprint}/6)\n\n---\n\n🔱 **TODAY'S HERMETIC PRINCIPLE:**\n**${todaysPrinciple.name}**\n_${todaysPrinciple.focus}_\n\n---\n\n🎯 **TOP 3 PRIORITIES:**\n${priorities.map((p, i) => `${i + 1}. ${p}`).join('\\n')}\n\n---\n\n💭 **REFLECTION PROMPT:**\n_What would make today feel successful? Not productive—successful._\n\n---\n\n✨ **INSPIRATION:**\n${todaysQuote}\n\n---\n\n⚡ **ENERGY CHECK:**\nHow's your energy right now? (Reply: 1-10)\n\nLet's make it a day of sacred service. 🔥`;\n\nreturn [{ json: { message, currentDay, currentWeek, principle: todaysPrinciple.name } }];"
+      },
+      "id": "code-morning-message",
+      "name": "Generate Morning Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $env.TELEGRAM_CHAT_ID }}",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-send-morning",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [650, 300],
+      "credentials": {
+        "telegramApi": {
+          "id": "YOUR_TELEGRAM_CREDENTIALS_ID",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:/Users/ormus/.hermetic/daily-logs/morning-{{ $now.format('yyyy-MM-dd') }}.json",
+        "options": {}
+      },
+      "id": "save-morning-log",
+      "name": "Log Morning Check-In",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Every Morning at 7 AM": {
+      "main": [
+        [
+          {
+            "node": "Generate Morning Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Morning Message": {
+      "main": [
+        [
+          {
+            "node": "Send to Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to Telegram": {
+      "main": [
+        [
+          {
+            "node": "Log Morning Check-In",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "Hermetic",
+      "id": "hermetic-automation"
+    },
+    {
+      "name": "Daily Rhythm",
+      "id": "daily-rhythm"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-30T00:00:00.000Z",
+  "versionId": "1"
+}

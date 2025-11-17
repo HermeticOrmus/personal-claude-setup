@@ -1,0 +1,117 @@
+{
+  "_comment": "MCP Server Configuration Template",
+  "_purpose": "Add to claude_desktop_config.json to enable runtime data discovery",
+  "_principle": "Mentalism - Agent queries reality, doesn't hardcode assumptions",
+
+  "mcpServers": {
+
+    "your-service-name": {
+      "_description": "Replace 'your-service-name' with actual service identifier",
+      "_examples": ["filesystem", "github", "postgres", "redis", "custom-api"],
+
+      "command": "node",
+      "_command_comment": "Executable that starts the MCP server (node, python3, npx, etc.)",
+
+      "args": [
+        "/path/to/mcp-server/index.js"
+      ],
+      "_args_comment": "Arguments passed to the command. Usually path to server script.",
+
+      "env": {
+        "API_KEY": "your-api-key-here",
+        "ENDPOINT": "https://api.example.com",
+        "PORT": "8080"
+      },
+      "_env_comment": "Environment variables the MCP server needs (API keys, endpoints, etc.)"
+    },
+
+    "example-filesystem": {
+      "_description": "Example: Filesystem MCP server for file operations",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\ormus\\projects"
+      ],
+      "env": {}
+    },
+
+    "example-github": {
+      "_description": "Example: GitHub MCP server for repo operations",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_your_token_here"
+      }
+    },
+
+    "example-postgres": {
+      "_description": "Example: PostgreSQL MCP server for database queries",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://user:password@localhost:5432/dbname"
+      ],
+      "env": {}
+    },
+
+    "example-custom-service": {
+      "_description": "Example: Custom service discovery endpoint",
+      "_purpose": "Agent queries your services at runtime instead of hardcoding",
+
+      "command": "node",
+      "args": [
+        "C:\\Users\\ormus\\.hermetic\\mcp-servers\\service-discovery\\index.js"
+      ],
+      "env": {
+        "SERVICES_CONFIG_PATH": "C:\\Users\\ormus\\config\\services.json",
+        "DISCOVERY_PORT": "8772"
+      }
+    }
+  },
+
+  "_usage_guide": {
+    "location": "~/.config/claude/claude_desktop_config.json (Linux/Mac) or %APPDATA%/Claude/claude_desktop_config.json (Windows)",
+    "reload": "Restart Claude Desktop after modifying this file",
+    "testing": "Use 'List MCP Resources' or 'Read MCP Resource' tools to verify server is working",
+
+    "decision_tree": {
+      "need_file_access": "Use @modelcontextprotocol/server-filesystem",
+      "need_github_integration": "Use @modelcontextprotocol/server-github",
+      "need_database_queries": "Use @modelcontextprotocol/server-postgres",
+      "need_custom_service_discovery": "Create custom MCP server (see example-custom-service)",
+      "need_dynamic_endpoints": "Create custom MCP server that exposes your service catalog"
+    },
+
+    "hermetic_principles": {
+      "interface_explicit": "MCP exposes services at runtime - agent can't hardcode wrong values",
+      "context_embedded": "Service metadata travels with the service (schemas, endpoints, methods)",
+      "constraints_automated": "MCP schema validation ensures agent sends correct data format",
+      "error_to_system_patch": "When agent hardcodes wrong endpoint, add it to MCP server instead"
+    }
+  },
+
+  "_creating_custom_mcp_server": {
+    "purpose": "Expose your own services/data for agent runtime discovery",
+    "minimal_example": "See https://modelcontextprotocol.io/docs/getting-started",
+
+    "use_cases": [
+      "Service discovery (ports, endpoints, methods)",
+      "Configuration management (environment variables, feature flags)",
+      "Data catalogs (available datasets, schemas)",
+      "API documentation (available operations, parameters)",
+      "Project metadata (conventions, patterns, constraints)"
+    ],
+
+    "structure": {
+      "server_file": "index.js or index.ts that implements MCP protocol",
+      "resources": "Data/files the agent can read (service catalog, configs, etc.)",
+      "tools": "Operations the agent can execute (query services, test endpoints, etc.)",
+      "prompts": "Reusable prompt templates with service context"
+    }
+  }
+}

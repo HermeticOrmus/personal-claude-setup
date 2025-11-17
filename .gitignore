@@ -1,0 +1,113 @@
+# Sensitive Information
+*.key
+*.pem
+*.p12
+*.pfx
+*.env
+*.env.*
+!*.env.example
+.secrets
+credentials.json
+config.private.json
+
+# API Keys and Tokens
+**/api-keys/
+**/tokens/
+**/*-token.json
+**/*-credentials.json
+**/*-secret.*
+
+# Personal Contact Information
+**/ormus-contact-info.json
+
+# WhatsApp/Telegram Data
+**/*-chats.json
+**/*-messages.json
+**/metadata/*.json
+**/whatsapp-backup/
+
+# MCP Sensitive Data
+.mcp/auth/*.token
+.mcp/auth/*.key
+.mcp/auth/**/*.json
+.mcp/data/*.db
+.mcp/data/sessions/
+
+# Claude Code Session Data
+.claude/debug/
+.claude/todos/
+.claude/agent-history/
+.claude/projects/
+.claude/file-history/
+*.jsonl
+
+# Node modules and dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+**/*.log.*
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Backups
+*.bak
+*.backup
+*~
+
+# Database files
+*.sqlite
+*.db
+*.sqlite3
+
+# Private notes and drafts
+**/PRIVATE-*
+**/private-*
+**/scratch/
+**/drafts/
+
+# Tool setup guides with potential secrets
+**/midjourney-setup-guide.md
+**/discord-setup-guide.md
+**/telegram-setup-guide.md
+
+# Client-specific data
+**/client-data/
+**/client-configs/
+
+# Large media files (optional - uncomment if needed)
+# *.mp4
+# *.mov
+# *.avi
+# *.pdf
+# *.zip
+# *.tar.gz

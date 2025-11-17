@@ -1,0 +1,179 @@
+{
+  "name": "Hermetic Market Teacher - Morning Intelligence",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule: 9 AM ET Mon-Fri",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=SPY&apikey=MOBYBND95AVXG0HI",
+        "options": {}
+      },
+      "id": "fetch-spy-quote",
+      "name": "Fetch SPY Quote",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&apikey=MOBYBND95AVXG0HI&outputsize=compact",
+        "options": {}
+      },
+      "id": "fetch-spy-history",
+      "name": "Fetch SPY Historical Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse market data and calculate indicators\nconst quote = $('Fetch SPY Quote').first().json['Global Quote'];\nconst history = $('Fetch SPY Historical Data').first().json['Time Series (Daily)'];\n\n// Current price data\nconst spyPrice = parseFloat(quote['05. price']);\nconst spyChange = parseFloat(quote['09. change']);\nconst spyChangePct = parseFloat(quote['10. change percent'].replace('%', ''));\nconst spyVolume = parseInt(quote['06. volume']);\n\n// Historical data for indicators\nconst prices = Object.entries(history)\n  .map(([date, data]) => ({\n    date,\n    close: parseFloat(data['4. close']),\n    volume: parseInt(data['5. volume'])\n  }))\n  .sort((a, b) => new Date(b.date) - new Date(a.date))\n  .slice(0, 30);\n\n// Simple RSI calculation (14-period)\nfunction calculateRSI(prices, period = 14) {\n  let gains = 0, losses = 0;\n  \n  for (let i = 1; i <= period; i++) {\n    const change = prices[i-1].close - prices[i].close;\n    if (change > 0) gains += change;\n    else losses += Math.abs(change);\n  }\n  \n  const avgGain = gains / period;\n  const avgLoss = losses / period;\n  const rs = avgGain / avgLoss;\n  return 100 - (100 / (1 + rs));\n}\n\n// Calculate indicators\nconst rsi = calculateRSI(prices);\nconst sma20 = prices.slice(0, 20).reduce((sum, p) => sum + p.close, 0) / 20;\nconst avgVolume = prices.slice(0, 20).reduce((sum, p) => sum + p.volume, 0) / 20;\nconst volumeRatio = spyVolume / avgVolume;\n\n// Determine market mood\nlet mood = 'NEUTRAL 😐';\nlet moodContext = '';\n\nif (spyChangePct > 0.5 && rsi < 70) {\n  mood = 'BULLISH 📈';\n  moodContext = 'Positive momentum with room to run';\n} else if (spyChangePct > 0.5 && rsi > 70) {\n  mood = 'OVERBOUGHT ⚠️';\n  moodContext = 'Strong gains but RSI overbought - caution';\n} else if (spyChangePct < -0.5 && rsi > 30) {\n  mood = 'BEARISH 📉';\n  moodContext = 'Selling pressure but not oversold yet';\n} else if (spyChangePct < -0.5 && rsi < 30) {\n  mood = 'OVERSOLD 💎';\n  moodContext = 'Steep decline with RSI oversold - potential bounce';\n} else {\n  moodContext = 'Sideways action - wait for clarity';\n}\n\n// Trend analysis\nconst trend = spyPrice > sma20 ? 'ABOVE 20-day SMA ✅' : 'BELOW 20-day SMA ⚠️';\n\n// Volume context\nconst volumeContext = volumeRatio > 1.5 ? 'HIGH volume (' + volumeRatio.toFixed(2) + 'x avg) ⚡' :\n                       volumeRatio > 0.8 ? 'Normal volume' :\n                       'LOW volume (' + volumeRatio.toFixed(2) + 'x avg) 💤';\n\n// Format date\nconst date = new Date().toLocaleDateString('en-US', {\n  weekday: 'long',\n  year: 'numeric',\n  month: 'long',\n  day: 'numeric'\n});\n\nreturn [{\n  json: {\n    date,\n    spyPrice: spyPrice.toFixed(2),\n    spyChange: spyChange.toFixed(2),\n    spyChangePct: spyChangePct.toFixed(2),\n    spyVolume: spyVolume.toLocaleString(),\n    mood,\n    moodContext,\n    rsi: rsi.toFixed(2),\n    sma20: sma20.toFixed(2),\n    trend,\n    volumeContext,\n    volumeRatio: volumeRatio.toFixed(2),\n    // Data for teaching moment generation\n    marketContext: `SPY ${spyChangePct > 0 ? 'up' : 'down'} ${Math.abs(spyChangePct).toFixed(2)}% to $${spyPrice.toFixed(2)}. RSI at ${rsi.toFixed(0)}, ${rsi > 70 ? 'overbought' : rsi < 30 ? 'oversold' : 'neutral'}. Price is ${spyPrice > sma20 ? 'above' : 'below'} 20-day SMA ($${sma20.toFixed(2)}). Volume is ${volumeRatio > 1.5 ? 'elevated' : volumeRatio < 0.8 ? 'light' : 'normal'}.`\n  }\n}];"
+      },
+      "id": "calculate-indicators",
+      "name": "Calculate Market Indicators",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\n\n// Generate teaching moment based on market conditions\nlet teaching = '';\n\n// RSI-based teaching\nif (parseFloat(data.rsi) > 70) {\n  teaching = `🎓 TEACHING: RSI at ${data.rsi} signals overbought conditions.\\n\\nHistorically, RSI >70 doesn't mean \"sell immediately\" - strong trends can stay overbought for weeks. However, it does mean:\\n• Reduce position sizing on new longs\\n• Consider taking partial profits on existing positions\\n• Watch for divergences (price higher but RSI lower)\\n\\nThis is Hermetic Principle #4: POLARITY - balance bullish momentum with overbought caution.`;\n} else if (parseFloat(data.rsi) < 30) {\n  teaching = `🎓 TEACHING: RSI at ${data.rsi} signals oversold conditions.\\n\\nOversold ≠ immediate bottom. Markets can stay oversold during strong downtrends. Look for:\\n• Volume confirmation on bounce (need buyers stepping in)\\n• Positive divergence (price lower but RSI higher)\\n• Break above 20-day SMA for trend change confirmation\\n\\nThis is Hermetic Principle #5: RHYTHM - don't force the trade, wait for the turn.`;\n} else if (parseFloat(data.volumeRatio) > 2.0) {\n  teaching = `🎓 TEACHING: Volume is ${data.volumeRatio}x average - highly elevated.\\n\\nHigh volume confirms conviction:\\n• If price up + high volume = strong buying = sustainable move\\n• If price down + high volume = capitulation = potential bottom\\n• If price flat + high volume = indecision = wait for direction\\n\\nVolume is truth. Price can be manipulated, but volume shows real money flow.\\n\\nThis is Hermetic Principle #3: VIBRATION - everything moves, volume shows the force.`;\n} else if (Math.abs(parseFloat(data.spyChangePct)) < 0.2) {\n  teaching = `🎓 TEACHING: Low volatility day (${data.spyChangePct}% move).\\n\\nQuiet markets = opportunity to prepare:\\n• Review your watchlist\\n• Update stop losses\\n• Plan trades for next volatility spike\\n• Don't force trades in low-probability setups\\n\\nRemember: 80% of profits come from 20% of trading days. Patience during quiet periods preserves capital for high-probability setups.\\n\\nThis is Hermetic Principle #5: RHYTHM - honor market cycles.`;\n} else {\n  teaching = `🎓 TEACHING: Market showing normal volatility.\\n\\nStay disciplined:\\n• Follow your 2% risk rule\\n• Only take setups that meet ALL your criteria\\n• Document your thesis before entry\\n• Review yesterday's trades for lessons\\n\\nTrading is a marathon, not a sprint. Consistent execution compounds into mastery.\\n\\nThis is Hermetic Principle #1: MENTALISM - clear mind, clear trades.`;\n}\n\n// Format complete message\nconst message = `🌅 MORNING INTELLIGENCE | ${data.date}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📊 MARKET PULSE\n\nSPY: $${data.spyPrice} (${parseFloat(data.spyChangePct) > 0 ? '+' : ''}${data.spyChangePct}%)\nChange: ${parseFloat(data.spyChange) > 0 ? '+' : ''}$${data.spyChange}\nVolume: ${data.spyVolume} ${data.volumeContext}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📈 TECHNICAL PICTURE\n\nMood: ${data.mood}\n${data.moodContext}\n\nRSI (14): ${data.rsi} ${parseFloat(data.rsi) > 70 ? '⚠️ Overbought' : parseFloat(data.rsi) < 30 ? '💎 Oversold' : '✅ Neutral'}\n20-Day SMA: $${data.sma20}\nTrend: ${data.trend}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n${teaching}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏰ NEXT SCAN: Hourly during market hours\n\n🔱 Hermetic Market Teacher\nTrade with consciousness. Learn with discipline.`;\n\nreturn [{ json: { message } }];"
+      },
+      "id": "format-message",
+      "name": "Format Telegram Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 400]
+    },
+    {
+      "parameters": {
+        "content": "=📱 **IMPORTANT**: Replace YOUR_CHAT_ID below with your actual Telegram chat ID.\n\nTo get your chat ID:\n1. Send /start to your bot\n2. Visit: https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates\n3. Look for \"chat\":{\"id\":YOUR_NUMBER}\n4. Replace YOUR_CHAT_ID with that number",
+        "height": 200,
+        "width": 400
+      },
+      "id": "telegram-note",
+      "name": "⚠️ Setup Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "authentication": "botToken",
+        "chatId": "YOUR_CHAT_ID",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "parseMode": "Markdown"
+        }
+      },
+      "id": "send-telegram",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1050, 400],
+      "credentials": {
+        "telegramApi": {
+          "id": "telegram-bot-credentials",
+          "name": "Hermetic Market Teacher Bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule: 9 AM ET Mon-Fri": {
+      "main": [
+        [
+          {
+            "node": "Fetch SPY Quote",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch SPY Historical Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch SPY Quote": {
+      "main": [
+        [
+          {
+            "node": "Calculate Market Indicators",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch SPY Historical Data": {
+      "main": [
+        [
+          {
+            "node": "Calculate Market Indicators",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Market Indicators": {
+      "main": [
+        [
+          {
+            "node": "Format Telegram Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Telegram Message": {
+      "main": [
+        [
+          {
+            "node": "Send to Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "timezone": "America/New_York"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-01-15T00:00:00.000Z",
+      "updatedAt": "2025-01-15T00:00:00.000Z",
+      "id": "hermetic-market-teacher",
+      "name": "Hermetic Market Teacher"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-15T00:00:00.000Z",
+  "versionId": "hermetic-v1"
+}
